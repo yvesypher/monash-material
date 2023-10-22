@@ -1,0 +1,591 @@
+---
+title: "Lecture 2: Introduction to web technologies"
+---
+
+```{r, include = FALSE}
+current_file <- knitr::current_input()
+basename <- gsub(".[Rq]md$", "", current_file)
+library(tidyverse)
+library(timevis)
+library(widgetframe)
+library(htmltools)
+
+js <- '<i class="fab fa-js-square monash-green2"></i>'
+css <- '<i class="fab fa-css3-alt monash-blue2"></i>'
+seetext <- '<span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="fas fa-font" ></i></span>'
+seehtml <- '<span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="far fa-window-maximize"></i></span>'
+
+
+knitr::opts_chunk$set(
+  fig.path = sprintf("images/%s/", basename),
+  fig.width = 6,
+  fig.height = 4,
+  fig.align = "center",
+  out.width = "100%",
+  fig.retina = 3,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  cache = TRUE,
+  cache.path = "cache/"
+)
+```
+
+## 🌐 World Wide Web (WWW)
+
+-   WWW (or the **Web**) is the information system where documents (web pages) are identified by Uniform Resource Locators (**URL**s)
+
+::: incremental
+-   A web page consists of:
+
+    -   <i class="fab fa-html5 monash-orange2"></i> **HTML** provides the basic structure of the web page
+    -   <i class="fab fa-css3-alt monash-blue2"></i> **CSS** controls the look of the web page (optional)
+    -   <i class='fab fa-js-square monash-green2'></i> **JS** is a programming language that can modify the behaviour of elements of the web page (optional)
+:::
+
+::: notes
+-   Keep in mind that you are not a web developer [(or maybe you are)]{.f4} so you don't need to know these in-depth, but you require some knowledge in web technologies if you want to do some low-level customisation of HTML documents.
+:::
+
+## 🔨 Web Documents are Handy
+
+::: incremental
+-   HTML documents are really handy for including interactive elements and supported in almost all computer devices.
+-   Naturally, this ties in well with [interactive data visualisation]{.monash-blue}.
+:::
+
+::: fragment
+-   Below is an interactive timeline visualisation of historical developments of HTML/CSS/JS:
+
+```{r, echo = FALSE}
+data <- tibble::tribble(~id, ~content, ~start, ~end, ~style,
+                1, "CSS 1", "1996-12-17", NA, "font-size:10pt",
+                2, "CSS 2", "1998-05-01", NA, "font-size:10pt",
+                3, "CSS", "1999-06-01", NA, "font-size:10pt;",
+                4, "HTML", "1989-01-01", NA, "font-size:10pt",
+                5, "HTML 2", "1995-11-24", NA, "font-size:10pt",
+                6, "HTML 3", "1997-01-14", NA, "font-size:10pt",
+                7, "HTML 4", "1997-12-18", NA, "font-size:10pt",
+                8, "HTML", "2014-10-28", NA, "font-size:10pt",
+                9, "CSS", "1994-10-10", NA, "font-size:10pt",
+                10, "JS", "1995-12-04", NA, "font-size:10pt"
+                
+)
+timevis::timevis(data, width = "100%", height = "250px")
+```
+:::
+
+## <i class="fab fa-html5 monash-orange2"></i> Hyper Text Markup Language {#html}
+
+-   HTML files have the extension `.html`.
+-   HTML files are often rendered using a web browser via an URL.
+-   HTML files are just text files that follows a special syntax that alerts web browsers how to render it.
+
+### <i class="fab fa-html5 monash-orange2"></i> Simple HTML example
+
+<center><a href="simple-example.html" download><i class="fas fa-download"></i></a> `simple-example.html`</center>
+
+::: flex
+::: {.w-50 .pr3}
+`r seetext`
+
+``` {.html code-line-numbers="|1,13|2,12|3|4|5-7|8|9-11|"}
+<html>
+<body>
+<h1>ETC5523: Communicating with Data</h1>
+<h2>Lecturer</h2>
+<ul>
+<li>Michael Lydeamore (Chief Examiner)</li>
+</ul>
+<h2>Tutors</h2>
+<ul>
+<li>Janith Wanniarachchi</li>
+<li>Cynthia Huang</li>
+</ul>
+</body>
+</html>
+```
+:::
+
+::: w-50
+`r seehtml`
+
+<iframe src="simple-example.html" height="100%">
+
+</iframe>
+:::
+:::
+
+### [<i class="fas fa-square monash-white" data-fa-transform="shrink-5"></i><i class="fab fa-html5 monash-orange2"></i>]{.fa-layers .fa-fw} HTML Structure
+
+``` {.html code-line-numbers="|3-8|10-14|"}
+<html>
+<!--This is a comment and ignored by web client.-->
+<head>
+  <!--This section contains web page metadata.-->
+  <title>Communicating with Data</title>
+  <meta name="author" content="Emi Tanaka">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<!--This section contains what you want to display on your web page.-->
+<h1>I'm a first level header</h1>
+<p>This is a paragraph.</p>
+</body>
+</html>
+```
+
+### <i class="fab fa-html5 monash-orange2"></i> HTML Syntax
+
+`r seetext`
+
+``` html
+<span style="color:blue;">Author content</span>
+```
+
+`r seehtml` [Author content]{style="color:blue;"}
+
+::: fragment
+The breakdown of this HTML syntax:
+:::
+
++-----------------:+-----------------------------------------------------+
+| start tag:       | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+| end tag:         | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+| content:         | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+| element name:    | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+| attribute:       | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+| attribute name:  | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+| attribute value: | \<span style="color:blue;"\>Author content\</span\> |
++------------------+-----------------------------------------------------+
+
+### Not all HTML tags have an end tag
+
+`r seetext`
+
+``` html
+<img height="200px" src="https://tinyurl.com/rlogo-svg">
+```
+
+<br> `r seehtml`
+
+<img src="https://tinyurl.com/rlogo-svg" height="200px"/>
+
+### <i class="fab fa-html5 monash-orange2"></i> Some HTML elements
+
++-------------------:+-----------------------------------------------------+
+| block element:     | \<div\>content\</div\>                              |
++--------------------+-----------------------------------------------------+
+| inline element:    | \<span\>content\</span\>                            |
++--------------------+-----------------------------------------------------+
+| paragraph:         | \<p\>content\</p\>                                  |
++--------------------+-----------------------------------------------------+
+| header level 1:    | \<h1\>content\</h1\>                                |
++--------------------+-----------------------------------------------------+
+| header level 2:    | \<h2\>content\</h2\> (note: only up to 6 levels)    |
++--------------------+-----------------------------------------------------+
+| italic:            | \<i\>content\</i\>                                  |
++--------------------+-----------------------------------------------------+
+| emphasised text:   | \<em\>content\</em\>                                |
++--------------------+-----------------------------------------------------+
+| bold:              | \<b\>content\</b\>                                  |
++--------------------+-----------------------------------------------------+
+| strong importance: | \<strong\>content\</strong\>                        |
++--------------------+-----------------------------------------------------+
+| link:              | \<a href="https://cwd.numbat.space/"\>content\</a\> |
++--------------------+-----------------------------------------------------+
+| insert new line:   | \<br\>                                              |
++--------------------+-----------------------------------------------------+
+| unordered list:    | \<ul\>\                                             |
+|                    | \<li\>item 1\</li\>\                                |
+|                    | \<li\>item 2\</li\>\                                |
+|                    | \</ul\>                                             |
++--------------------+-----------------------------------------------------+
+
+::: fragment
+How these are rendered to the browser depends on the **browser default style values**, **style attribute** or **CSS**...
+:::
+
+## `r css` Cascading Style Sheet (CSS) {#css}
+
+::: incremental
+-   CSS files have the extension `.css` [and styles also XHTML, plain XML, SVG and XUL]{.f4}.
+
+-   There are 3 ways to style elements in HTML:
+
+    -   **inline** by using the `style` attribute inside HTML start tag:
+
+    ``` html
+    <h1 style="color:blue;">Blue Header</h1>
+    ```
+
+    -   **externally** by using the `<link>` element:
+
+    ``` html
+    <link rel="stylesheet" href="styles.css">
+    ```
+
+    -   **internally** by defining within `<style>` element:<br>
+
+    ``` html
+    <style type="text/css"> h1 { color: blue; } </style>
+    ```
+:::
+
+::: notes
+-   By convention, the `<style>` and `<link>` elements tend to go into the `<head>` section of the HTML document.
+:::
+
+### `r css` CSS Syntax
+
+::: flex
+::: {.w-50 .pr3}
+`r seetext`
+
+``` html
+<style type="text/css">
+h1 { color: blue; }
+</style>
+
+<h1>This is a header</h1>
+```
+:::
+
+::: w-50
+`r seehtml`
+
+<h1 style="color:blue">
+
+This is a header
+
+</h1>
+:::
+:::
+
+::: fragment
+The breakdown of the CSS syntax:
+:::
+
+|                 |                     |
+|----------------:|---------------------|
+|       selector: | h1 { color: blue; } |
+|       property: | h1 { color: blue; } |
+|  property name: | h1 { color: blue; } |
+| property value: | h1 { color: blue; } |
+
+### You may have multiple properties for a single CSS selector
+
+``` css
+h1 {
+  color: blue;
+  font-family: monospace;
+  background: yellow;
+}
+```
+
+<br>
+
+<h1 style="color: blue;font-family: monospace;background: yellow;">
+
+This is a header
+
+</h1>
+
+### `r css` Some CSS properties
+
+<center>`<div> Sample text </div>`</center>
+
++--------------------------:+------------------------------------------+-----------------+
+| background color:         | div { background-color: yellow; }        | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| text color:               | div { color: purple; }                   | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| border:                   | div { border: 1px dashed brown; }        | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| left border only:         | div { border-left: 10px solid pink; }    | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| text size:                | div { font-size: 10pt; }                 | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| padding:                  | div { background-color: yellow;\         | Sample text     |
+|                           |     padding: 10px; }                     |                 |
++---------------------------+------------------------------------------+-----------------+
+| margin:                   | div { background-color: yellow;\         | Sample text     |
+|                           |     margin: 10px; }                      |                 |
++---------------------------+------------------------------------------+-----------------+
+| horizontally center text: | div { background-color: yellow;\         | Sample text     |
+|                           |     padding-top: 20px;\                  |                 |
+|                           |     text-align: center; }                |                 |
++---------------------------+------------------------------------------+-----------------+
+| font family:              | div { font-family: Marker Felt, times; } | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| strike:                   | div { text-decoration: line-through; }   | ~~Sample text~~ |
++---------------------------+------------------------------------------+-----------------+
+| underline:                | div { text-decoration: underline; }      | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+| opacity:                  | div { opacity: 0.3 }                     | Sample text     |
++---------------------------+------------------------------------------+-----------------+
+
+## `r css` CSS Selector {#selector}
+
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`\*\`         |         | selects all elements                                                                 |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`div\`        |         | selects all \<div\> elements                                                         |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`div, p\`     |         | selects all \<div\> and \<p\> elements                                               |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`div p\`      |         | selects all \<p\> within \<div\>                                                     |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`div \> p\`   |         | selects all \<p\> one level deep in \<div\>                                          |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`div + p\`    |         | selects all \<p\> immediately after a \<div\>                                        |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`div \~ p\`   |         | selects all \<p\> preceded by a \<div\>                                              |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`.classname\` |         | selects all elements with the attribute class="classname".                           |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`.c1.c2\`     |         | selects all elements with *both* c1 and c2 within its class attribute.               |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`.c1 .c2\`    |         | selects all elements with class c2 that is a descendant of an element with class c1. |
++----------------+---------+--------------------------------------------------------------------------------------+
+| \`#idname\`    |         | selects all elements with the attribute id="idname".                                 |
++----------------+---------+--------------------------------------------------------------------------------------+
+
+## `r js` JavaScript (JS) {#js}
+
+::: incremental
+-   JS is a programming language and enable interactive components in HTML documents.
+
+-   You can insert JS into a HTML document in two ways:
+
+    -   **internally** by defining within `<script>` element:
+
+    ``` html
+    <script>
+    document.getElementById("p1").innerHTML = "content";
+    </script>
+    ```
+
+    -   **externally** by using the `src` attribute to refer to the external file:
+
+    ``` html
+    <script src="myjava.js"></script>
+    ```
+
+-   You are *not* expected to be able to do any JS in this course.
+:::
+
+## HTML outputs with <br>[Rmd documents]{.monash-blue}
+
+``` yaml
+---
+output: html_document
+---
+```
+
+``` yaml
+---
+output: bookdown::html_document2
+---
+```
+
+### `r css` Inserting CSS in Rmd documents [Part 1]{.f4}
+
+-   There is a `css` engine:
+
+```{css}
+#| echo: fenced
+h1 { color: #3B3E79; }
+```
+
+. . .
+
+-   This inserts the following output into the document:
+
+``` html
+<style type="text/css">
+h1 { color: red; }
+</style>
+```
+
+. . .
+
+-   If the output is a HTML document then the defined styles will apply to the output document.
+
+### `r css` Inserting CSS in Rmd documents [Part 2]{.f4}
+
+-   If you have an external file, say `styles.css`, that you define the styles, then most HTML outputs will support this with YAML argument `css`
+
+``` {.yaml code-line-numbers="|4"}
+---
+output: 
+  html_document: 
+    css: ["styles.css"]
+---
+```
+
+or say
+
+``` {.yaml code-line-numbers="|4"}
+---
+output: 
+  bookdown::html_document2: 
+    css: ["styles.css", "custom.css"]
+---
+```
+
+### `r js` Inserting JS into Rmd documents [Part 1]{.f4}
+
+-   There is a `js` engine:
+
+```{js}
+#| echo: fenced
+document.getElementById("p1").innerHTML = "content";
+```
+
+::: fragment
+which inserts:
+
+``` html
+<script type="text/javascript">
+document.getElementById("p1").innerHTML = "content";
+</script>
+```
+:::
+
+::: fragment
+-   If you have an external file, say `myjava.js`, then you can directly insert this in the body of the Rmd file as:
+
+``` js
+<script src="myjava.js"></script>
+```
+:::
+
+### `r js` Inserting JS into Rmd documents [Part 2]{.f4}
+
+If you need to insert at a specific location within the document then you can use `includes`:
+
+``` yaml
+---
+output:
+  html_document:
+    includes: 
+      in_header: ["header.html"]
+      before_body: ["before_body.html"]
+      after_body: ["after_body.html"]
+---
+```
+
+where `header.html`, `before_body.html`, `after_body.html` includes the JS code, e.g.
+
+``` html
+<script src="myjava.js"></script>
+<script type="text/javascript">
+document.getElementById("p1").innerHTML = "content";
+</script>
+```
+
+### <i class="fas fa-user-friends"></i> Community Web Enhancements
+
+-   [Bootstrap](https://getbootstrap.com/) is a free open-source CSS and JS that is widely adopted.[^1]
+-   [jQuery](https://jquery.com/) is a widely used JS library for object selection and manipulation.<sup>1</sup>
+-   [MathJax](https://www.mathjax.org/) is a JS library for displaying mathematics.<sup>1</sup>
+-   [Font Awesome](https://fontawesome.com/) inserts icons to web using their CSS.[^2]
+-   [D3.js](https://d3js.org/) is one of the most popular JS library for interactive data visualisation.
+
+[^1]: Included in the default `rmarkdown::html_document`.
+
+[^2]: Sometimes included in certain Rmd HTML documents.
+
+### ☁️ Communication in the Web {.smaller}
+
+-   Hypertext Transfer Protocol (**HTTP**) functions as the communicator in the Web
+-   HTTPS is the secure version of HTTP where communications are encrypted
+
+<center><img src="images/lecture-02/client-server.png" class="bg-white" width="650px"/></center>
+
+::: fragment
+::: callout-warning
+Different clients may work differently! E.g. Internet Explorer and Chrome may render the same web page differently.
+:::
+:::
+
+### 📋 Web Standard
+
+::: f2
+-   There are 3 major groups that govern the standard for the Web:
+    -   World Wide Web Consortium (**W3C**) formed in 1994 maintains the [CSS specifications](https://www.w3.org/Style/CSS/) <i class="fab fa-css3-alt blue"></i>
+    -   Web Hypertext Application Technology Working Group (**WHATWG**) formed in 2004 and is the publisher of the [HTML and DOM standards](https://html.spec.whatwg.org/) <i class="fab fa-html5 orange"></i>
+    -   **TC39 technical committee** of [Ecma International](http://www.ecma-international.org/publications/standards/Standard.htm), renamed from European Computer Manufacturers Association (ECMA) in 1994, maintains the standards for JS [<i class='fas fa-square black' data-fa-transform='shrink-2'></i><i class='fab fa-js-square yellow'></i>]{.fa-layers}
+-   These groups consist of Mozilla, <i class="fab fa-apple"></i> Apple, <i class="fab fa-google"></i> Google, <i class="fab fa-microsoft"></i> Microsoft and other invited members.
+:::
+
+### 📜 MDN Web Docs [LIVE DEMO]{.f4}
+
+[<https://developer.mozilla.org/>]{.f2}
+
+::: f2
+-   Documentation of web standards maintained by the community.
+
+-   Includes status of use:
+
+    <center><img src="images/lecture-02/obsolete.png"/></center>
+
+-   As well as its compatibility with web clients:
+
+    <center><img src="images/lecture-02/browser-compatibility.png" width="450px"/></center>
+:::
+
+### Writing HTML {#htmltidy}
+
+[You can play at <https://htmltidy.net/>]{.f2}
+
+<center><img src="images/lecture-02/htmltidy.gif" class="ba" width="900px"/></center>
+
+# 📝 Interactive Cheatsheets {#cheatsheets}
+
+::: r-fit-text
+<i class="fab fa-html5 monash-orange2"></i> HTML Cheatsheet <https://htmlcheatsheet.com/>
+
+<i class="fab fa-css3-alt monash-blue2"></i> CSS Cheatsheet <https://htmlcheatsheet.com/css/>
+
+<i class="fab fa-js-square monash-green2"></i> JS Cheatsheet <https://htmlcheatsheet.com/js/>
+:::
+
+## 🔎 Inspect Element [LIVE DEMO]{.f4}
+
+Below GIF shows interactive use of Inspect Element[^3] available from the menu in most web browsers when you right click on the web page[^4]:
+
+[^3]: Or called Inspect.
+
+[^4]: Note: this is for inspection and doesn't actual make changes to the files.
+
+<center><img src="images/lecture-02/inspect-element.gif" class="ba" width="620px"/></center>
+
+˜
+
+## Week 2 Lesson
+
+::: callout-important
+## Summary
+
+-   We went through the basics of HTML, CSS and JS
+-   You should be more comfortable with writing HTML and CSS
+-   You learnt how to include CSS and JS into HTML documents created from R Markdown
+-   You know the tools to interactively learn HTML and CSS
+:::
+
+::: {.callout-tip .fragment}
+## Resources
+
+-   [Introduction to Data Technologies Ch 2-4 by Paul Murrell](https://www.stat.auckland.ac.nz/~paul/ItDT/itdt-2010-11-01.pdf)
+-   [Interactive HTML/CSS/JS cheatsheets](#cheatsheets)
+-   [HTML Tidy .Net](#htmltidy)
+:::
