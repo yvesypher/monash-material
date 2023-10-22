@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Yvesypher - Lecture 6: Effective data visualisation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="../site_libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet">
+<script src="../site_libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<link rel="stylesheet" href="../assets/all.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Yvesypher</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-etc5523" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">ETC5523</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-etc5523">    
+        <li class="dropdown-header">2023S2 Etc5523</li>
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-01.html" rel="" target="">
+ <span class="dropdown-text">Lecture 1: Basic communication theory and practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-02.html" rel="" target="">
+ <span class="dropdown-text">Lecture 2: Introduction to web technologies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-03.html" rel="" target="">
+ <span class="dropdown-text">Lecture 3: Communicating data with interactive web apps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-04.html" rel="" target="">
+ <span class="dropdown-text">Lecture 4: Data storytelling on the web</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05A.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5A: Statistical model outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05B.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5B: Data tables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-06.html" rel="" target="">
+ <span class="dropdown-text">Lecture 6: Effective data visualisation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-07.html" rel="" target="">
+ <span class="dropdown-text">Lecture 7: Captivating statistical presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-08.html" rel="" target="">
+ <span class="dropdown-text">Lecture 8: Clearly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-09.html" rel="" target="">
+ <span class="dropdown-text">Lecture 9: Stylishly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-10.html" rel="" target="">
+ <span class="dropdown-text">Lecture 10: Narrative</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2023S2-etc5523/lecture-01.html">2023S2 Etc5523</a></li><li class="breadcrumb-item"><a href="../2023S2-etc5523/lecture-06.html">Lecture 6: Effective data visualisation</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">2023S2 Etc5523</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Basic communication theory and practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Introduction to web technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Communicating data with interactive web apps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Data storytelling on the web</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05A.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5A: Statistical model outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5B: Data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-06.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 6: Effective data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Captivating statistical presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Clearly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Stylishly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Narrative</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim"></a></li>
+  <li><a href="#data-visualisation" id="toc-data-visualisation" class="nav-link" data-scroll-target="#data-visualisation">Data Visualisation</a></li>
+  <li><a href="#communicating-with-data-visualisation" id="toc-communicating-with-data-visualisation" class="nav-link" data-scroll-target="#communicating-with-data-visualisation">💬️ Communicating with data visualisation</a>
+  <ul class="collapse">
+  <li><a href="#birth-place-from-the-2021-australian-census" id="toc-birth-place-from-the-2021-australian-census" class="nav-link" data-scroll-target="#birth-place-from-the-2021-australian-census">Birth place from the 2021 Australian Census</a></li>
+  </ul></li>
+  <li><a href="#birth-place-from-the-2021-australian-census-1" id="toc-birth-place-from-the-2021-australian-census-1" class="nav-link" data-scroll-target="#birth-place-from-the-2021-australian-census-1">Birth place from the 2021 Australian Census</a>
+  <ul class="collapse">
+  <li><a href="#india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show" id="toc-india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show" class="nav-link" data-scroll-target="#india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show">India now third most common place of birth of Australian residents, census results show</a></li>
+  </ul></li>
+  <li><a href="#another-look" id="toc-another-look" class="nav-link" data-scroll-target="#another-look">Another look</a></li>
+  <li><a href="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found" id="toc-india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found" class="nav-link" data-scroll-target="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</a></li>
+  <li><a href="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1" id="toc-india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1" class="nav-link" data-scroll-target="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</a></li>
+  <li><a href="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2" id="toc-india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2" class="nav-link" data-scroll-target="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</a></li>
+  <li><a href="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3" id="toc-india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3" class="nav-link" data-scroll-target="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</a></li>
+  <li><a href="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4" id="toc-india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4" class="nav-link" data-scroll-target="#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</a></li>
+  <li><a href="#what-plot-type-to-use" id="toc-what-plot-type-to-use" class="nav-link" data-scroll-target="#what-plot-type-to-use">What plot type to use?</a>
+  <ul class="collapse">
+  <li><a href="#data-visualisation-catalogue" id="toc-data-visualisation-catalogue" class="nav-link" data-scroll-target="#data-visualisation-catalogue">🛒 Data Visualisation Catalogue</a></li>
+  <li><a href="#composite-plots" id="toc-composite-plots" class="nav-link" data-scroll-target="#composite-plots"><i class="fas fa-project-diagram blue"></i> Composite plots</a></li>
+  <li><a href="#composite-plots-1" id="toc-composite-plots-1" class="nav-link" data-scroll-target="#composite-plots-1"><i class="fas fa-project-diagram blue"></i> Composite plots</a></li>
+  <li><a href="#why-is-a-3d-pie-chart-considered-a-bad-plot" id="toc-why-is-a-3d-pie-chart-considered-a-bad-plot" class="nav-link" data-scroll-target="#why-is-a-3d-pie-chart-considered-a-bad-plot">Why is a 3D pie chart considered a “bad plot”?</a></li>
+  <li><a href="#what-about-2d-pie-charts" id="toc-what-about-2d-pie-charts" class="nav-link" data-scroll-target="#what-about-2d-pie-charts">What about 2D pie charts?</a></li>
+  <li><a href="#elementary-perceptual-tasks" id="toc-elementary-perceptual-tasks" class="nav-link" data-scroll-target="#elementary-perceptual-tasks">Elementary Perceptual Tasks</a></li>
+  </ul></li>
+  <li><a href="#retrieving-information-from-graphs" id="toc-retrieving-information-from-graphs" class="nav-link" data-scroll-target="#retrieving-information-from-graphs">Retrieving information from graphs</a>
+  <ul class="collapse">
+  <li><a href="#rank-1" id="toc-rank-1" class="nav-link" data-scroll-target="#rank-1">Rank 1</a></li>
+  <li><a href="#rank-2" id="toc-rank-2" class="nav-link" data-scroll-target="#rank-2">Rank 2</a></li>
+  <li><a href="#rank-3" id="toc-rank-3" class="nav-link" data-scroll-target="#rank-3">Rank 3</a></li>
+  <li><a href="#rank-4" id="toc-rank-4" class="nav-link" data-scroll-target="#rank-4">Rank 4</a></li>
+  <li><a href="#rank-5" id="toc-rank-5" class="nav-link" data-scroll-target="#rank-5">Rank 5</a></li>
+  <li><a href="#rank-6" id="toc-rank-6" class="nav-link" data-scroll-target="#rank-6">Rank 6</a></li>
+  <li><a href="#preattentive-processing" id="toc-preattentive-processing" class="nav-link" data-scroll-target="#preattentive-processing">Preattentive processing</a></li>
+  </ul></li>
+  <li><a href="#gestalt-principles" id="toc-gestalt-principles" class="nav-link" data-scroll-target="#gestalt-principles">Gestalt Principles</a>
+  <ul class="collapse">
+  <li><a href="#law-of-proximity" id="toc-law-of-proximity" class="nav-link" data-scroll-target="#law-of-proximity">Law of Proximity</a></li>
+  <li><a href="#law-of-proximity-1" id="toc-law-of-proximity-1" class="nav-link" data-scroll-target="#law-of-proximity-1">Law of Proximity</a></li>
+  <li><a href="#law-of-similarity" id="toc-law-of-similarity" class="nav-link" data-scroll-target="#law-of-similarity">Law of Similarity</a></li>
+  <li><a href="#law-of-closure" id="toc-law-of-closure" class="nav-link" data-scroll-target="#law-of-closure">Law of Closure</a></li>
+  </ul></li>
+  <li><a href="#color-space" id="toc-color-space" class="nav-link" data-scroll-target="#color-space">Color space</a>
+  <ul class="collapse">
+  <li><a href="#qualitative-palettes" id="toc-qualitative-palettes" class="nav-link" data-scroll-target="#qualitative-palettes">Qualitative palettes</a></li>
+  <li><a href="#sequential-palettes" id="toc-sequential-palettes" class="nav-link" data-scroll-target="#sequential-palettes">Sequential palettes</a></li>
+  <li><a href="#diverging-palettes" id="toc-diverging-palettes" class="nav-link" data-scroll-target="#diverging-palettes">Diverging palettes</a></li>
+  <li><a href="#colorblindness" id="toc-colorblindness" class="nav-link" data-scroll-target="#colorblindness">Colorblindness</a></li>
+  <li><a href="#week-6-lesson" id="toc-week-6-lesson" class="nav-link" data-scroll-target="#week-6-lesson">Week 6 Lesson</a></li>
+  <li><a href="#week-6-lesson-1" id="toc-week-6-lesson-1" class="nav-link" data-scroll-target="#week-6-lesson-1">Week 6 Lesson</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 6: Effective data visualisation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-2_4d0d4d05e2cb09328a2b2f1c14260257">
+<style type="text/css">
+.reveal p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0;
+}
+</style>
+</div>
+<section id="aim" class="level2">
+<h2 class="anchored" data-anchor-id="aim"></h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aim
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Apply principles and practices for data visualisation that effectively and efficiently convey intended messages to viewers</li>
+<li>Use data visualisation to create effective data stories</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>“A picture is worth a thousand words”.</li>
+<li>Data visualisation can make large, complex data more accessible, understandable and usable.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="data-visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualisation">Data Visualisation</h2>
+<div class="blockquote">
+<p>Data visualization is <strong>part art</strong> and <strong>part science</strong>. The challenge is to get the art right without getting the science wrong and vice versa.</p>
+<p><span class="ftr">– Claus O. Wilke, Fundamentals of Data Visualization</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Role
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A data visualization has to accurately communicate the data to the intended audience.</li>
+<li>A data visualization must not mislead or distort information from the data.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="communicating-with-data-visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="communicating-with-data-visualisation">💬️ Communicating with data visualisation</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Communication
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Effective data visualisation means to design your data plot to effectively use human visual system to improve cognition about a targeted information from the data.</p>
+</div>
+</div>
+<ul>
+<li>I interchangeably use the terms data visualisation, plot, data plot, graphic, statistical graphic, and figure.</li>
+</ul>
+<section id="birth-place-from-the-2021-australian-census" class="level3 scrollable" data-auto-animate="true">
+<h3 class="scrollable anchored" data-auto-animate="true" data-anchor-id="birth-place-from-the-2021-australian-census">Birth place from the 2021 Australian Census</h3>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-3_9cec1715d9d18b74457347077877d868">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df2021 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> scales<span class="sc">::</span><span class="fu">comma</span>(count, <span class="dv">1</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">percentage =</span> scales<span class="sc">::</span><span class="fu">comma</span>(percentage, <span class="fl">0.1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Birth place"</span>, <span class="st">"Count"</span>, <span class="st">"%"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">align =</span> <span class="st">"lrr"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_classic</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Birth place</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Australia</td>
+<td style="text-align: right;">17,020,422</td>
+<td style="text-align: right;">66.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Not Stated</td>
+<td style="text-align: right;">1,358,658</td>
+<td style="text-align: right;">5.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">England</td>
+<td style="text-align: right;">927,490</td>
+<td style="text-align: right;">3.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Other</td>
+<td style="text-align: right;">759,173</td>
+<td style="text-align: right;">3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">India</td>
+<td style="text-align: right;">673,352</td>
+<td style="text-align: right;">2.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">549,618</td>
+<td style="text-align: right;">2.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New Zealand</td>
+<td style="text-align: right;">530,492</td>
+<td style="text-align: right;">2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Philippines</td>
+<td style="text-align: right;">293,892</td>
+<td style="text-align: right;">1.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vietnam</td>
+<td style="text-align: right;">257,997</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Africa</td>
+<td style="text-align: right;">189,207</td>
+<td style="text-align: right;">0.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Malaysia</td>
+<td style="text-align: right;">165,616</td>
+<td style="text-align: right;">0.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">163,326</td>
+<td style="text-align: right;">0.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sri Lanka</td>
+<td style="text-align: right;">131,904</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nepal</td>
+<td style="text-align: right;">122,506</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Scotland</td>
+<td style="text-align: right;">118,496</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Korea South</td>
+<td style="text-align: right;">102,092</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States America</td>
+<td style="text-align: right;">101,309</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Germany</td>
+<td style="text-align: right;">101,255</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hong Kong</td>
+<td style="text-align: right;">100,148</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iraq</td>
+<td style="text-align: right;">92,922</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Greece</td>
+<td style="text-align: right;">92,314</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pakistan</td>
+<td style="text-align: right;">89,633</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lebanon</td>
+<td style="text-align: right;">87,340</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indonesia</td>
+<td style="text-align: right;">87,075</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Thailand</td>
+<td style="text-align: right;">83,779</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ireland</td>
+<td style="text-align: right;">80,927</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iran</td>
+<td style="text-align: right;">70,899</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiji</td>
+<td style="text-align: right;">68,947</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Netherlands</td>
+<td style="text-align: right;">66,481</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Singapore</td>
+<td style="text-align: right;">61,056</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">59,797</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bangladesh</td>
+<td style="text-align: right;">51,491</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canada</td>
+<td style="text-align: right;">50,223</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Taiwan</td>
+<td style="text-align: right;">49,511</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brazil</td>
+<td style="text-align: right;">46,720</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Poland</td>
+<td style="text-align: right;">45,884</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Japan</td>
+<td style="text-align: right;">45,267</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Croatia</td>
+<td style="text-align: right;">43,302</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Egypt</td>
+<td style="text-align: right;">43,213</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">North Macedonia</td>
+<td style="text-align: right;">41,786</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">39,714</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Myanmar</td>
+<td style="text-align: right;">39,171</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cambodia</td>
+<td style="text-align: right;">39,043</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Turkey</td>
+<td style="text-align: right;">38,568</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">France</td>
+<td style="text-align: right;">36,019</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Malta</td>
+<td style="text-align: right;">35,413</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Papua New Guinea</td>
+<td style="text-align: right;">29,984</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chile</td>
+<td style="text-align: right;">29,860</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wales</td>
+<td style="text-align: right;">29,250</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Samoa</td>
+<td style="text-align: right;">28,107</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bosnia Herzegov</td>
+<td style="text-align: right;">26,171</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mauritius</td>
+<td style="text-align: right;">25,981</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/census2021-part1_5979cb27079e8dd46f84942c13833313">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df2021 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(birth, percentage)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Percentage"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2021-part1-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which birth place is the third largest among people in Australia?</p>
+</section>
+</section>
+<section id="birth-place-from-the-2021-australian-census-1" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="birth-place-from-the-2021-australian-census-1">Birth place from the 2021 Australian Census</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/census2021-part2_800f9157096ab946875f5a3d64dc968e">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df2021 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">fct_reorder</span>(birth, <span class="sc">-</span>percentage)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(birth, percentage)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Percentage"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2021-part2-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><i class="fa-solid fa-face-meh" style=" transform: rotate(-45deg)"></i> Can you read the labels without tilting your head?</p>
+<div class="cell" data-layout-align="center" data-hash="cache/census2021-part4_cd64d0427045392cff68b3dd53e89258">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df2021 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">fct_reorder</span>(birth, percentage)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(percentage, birth)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, <span class="at">x =</span> <span class="st">"Percentage"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2021-part4-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>What’s the data story?</p>
+<section id="india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show" class="level3" data-auto-animate="true">
+<h3 data-auto-animate="true" class="anchored" data-anchor-id="india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show">India now third most common place of birth of Australian residents, census results show</h3>
+<div class="flex">
+<div class="w-60">
+<div class="cell" data-layout-align="center" data-hash="cache/census2021-part5_7c55bab20a381f99cac985ceafe3f2fa">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total2021 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(birth<span class="sc">==</span><span class="st">"Total"</span> <span class="sc">&amp;</span> census<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(count)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>auperc2021 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(birth<span class="sc">==</span><span class="st">"Australia"</span> <span class="sc">&amp;</span> census<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(percentage)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>nsperc2021 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(birth<span class="sc">==</span><span class="st">"Not Stated"</span> <span class="sc">&amp;</span> census<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(percentage)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df2021 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(percentage)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Australia"</span>, <span class="st">"Other"</span>, <span class="st">"Not Stated"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">fct_reorder</span>(birth, count)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(count, birth)) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">data =</span> <span class="sc">~</span><span class="fu">filter</span>(.x, birth<span class="sc">==</span><span class="st">"India"</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"#006DAE"</span>) <span class="sc">+</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(percentage<span class="sc">/</span><span class="dv">100</span>, <span class="fl">0.1</span>)),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">nudge_x =</span> <span class="sc">-</span><span class="dv">50000</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span> </span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Birth place"</span>, <span class="at">x =</span> <span class="st">"Number of Australian residents</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2021"</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2021-part5-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="w-40 f3">
+<p><br><br><br></p>
+<ul>
+<li><p>The text on the bar shows the percentage out of 25,422,788 Australian residents born in that place.</p></li>
+<li><p>There were 5.3% of Australian residents who did not state their birth place.</p></li>
+<li><p>The top country of birth place is Australia with 66.9% of Australian residents born in Australia.</p></li>
+</ul>
+<p><i class="fa-solid fa-newspaper"></i> Story from <a href="https://www.theguardian.com/australia-news/2022/jun/28/india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show">The Guardian</a>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="another-look" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="another-look">Another look</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Story
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found.</p>
+<p><a href="https://www.theguardian.com/australia-news/2022/jun/28/india-now-third-most-common-place-of-birth-of-australian-residents-census-results-show">– The Guardian</a></p>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-4_634fab84220791eeed9adde8c7b9ccc5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>rank) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> scales<span class="sc">::</span><span class="fu">comma</span>(count, <span class="dv">1</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">percentage =</span> scales<span class="sc">::</span><span class="fu">comma</span>(percentage, <span class="fl">0.1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Birth place"</span>, <span class="st">"Count"</span>, <span class="st">"%"</span>, <span class="st">"Census Year"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">align =</span> <span class="st">"lrrr"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_classic</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Birth place</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">%</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Census Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">England</td>
+<td style="text-align: right;">907,570</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Zealand</td>
+<td style="text-align: right;">518,466</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">509,555</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">India</td>
+<td style="text-align: right;">455,389</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">2016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Philippines</td>
+<td style="text-align: right;">232,386</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2016</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">England</td>
+<td style="text-align: right;">927,490</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">India</td>
+<td style="text-align: right;">673,352</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">549,618</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New Zealand</td>
+<td style="text-align: right;">530,492</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Philippines</td>
+<td style="text-align: right;">293,892</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">2021</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found" class="level2">
+<h2 class="anchored" data-anchor-id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/census2-part1_2daa11ac0dcfe1088f340b356b07c422">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df2  <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">fct_reorder</span>(birth, count, sum)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(count, birth)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">data =</span> <span class="sc">~</span><span class="fu">filter</span>(.x, birth<span class="sc">==</span><span class="st">"India"</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"#006DAE"</span>) <span class="sc">+</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(percentage<span class="sc">/</span><span class="dv">100</span>, <span class="fl">0.1</span>)),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">nudge_x =</span> <span class="sc">-</span><span class="dv">70000</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>census) <span class="sc">+</span> </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Birth place"</span>, <span class="at">x =</span> <span class="st">"Number of Australian residents</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2016 and 2021"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2-part1-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Does this show that India overtook China and New Zealand?</p>
+</section>
+<section id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1" class="level2">
+<h2 class="anchored" data-anchor-id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/census2-part2_c7122fde4c81ba7e99981199a0cea20b">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(census), count, <span class="at">color =</span> birth)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> birth))  <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Number of </span><span class="sc">\n</span><span class="st">Australian residents</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2016 and 2021"</span>, <span class="at">x =</span> <span class="st">"Census Year"</span>, <span class="at">color =</span> <span class="st">"Birth place"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2-part2-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Should we show percentage instead of counts?</p>
+</section>
+<section id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2" class="level2">
+<h2 class="anchored" data-anchor-id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/census2-part3_93eebfe82daa97eceed45f1f9e2d668b">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(census), percentage<span class="sc">/</span><span class="dv">100</span>, <span class="at">color =</span> birth)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> birth)) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percentage of</span><span class="sc">\n</span><span class="st">Australian residents</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2016 and 2021"</span>, <span class="at">x =</span> <span class="st">"Census Year"</span>, <span class="at">color =</span> <span class="st">"Birth place"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2-part3-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The legend and the line order is different…</p>
+</section>
+<section id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3" class="level2">
+<h2 class="anchored" data-anchor-id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/census2-part4_bb989b8d4db1b5f1e6365e2e4d48fc34">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(census, birth) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">fct_reorder2</span>(birth, census, percentage, last2)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(census), percentage<span class="sc">/</span><span class="dv">100</span>, <span class="at">color =</span> birth)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> birth)) <span class="sc">+</span> </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span> </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percentage of</span><span class="sc">\n</span><span class="st">Australian residents</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2016 and 2021"</span>, <span class="at">x =</span> <span class="st">"Census Year"</span>, <span class="at">color =</span> <span class="st">"Birth place"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2-part4-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Maybe we can put the labels directly in the plot?</p>
+</section>
+<section id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4" class="level2">
+<h2 class="anchored" data-anchor-id="india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4">India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/census2-part5_e971a7a52c7ff66c97455f33232427be">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(census, birth) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(census), percentage<span class="sc">/</span><span class="dv">100</span>, <span class="at">color =</span> birth)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> birth)) <span class="sc">+</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> birth), </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> <span class="sc">~</span>{ .x <span class="sc">%&gt;%</span> </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                <span class="fu">filter</span>(census<span class="sc">==</span><span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                <span class="fu">mutate</span>(<span class="at">percentage =</span> <span class="fu">case_when</span>(birth<span class="sc">==</span><span class="st">"China"</span> <span class="sc">~</span> percentage <span class="sc">+</span> <span class="fl">0.05</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                                              birth<span class="sc">==</span><span class="st">"New Zealand"</span> <span class="sc">~</span> percentage <span class="sc">-</span> <span class="fl">0.05</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                                              <span class="cn">TRUE</span> <span class="sc">~</span> percentage))}, </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">nudge_x =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percentage of</span><span class="sc">\n</span><span class="st">Australian residents</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">caption =</span> <span class="st">"Data source: Australian Census 2016 and 2021"</span>, <span class="at">x =</span> <span class="st">"Census Year"</span>, <span class="at">color =</span> <span class="st">"Birth place"</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/census2-part5-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="what-plot-type-to-use" class="level1 page-columns page-full">
+<h1>What plot type to use?</h1>
+<section id="data-visualisation-catalogue" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualisation-catalogue">🛒 Data Visualisation Catalogue</h2>
+<p><i class="fa-solid fa-triangle-exclamation"></i> Non-exhaustive</p>
+<p><img src="images/lecture-06/vis-barplot-horizontal.svg">&lt;img src=“images/lecture-06/vis-barplot-vertical.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-piechart.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-stacked-barplot.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-grouped-barplot.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-stacked-percentage-barplot.svg” style=“padding-left:20px;”&gt;</p>
+<p><img src="images/lecture-06/vis-histogram.svg">&lt;img src=“images/lecture-06/vis-density.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-boxplot.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-violin.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-beeswarm.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-dot.svg” style=“padding-left:20px;”&gt;</p>
+<p><img src="images/lecture-06/vis-scatter.svg">&lt;img src=“images/lecture-06/vis-hex.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-bubble.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-line.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-heatmap.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-map.svg” style=“padding-left:20px;”&gt;</p>
+</section>
+<section id="composite-plots" class="level2">
+<h2 class="anchored" data-anchor-id="composite-plots"><i class="fas fa-project-diagram blue"></i> Composite plots</h2>
+<ul>
+<li>Your data plot may be made from <strong>multiple plot types</strong>:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/box-plus-violin_7b685e9c9e0ab4a1e34397807fb6ceaa">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(palmerpenguins<span class="sc">::</span>penguins, <span class="fu">aes</span>(species, bill_length_mm)) <span class="sc">+</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/box-plus-violin-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composite-plots-1" class="level2">
+<h2 class="anchored" data-anchor-id="composite-plots-1"><i class="fas fa-project-diagram blue"></i> Composite plots</h2>
+<ul>
+<li>Your data plot may be composed of <strong>multiple subplots</strong>:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/patchwork_665f65679fda0198555fa3400d456dc6">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(palmerpenguins<span class="sc">::</span>penguins, <span class="fu">aes</span>(species, bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete_qualitative</span>() <span class="sc">+</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(palmerpenguins<span class="sc">::</span>penguins, <span class="fu">aes</span>(bill_depth_mm, bill_length_mm)) <span class="sc">+</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete_qualitative</span>() <span class="sc">+</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>, <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Species"</span>) <span class="sc">+</span> </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> g2 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/patchwork-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-is-a-3d-pie-chart-considered-a-bad-plot" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-a-3d-pie-chart-considered-a-bad-plot">Why is a 3D pie chart considered a “bad plot”?</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/pie3d_d03af1a51593c710c54d2554ef336542">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">bg =</span> <span class="st">'transparent'</span>, <span class="at">fg =</span> <span class="st">'black'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>dfv <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(census <span class="sc">==</span> <span class="dv">2021</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span>birth <span class="sc">%in%</span> <span class="st">"Total"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">fct_lump</span>(birth, <span class="at">w =</span> count,  <span class="at">n =</span> <span class="dv">6</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(birth) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">sum</span>(count),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">percentage =</span> <span class="fu">sum</span>(percentage))</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>plotrix<span class="sc">::</span><span class="fu">pie3D</span>(dfv<span class="sc">$</span>percentage, <span class="at">labels =</span> dfv<span class="sc">$</span>birth, <span class="at">explode =</span> <span class="fl">0.1</span>, <span class="at">radius =</span> <span class="fl">0.8</span>, <span class="at">start =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/pie3d-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="what-about-2d-pie-charts" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-about-2d-pie-charts">What about 2D pie charts?</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-5_25bc4c6e67812f323acb438f6d843ec4">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"pie"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="blockquote">
+<p>Pie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data.</p>
+</div>
+<ul>
+<li>This comes from empirical research of Cleveland &amp; McGill (1984) among others.</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Cleveland, William S., and Robert Mc Gill. (1984) “Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.”</p>
+</div></div></section>
+<section id="elementary-perceptual-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="elementary-perceptual-tasks">Elementary Perceptual Tasks</h2>
+<p><i class="fa-solid fa-triangle-exclamation"></i> Non-exhaustive</p>
+<p><img src="images/lecture-06/task-position-common-scale-1.svg">&lt;img src=“images/lecture-06/task-position-non-aligned-scale-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-length-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-direction-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-angle-1.svg” style=“padding-left:10px;”&gt;</p>
+<p><img src="images/lecture-06/task-area-1.svg">&lt;img src=“images/lecture-06/task-volume-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-curvature-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-texture.svg” style=“padding-left:10px;” width=“220pt” height=“172pt”&gt;&lt;img src=“images/lecture-06/task-shape-1.svg” style=“padding-left:10px;”&gt;</p>
+<p><img src="images/lecture-06/task-color-hue-1.svg">&lt;img src=“images/lecture-06/task-color-chroma-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-color-luminance-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-color-saturation-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-color-shade-1.svg” style=“padding-left:10px;”&gt;</p>
+</section>
+</section>
+<section id="retrieving-information-from-graphs" class="level1 page-columns page-full">
+<h1>Retrieving information from graphs</h1>
+<p>Of the 10 elementary perception tasks, Cleveland &amp; McGill (1984) found the accuracy ranked as follows…</p>
+<section id="rank-1" class="level2">
+<h2 class="anchored" data-anchor-id="rank-1">Rank 1</h2>
+<p><img src="images/lecture-06/task-position-common-scale-1.svg"></p>
+<p>Example</p>
+<p><img src="images/lecture-06/vis-scatter.svg"> <img src="images/lecture-06/vis-barplot-horizontal.svg"></p>
+</section>
+<section id="rank-2" class="level2">
+<h2 class="anchored" data-anchor-id="rank-2">Rank 2</h2>
+<p><img src="images/lecture-06/task-position-non-aligned-scale-1.svg"></p>
+<p>Example</p>
+<p><img src="images/lecture-06/vis-stacked-barplot.svg"></p>
+</section>
+<section id="rank-3" class="level2">
+<h2 class="anchored" data-anchor-id="rank-3">Rank 3</h2>
+<p><img src="images/lecture-06/task-length-1.svg"> <img src="images/lecture-06/task-direction-1.svg"> <img src="images/lecture-06/task-angle-1.svg"></p>
+<p>Example</p>
+<p><img src="images/lecture-06/vis-piechart.svg"></p>
+</section>
+<section id="rank-4" class="level2">
+<h2 class="anchored" data-anchor-id="rank-4">Rank 4</h2>
+<p><img src="images/lecture-06/task-area-1.svg"></p>
+<p>Example</p>
+<p><img src="images/lecture-06/vis-bubble.svg"></p>
+</section>
+<section id="rank-5" class="level2">
+<h2 class="anchored" data-anchor-id="rank-5">Rank 5</h2>
+<p><img src="images/lecture-06/task-volume-1.svg"> <img src="images/lecture-06/task-curvature-1.svg"></p>
+<p>Example</p>
+<p><img src="images/lecture-06/vis-volchart-1.svg"></p>
+</section>
+<section id="rank-6" class="level2">
+<h2 class="anchored" data-anchor-id="rank-6">Rank 6</h2>
+<p><img src="images/lecture-06/task-color-shade-1.svg"> <img src="images/lecture-06/task-color-saturation-1.svg"></p>
+<p>Example</p>
+<p><img src="images/lecture-06/vis-map.svg"> <img src="images/lecture-06/vis-heatmap.svg"></p>
+</section>
+<section id="preattentive-processing" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="preattentive-processing">Preattentive processing</h2>
+<ul>
+<li><p>Viewers can notice certain features are absent or present without focussing their attention on particular regions.</p></li>
+<li><p>Which plot helps you to distinguish the data points?</p></li>
+</ul>
+<center>
+<img src="images/lecture-06/preattentive-1.svg"> <img src="images/lecture-06/preattentive-2.svg"> <img src="images/lecture-06/preattentive-3.svg" class="fragment">
+</center>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Healey, Christopher G., and James T. Enns (2012) “Attention and Visual Memory in Visualization and Computer Graphics.” IEEE Transactions on Visualization and Computer Graphics 18 (7): 1170–88.</p>
+</div></div></section>
+</section>
+<section id="gestalt-principles" class="level1">
+<h1>Gestalt Principles</h1>
+<ul>
+<li>“Gestalt” is German for form or shape.</li>
+<li>A set of laws to address the natural compulsion to find order in disorder by perceiving a series of individual elements as a whole.</li>
+</ul>
+<section id="law-of-proximity" class="level2">
+<h2 class="anchored" data-anchor-id="law-of-proximity">Law of Proximity</h2>
+<ul>
+<li>By placing elements closer together, it makes it easier for you to group elements together as well as make comparisons.</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/gestalt-proximity_798123d36893470cbddbe5e90eb04af6">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dfsex <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(count, birth)) <span class="sc">+</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Birth place"</span>, <span class="at">x =</span> <span class="st">"Number of Australian Residents"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data Source: Australian Census 2021"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia by sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/gestalt-proximity-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Can you tell which birth place have more women than men amongst the Australian residents?</p>
+</section>
+<section id="law-of-proximity-1" class="level2">
+<h2 class="anchored" data-anchor-id="law-of-proximity-1">Law of Proximity</h2>
+<div class="cell" data-layout-align="center" data-hash="cache/gestalt-proximity2_8bcae7531ebd596d1495f2809e3e0ae1">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gprox <span class="ot">&lt;-</span> dfsex <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(count, birth, <span class="at">fill =</span> sex)) <span class="sc">+</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Birth place"</span>, <span class="at">x =</span> <span class="st">"Number of Australian Residents"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data Source: Australian Census 2021"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia by sex"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Sex"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>gprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/gestalt-proximity2-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Data story</strong></p>
+<p>Census 2021 shows far more women born in Phillipines and China migrate to Australia than men born in their respective countries, whilst more men born in India migrate to Australia than women born in India.</p>
+</section>
+<section id="law-of-similarity" class="level2">
+<h2 class="anchored" data-anchor-id="law-of-similarity">Law of Similarity</h2>
+<ul>
+<li>When objects share similar attributes, they are perceived as being part of the same group.</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/gestalt-similarity_9374330d48efe36369c106c90e81a448">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>span <span class="ot">&lt;-</span> <span class="cf">function</span>(color, text) glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"&lt;b style='color:{color};'&gt;{text}&lt;/b&gt;"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dfsex <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth =</span> <span class="fu">case_when</span>(birth <span class="sc">==</span> <span class="st">"England"</span> <span class="sc">~</span> <span class="fu">span</span>(<span class="st">"#006DAE"</span>, <span class="st">"England"</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"India"</span> <span class="sc">~</span> <span class="fu">span</span>(<span class="st">"#C8008F"</span>, <span class="st">"India"</span>),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"China"</span> <span class="sc">~</span> <span class="fu">span</span>(<span class="st">"#C8008F"</span>, <span class="st">"China"</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"Philippines"</span> <span class="sc">~</span> <span class="fu">span</span>(<span class="st">"#C8008F"</span>, <span class="st">"Philippines"</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"New Zealand"</span> <span class="sc">~</span> <span class="fu">span</span>(<span class="st">"#008A25"</span>, <span class="st">"New Zealand"</span>)),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">birth =</span> <span class="fu">fct_reorder</span>(birth, count)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(count, birth, <span class="at">fill =</span> sex)) <span class="sc">+</span> </span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span> </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Birth place"</span>, <span class="at">x =</span> <span class="st">"Number of Australian Residents"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data Source: Australian Census 2021"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia by sex"</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Sex"</span>) <span class="sc">+</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/gestalt-similarity-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that the countries are colored by their continent (<b style="color:#006DAE;">Europe</b>, <b style="color:#C8008F;">Asia</b>, and <b style="color:#008A25;">Oceania</b>).</p>
+</section>
+<section id="law-of-closure" class="level2">
+<h2 class="anchored" data-anchor-id="law-of-closure">Law of Closure</h2>
+<ul>
+<li>Objects collected within a boundary-like structure are perceived as a group.</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/gestalt-closure_fb115bb25c065a105426d1bbaf4299e5">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>span <span class="ot">&lt;-</span> <span class="cf">function</span>(color, text) glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"&lt;b style='color:{color};'&gt;{text}&lt;/b&gt;"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dfsex <span class="sc">%&gt;%</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">case_when</span>(birth <span class="sc">==</span> <span class="st">"England"</span> <span class="sc">~</span> <span class="st">"Europe"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"India"</span> <span class="sc">~</span> <span class="st">"Asia"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"China"</span> <span class="sc">~</span> <span class="st">"Asia"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"Philippines"</span> <span class="sc">~</span> <span class="st">"Asia"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                           birth <span class="sc">==</span> <span class="st">"New Zealand"</span> <span class="sc">~</span> <span class="st">"Oceania"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(count<span class="sc">/</span><span class="dv">1000</span>, birth, <span class="at">fill =</span> sex)) <span class="sc">+</span> </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span> </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Birth place"</span>, <span class="at">x =</span> <span class="st">"Number of Australian Residents ('000s)"</span>,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data Source: Australian Census 2021"</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Top 5 countries of birth outside Australia by sex"</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Sex"</span>) <span class="sc">+</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>group, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/gestalt-closure-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="color-space" class="level1">
+<h1>Color space</h1>
+<div class="f3 monash-gray80">
+<p>Zeileis, Fisher, Hornik, Ihaka, McWhite, Murrell, Stauffer, Wilke (2019). colorspace: A Toolbox for Manipulating and Assessing Colors and Palettes. <em>arXiv 1903.06490</em></p>
+<p>Zeileis, Hornik, Murrell (2009). Escaping RGBland: Selecting Colors for Statistical Graphics. <em>Computational Statistics &amp; Data Analysis</em> 53(9) 3259-3270</p>
+</div>
+<section id="qualitative-palettes" class="level2">
+<h2 class="anchored" data-anchor-id="qualitative-palettes">Qualitative palettes</h2>
+<ul>
+<li>Designed for categorical variable with no particular ordering</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-6_03454a1bb9958f2859635185fa1892ca">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="st">"Qualitative"</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>, <span class="at">n =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/unnamed-chunk-6-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sequential-palettes" class="level2">
+<h2 class="anchored" data-anchor-id="sequential-palettes">Sequential palettes</h2>
+<ul>
+<li>Designed for ordered categorical variable or number going from low to high (or vice-versa)</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-7_3e595751dcae30573786693bf8bebe07">
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="st">"Sequential"</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>, <span class="at">n =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/unnamed-chunk-7-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="diverging-palettes" class="level2">
+<h2 class="anchored" data-anchor-id="diverging-palettes">Diverging palettes</h2>
+<ul>
+<li>Designed for ordered categorical variable or number going from low to high (or vice-versa) with a neutral value in between</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-8_7248a76052119a602a382e815eac4bff">
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="st">"Diverging"</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>, <span class="at">n =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/unnamed-chunk-8-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="colorblindness" class="level2">
+<h2 class="anchored" data-anchor-id="colorblindness">Colorblindness</h2>
+<p>Colorblindness affect roughly 1 in 8 men.</p>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-9_c10efbc711b94817ca05e9a7b735490f">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(gprox)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-06.rmarkdown/unnamed-chunk-9-1.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Check your color choices using the <a href="https://github.com/clauswilke/colorblindr"><code>colorblindr</code></a> package or otherwise.</p>
+</section>
+<section id="week-6-lesson" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-lesson">Week 6 Lesson</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>We went some examples of constructing data plots to illustrate your data story</li>
+<li>We looked at some plot types and elementary perceptual tasks</li>
+<li>We examined the empirical results of the information retrieval from elementary perceptual tasks</li>
+<li>We studied at some cognitive concepts, like preattentive processing and Gestalt principles, for data visualisation</li>
+<li>We saw the different types of color palettes and considered color choices for colorblind audiences</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="week-6-lesson-1" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-lesson-1">Week 6 Lesson</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://www.data-to-viz.com/">From Data to Viz</a></li>
+<li><a href="https://r-graph-gallery.com/">The R Graph Gallery</a></li>
+<li><a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization by Claus O. Wilke</a></li>
+<li><a href="https://learnr.numbat.space/chapter6">Learn R Chapter 6 Data Visualisation</a></li>
+<li><a href="https://vizzendata.com/2020/07/06/utilizing-gestalt-principles-to-improve-your-data-visualization-design/">Utilizing Gestalt Principles to Improve Your Data Visualization Design</a></li>
+</ul>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

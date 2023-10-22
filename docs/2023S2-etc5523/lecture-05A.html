@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Yvesypher - Lecture 5A: Statistical model outputs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../assets/all.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Yvesypher</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-etc5523" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">ETC5523</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-etc5523">    
+        <li class="dropdown-header">2023S2 Etc5523</li>
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-01.html" rel="" target="">
+ <span class="dropdown-text">Lecture 1: Basic communication theory and practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-02.html" rel="" target="">
+ <span class="dropdown-text">Lecture 2: Introduction to web technologies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-03.html" rel="" target="">
+ <span class="dropdown-text">Lecture 3: Communicating data with interactive web apps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-04.html" rel="" target="">
+ <span class="dropdown-text">Lecture 4: Data storytelling on the web</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05A.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5A: Statistical model outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05B.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5B: Data tables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-06.html" rel="" target="">
+ <span class="dropdown-text">Lecture 6: Effective data visualisation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-07.html" rel="" target="">
+ <span class="dropdown-text">Lecture 7: Captivating statistical presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-08.html" rel="" target="">
+ <span class="dropdown-text">Lecture 8: Clearly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-09.html" rel="" target="">
+ <span class="dropdown-text">Lecture 9: Stylishly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-10.html" rel="" target="">
+ <span class="dropdown-text">Lecture 10: Narrative</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2023S2-etc5523/lecture-01.html">2023S2 Etc5523</a></li><li class="breadcrumb-item"><a href="../2023S2-etc5523/lecture-05A.html">Lecture 5A: Statistical model outputs</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">2023S2 Etc5523</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Basic communication theory and practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Introduction to web technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Communicating data with interactive web apps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Data storytelling on the web</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05A.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 5A: Statistical model outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5B: Data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Effective data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Captivating statistical presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Clearly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Stylishly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Narrative</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim"></a></li>
+  <li><a href="#statistical-models" id="toc-statistical-models" class="nav-link" data-scroll-target="#statistical-models">📈 Statistical models</a></li>
+  <li><a href="#fitting-linear-models-in-r" id="toc-fitting-linear-models-in-r" class="nav-link" data-scroll-target="#fitting-linear-models-in-r">Fitting linear models in R</a></li>
+  <li><a href="#ℹ-extracting-information-from-the-fitted-model" id="toc-ℹ-extracting-information-from-the-fitted-model" class="nav-link" data-scroll-target="#ℹ-extracting-information-from-the-fitted-model">ℹ️ Extracting information from the fitted model</a>
+  <ul class="collapse">
+  <li><a href="#accessing-model-parameter-estimates" id="toc-accessing-model-parameter-estimates" class="nav-link" data-scroll-target="#accessing-model-parameter-estimates">Accessing model parameter estimates</a></li>
+  <li><a href="#summary-of-the-model-object" id="toc-summary-of-the-model-object" class="nav-link" data-scroll-target="#summary-of-the-model-object">Summary of the model object</a></li>
+  <li><a href="#extract-summary-values" id="toc-extract-summary-values" class="nav-link" data-scroll-target="#extract-summary-values">Extract summary values</a></li>
+  </ul></li>
+  <li><a href="#functions-in" id="toc-functions-in" class="nav-link" data-scroll-target="#functions-in">Functions in <i class="fab fa-r-project"></i></a>
+  <ul class="collapse">
+  <li><a href="#functions-in-r" id="toc-functions-in-r" class="nav-link" data-scroll-target="#functions-in-r">Functions in R</a></li>
+  <li><a href="#s3-object-oriented-programming-oop" id="toc-s3-object-oriented-programming-oop" class="nav-link" data-scroll-target="#s3-object-oriented-programming-oop">S3 Object oriented programming (OOP)</a></li>
+  </ul></li>
+  <li><a href="#working-with-model-objects-in" id="toc-working-with-model-objects-in" class="nav-link" data-scroll-target="#working-with-model-objects-in">Working with <em>model objects</em><br> in <i class="fab fa-r-project"></i></a>
+  <ul class="collapse">
+  <li><a href="#modelling-in-r" id="toc-modelling-in-r" class="nav-link" data-scroll-target="#modelling-in-r"><i class="far fa-chart-bar gray"></i> Modelling in R</a></li>
+  <li><a href="#s3-object-classes" id="toc-s3-object-classes" class="nav-link" data-scroll-target="#s3-object-classes">S3 Object classes</a></li>
+  <li><a href="#case-study-broomtidy" id="toc-case-study-broomtidy" class="nav-link" data-scroll-target="#case-study-broomtidy">Case study <code>broom::tidy</code></a></li>
+  </ul></li>
+  <li><a href="#case-study-broomtidy-1" id="toc-case-study-broomtidy-1" class="nav-link" data-scroll-target="#case-study-broomtidy-1">Case study <code>broom::tidy</code></a></li>
+  <li><a href="#working-with-model-objects" id="toc-working-with-model-objects" class="nav-link" data-scroll-target="#working-with-model-objects"><i class="fas fa-clipboard-list"></i> Working with model objects</a>
+  <ul class="collapse">
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><i class="fab fa-python"></i> Python</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 5A: Statistical model outputs</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="aim" class="level2">
+<h2 class="anchored" data-anchor-id="aim"></h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aim
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Extract information from model objects<br>
+</li>
+<li>Understand and create functions in R</li>
+<li>Understand and apply S3 object-oriented programming in R</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Working with model objects is necessary for you to get the information you need for communication</li>
+<li>These concepts will be helpful later when we start developing R-packages</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="statistical-models" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-models">📈 Statistical models</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>All models are approximations of the unknown data generating process</li>
+<li>How good of an approximation depends on the collected data and the model choice</li>
+</ul>
+</div>
+<div class="flex">
+<div class="w-50">
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-2_a2a917d0f8fcc20725f31c813e8df68f">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-05A.rmarkdown/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="w-50">
+<p>🎯 Characterise <code>mpg</code> in terms of <code>wt</code>.</p>
+<div class="fragment">
+<ul>
+<li>We fit the model:</li>
+</ul>
+<p><span class="math display">\[\texttt{mpg}_i = \beta_0 + \beta_1\texttt{wt}_i + e_i\]</span></p>
+<details style="padding-left:40px;font-size:18pt">
+<summary>
+Parameter details
+</summary>
+<div class="overflow-scroll h3">
+<ul>
+<li><span class="math inline">\(\texttt{mpg}_i\)</span> is the miles per gallon of the <span class="math inline">\(i\)</span>-th car,</li>
+<li><span class="math inline">\(\texttt{wt}_i\)</span> is the weight of the <span class="math inline">\(i\)</span>-th car,</li>
+<li><span class="math inline">\(\beta_0\)</span> is the intercept,</li>
+<li><span class="math inline">\(\beta_1\)</span> is the slope, and</li>
+<li><span class="math inline">\(e_i\)</span> is random error, usually assumed <span class="math inline">\(e_i \sim NID(0, \sigma^2)\)</span></li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="fitting-linear-models-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-linear-models-in-r">Fitting linear models in R</h2>
+<p><span class="math display">\[\texttt{mpg}_i = \beta_0 + \beta_1\texttt{wt}_i + e_i\]</span></p>
+<div class="flex">
+<div class="w-50">
+<p>In R we fit this as</p>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-3_79f0b006b9e0752ff1a640dfffa94390">
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>which is the same as</p>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-4_a110d5209310c6fdd435fbab99ee50d8">
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> wt, <span class="at">data =</span> mtcars)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ 1 + wt, data = mtcars)
+
+Coefficients:
+(Intercept)           wt  
+     37.285       -5.344  </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\hat{\beta}_0 = 37.285\)</span> and <span class="math inline">\(\hat{\beta}_1 = -5.344\)</span></p>
+</div>
+</div>
+<div class="w-50">
+<div class="fragment">
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-5_ab0ff94d9ac0cb41d91e4abcf95151fb">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lecture-05A.rmarkdown/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ℹ-extracting-information-from-the-fitted-model" class="level2">
+<h2 class="anchored" data-anchor-id="ℹ-extracting-information-from-the-fitted-model">ℹ️ Extracting information from the fitted model</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>When you fit a model, there would be a number of information you will be interested in extracting from the fit including:
+<ul class="incremental">
+<li>the model parameter estimates,</li>
+<li>model-related summary statistics, e.g.&nbsp;<span class="math inline">\(R^2\)</span>, AIC and BIC,</li>
+<li>model-related values, e.g.&nbsp;residuals, fitted values and predictions.</li>
+</ul></li>
+<li>So how do you extract these values from the <code>fit</code>?</li>
+<li>What does <code>fit</code> even contain?</li>
+</ul>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-6_199ed8d43431345387dad08222c506bb">
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 12
+ $ coefficients : Named num [1:2] 37.29 -5.34
+  ..- attr(*, "names")= chr [1:2] "(Intercept)" "wt"
+ $ residuals    : Named num [1:32] -2.28 -0.92 -2.09 1.3 -0.2 ...
+  ..- attr(*, "names")= chr [1:32] "Mazda RX4" "Mazda RX4 Wag" "Datsun 710" "Hornet 4 Drive" ...
+ $ effects      : Named num [1:32] -113.65 -29.116 -1.661 1.631 0.111 ...
+  ..- attr(*, "names")= chr [1:32] "(Intercept)" "wt" "" "" ...
+ $ rank         : int 2
+ $ fitted.values: Named num [1:32] 23.3 21.9 24.9 20.1 18.9 ...
+  ..- attr(*, "names")= chr [1:32] "Mazda RX4" "Mazda RX4 Wag" "Datsun 710" "Hornet 4 Drive" ...
+ $ assign       : int [1:2] 0 1
+ $ qr           :List of 5
+  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...
+  .. ..- attr(*, "dimnames")=List of 2
+  .. .. ..$ : chr [1:32] "Mazda RX4" "Mazda RX4 Wag" "Datsun 710" "Hornet 4 Drive" ...
+  .. .. ..$ : chr [1:2] "(Intercept)" "wt"
+  .. ..- attr(*, "assign")= int [1:2] 0 1
+  ..$ qraux: num [1:2] 1.18 1.05
+  ..$ pivot: int [1:2] 1 2
+  ..$ tol  : num 1e-07
+  ..$ rank : int 2
+  ..- attr(*, "class")= chr "qr"
+ $ df.residual  : int 30
+ $ xlevels      : Named list()
+ $ call         : language lm(formula = mpg ~ 1 + wt, data = mtcars)
+ $ terms        :Classes 'terms', 'formula'  language mpg ~ 1 + wt
+  .. ..- attr(*, "variables")= language list(mpg, wt)
+  .. ..- attr(*, "factors")= int [1:2, 1] 0 1
+  .. .. ..- attr(*, "dimnames")=List of 2
+  .. .. .. ..$ : chr [1:2] "mpg" "wt"
+  .. .. .. ..$ : chr "wt"
+  .. ..- attr(*, "term.labels")= chr "wt"
+  .. ..- attr(*, "order")= int 1
+  .. ..- attr(*, "intercept")= int 1
+  .. ..- attr(*, "response")= int 1
+  .. ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt; 
+  .. ..- attr(*, "predvars")= language list(mpg, wt)
+  .. ..- attr(*, "dataClasses")= Named chr [1:2] "numeric" "numeric"
+  .. .. ..- attr(*, "names")= chr [1:2] "mpg" "wt"
+ $ model        :'data.frame':  32 obs. of  2 variables:
+  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+  ..$ wt : num [1:32] 2.62 2.88 2.32 3.21 3.44 ...
+  ..- attr(*, "terms")=Classes 'terms', 'formula'  language mpg ~ 1 + wt
+  .. .. ..- attr(*, "variables")= language list(mpg, wt)
+  .. .. ..- attr(*, "factors")= int [1:2, 1] 0 1
+  .. .. .. ..- attr(*, "dimnames")=List of 2
+  .. .. .. .. ..$ : chr [1:2] "mpg" "wt"
+  .. .. .. .. ..$ : chr "wt"
+  .. .. ..- attr(*, "term.labels")= chr "wt"
+  .. .. ..- attr(*, "order")= int 1
+  .. .. ..- attr(*, "intercept")= int 1
+  .. .. ..- attr(*, "response")= int 1
+  .. .. ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt; 
+  .. .. ..- attr(*, "predvars")= language list(mpg, wt)
+  .. .. ..- attr(*, "dataClasses")= Named chr [1:2] "numeric" "numeric"
+  .. .. .. ..- attr(*, "names")= chr [1:2] "mpg" "wt"
+ - attr(*, "class")= chr "lm"</code></pre>
+</div>
+</div>
+<section id="accessing-model-parameter-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-model-parameter-estimates">Accessing model parameter estimates</h3>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-7_dce1a71f568a36ad3db623887c2563ae">
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fit<span class="sc">$</span>coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)          wt 
+  37.285126   -5.344472 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OR using</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)          wt 
+  37.285126   -5.344472 </code></pre>
+</div>
+</div>
+<p>This gives us the estimates of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p>
+<p>But what about <span class="math inline">\(\sigma^2\)</span>? Recall <span class="math inline">\(e_i \sim NID(0, \sigma^2)\)</span>.</p>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-8_237eae2901d440b9cd9206983512d219">
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sigma</span>(fit)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.277398</code></pre>
+</div>
+</div>
+</section>
+<section id="summary-of-the-model-object" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-the-model-object">Summary of the model object</h3>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-9_9e54a40a3ab8c7d816a897c9633637cf">
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ 1 + wt, data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.5432 -2.3647 -0.1252  1.4096  6.8727 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***
+wt           -5.3445     0.5591  -9.559 1.29e-10 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.046 on 30 degrees of freedom
+Multiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 
+F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
+</div>
+</div>
+</section>
+<section id="extract-summary-values" class="level3">
+<h3 class="anchored" data-anchor-id="extract-summary-values">Extract summary values</h3>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-10_cdca497195f9e4cdbab233edd2efae47">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)    37.3      1.88      19.9  8.24e-19
+2 wt             -5.34     0.559     -9.56 1.29e-10</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-11_037930b2484f7ad1665f0f9f838d1cfc">
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">glance</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.753         0.745  3.05      91.4 1.29e-10     1  -80.0  166.  170.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-12_bc8e84bb848181c25fb8bbb1e8772834">
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">augment</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 32 × 9
+   .rownames           mpg    wt .fitted .resid   .hat .sigma .cooksd .std.resid
+   &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Mazda RX4          21    2.62    23.3 -2.28  0.0433   3.07 1.33e-2    -0.766 
+ 2 Mazda RX4 Wag      21    2.88    21.9 -0.920 0.0352   3.09 1.72e-3    -0.307 
+ 3 Datsun 710         22.8  2.32    24.9 -2.09  0.0584   3.07 1.54e-2    -0.706 
+ 4 Hornet 4 Drive     21.4  3.22    20.1  1.30  0.0313   3.09 3.02e-3     0.433 
+ 5 Hornet Sportabout  18.7  3.44    18.9 -0.200 0.0329   3.10 7.60e-5    -0.0668
+ 6 Valiant            18.1  3.46    18.8 -0.693 0.0332   3.10 9.21e-4    -0.231 
+ 7 Duster 360         14.3  3.57    18.2 -3.91  0.0354   3.01 3.13e-2    -1.31  
+ 8 Merc 240D          24.4  3.19    20.2  4.16  0.0313   3.00 3.11e-2     1.39  
+ 9 Merc 230           22.8  3.15    20.5  2.35  0.0314   3.07 9.96e-3     0.784 
+10 Merc 280           19.2  3.44    18.9  0.300 0.0329   3.10 1.71e-4     0.100 
+# ℹ 22 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="functions-in" class="level2">
+<h2 class="anchored" data-anchor-id="functions-in">Functions in <i class="fab fa-r-project"></i></h2>
+<p>Revise about functions at <a href="https://learnr.numbat.space/chapter2#11">Learn R</a></p>
+<section id="functions-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="functions-in-r">Functions in R</h3>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Functions can be broken into three components:</p>
+<ul class="incremental">
+<li><code>formals()</code>, the list of arguments,</li>
+<li><code>body()</code>, the code inside the function, and</li>
+<li><code>environment()</code></li>
+</ul></li>
+<li><p>Functions in R are created using <code>function()</code> with binding to a name using <code>&lt;-</code> or <code>=</code></p></li>
+</ul>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-13_b4741493d51dd213ad71392f2c0c316f">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-14_5ada0b9961f55524ddbe7b382cfde235">
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">formals</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$x</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-15_7b51ac7d395d9fadacfb72a59e1f7ed4">
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">body</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sum(x)/length(x)</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-16_b47059b39b61dc5eee16a597cf8affc5">
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
+</div>
+</div>
+<section id="function-example-1" class="level4" data-auto-animate="true">
+<h4 data-auto-animate="true" class="anchored" data-anchor-id="function-example-1"><i class="fas fa-industry"></i> Function Example 1</h4>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-17_7fdb8cadc50b278a921ab2c923b23b8c">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/avg1_9312e7ddac7fb78b416a61f605f29236">
+<div class="sourceCode cell-code" id="cb28" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(x1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<p><i class="monash-blue fas fa-wrench"></i> What if there are missing values in the vector or the values are dates?</p>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/avg2_965083cddd2a45536ae1d1f546d89ceb">
+<div class="sourceCode cell-code" id="cb30" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/avg3_50cc43760e3ffcf1b3f7c2acc9e61abd">
+<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2021-08-04"</span>, <span class="st">"2021-08-11"</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(x3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in Summary.Date(structure(c(18843, 18850), class = "Date"), na.rm = FALSE): sum not defined for "Date" objects</code></pre>
+</div>
+</div>
+</section>
+<section id="function-example-2" class="level4" data-auto-animate="true">
+<h4 data-auto-animate="true" class="anchored" data-anchor-id="function-example-2"><i class="fas fa-industry"></i> Function Example 2</h4>
+<div class="cell" data-layout-align="center" data-hash="cache/avg_728323cb5fb855ae13bff4132d5c1004">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x))</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(x, <span class="at">na.rm =</span> na.rm) <span class="sc">/</span> n</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-18_50190264c5b4037cdfc7e4fda369b40e">
+<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(x1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-19_4a60f4db1453487711a7130fdd397f76">
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-20_3f4ccb24cffa3ff4801601a2a067ade3">
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(x3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in Summary.Date(structure(c(18843, 18850), class = "Date"), na.rm = TRUE): sum not defined for "Date" objects</code></pre>
+</div>
+</div>
+</section>
+<section id="function-example-3" class="level4" data-auto-animate="true">
+<h4 data-auto-animate="true" class="anchored" data-anchor-id="function-example-3"><i class="fas fa-industry"></i> Function Example 3</h4>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-21_1ac999ada663947ebcec97520bb9aa80">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>f3 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb41-2"><a href="#cb41-2"></a>  n <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x))</span>
+<span id="cb41-3"><a href="#cb41-3"></a>  out <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">as.numeric</span>(x), <span class="at">na.rm =</span> na.rm) <span class="sc">/</span> n </span>
+<span id="cb41-4"><a href="#cb41-4"></a>  <span class="cf">if</span>(<span class="fu">class</span>(x)<span class="sc">==</span><span class="st">"Date"</span>) { </span>
+<span id="cb41-5"><a href="#cb41-5"></a>    <span class="fu">return</span>(<span class="fu">as.Date</span>(out, </span>
+<span id="cb41-6"><a href="#cb41-6"></a>                   <span class="at">origin =</span> <span class="st">"1970-01-01"</span>)) </span>
+<span id="cb41-7"><a href="#cb41-7"></a>  } </span>
+<span id="cb41-8"><a href="#cb41-8"></a>  out</span>
+<span id="cb41-9"><a href="#cb41-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-22_779ce18d191f662dc0ce4fe597409c3a">
+<div class="sourceCode cell-code" id="cb42" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(x1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-23_f913061a383851b29eb8fc0a3d494139">
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-24_454e9b0a0fd254f74b7dfa1344c2f6c0">
+<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(x3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2021-08-07"</code></pre>
+</div>
+</div>
+<ul>
+<li>What about for another object class?</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-25_58a204ed735e68aaca745ed76f1ad03f">
+<div class="sourceCode cell-code" id="cb48" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(<span class="fu">c</span>(<span class="st">"2021-08-11 18:00"</span>, <span class="st">"2021-08-11 20:00"</span>), <span class="at">tz =</span> <span class="st">"UTC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="s3-object-oriented-programming-oop" class="level3">
+<h3 class="anchored" data-anchor-id="s3-object-oriented-programming-oop">S3 Object oriented programming (OOP)</h3>
+<ul>
+<li>The <strong><em>S3 system</em></strong> is the most widely used OOP system in R but there are other OOP systems in R, e.g.&nbsp;the S4 system is used for model objects in <code>lme4</code> R-package, but it will be out of scope for this unit</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-26_a34fd288c6df2db6435a28e08b380319">
+<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Date"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "POSIXct" "POSIXt" </code></pre>
+</div>
+</div>
+<ul>
+<li>Here I create a generic called <code>f4</code>:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-27_470bafffc8d07560e2dabd46d4a478fe">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) <span class="fu">UseMethod</span>(<span class="st">"f4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>And an associated default <strong>method</strong>:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-28_7b9113402963a9cdf3fe4a6b8177eeda">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>f4.default <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(x, <span class="at">na.rm =</span> na.rm) <span class="sc">/</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x))</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>And an associated specific <strong>method</strong> for the <code>Date</code> class:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-29_4a309a840dd664bcd32279e86754a21f">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>f4.Date <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">f4.default</span>(<span class="fu">as.numeric</span>(x), <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.Date</span>(out, <span class="at">origin =</span> <span class="st">"1970-01-01"</span>)</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-30_4ecf2205130209d77c2207e7d04eb6bf">
+<div class="sourceCode cell-code" id="cb60" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(x1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(x2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(x3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2021-08-07"</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-31_d20dac21cbab381c090a84197b545e87">
+<div class="sourceCode cell-code" id="cb66" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "POSIXct" "POSIXt" </code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-32_af6b976f8d71d32fb840677cfd2bb29e">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>f4.POSIXct <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">f4.default</span>(<span class="fu">as.numeric</span>(x), <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.POSIXct</span>(out, </span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">tz =</span> <span class="fu">attr</span>(x, <span class="st">"tzone"</span>), </span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">origin =</span> <span class="st">"1970-01-01"</span>)</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-33_188080bfc7688a1f8096361e573ea488">
+<div class="sourceCode cell-code" id="cb69" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(x4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2021-08-11 19:00:00 UTC"</code></pre>
+</div>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>A method is created by using the form <code>generic.class</code>.</li>
+<li>When using a method for <code>class</code>, you can omit the <code>.class</code> from the function.</li>
+<li>E.g. <code>f4(x4)</code> is the same as <code>f4.POSIXct(x4)</code> since the class of <code>x4</code> is <code>POSIXct</code> (and <code>POSIXt</code>).</li>
+<li>But notice <code>f4.numeric</code> doesn’t exist, instead there is <code>f4.default</code>.</li>
+<li><code>default</code> is a special class and when a generic doesn’t have a method for the corresponding class, it falls back to <code>generic.default</code></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="working-with-model-objects-in" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-model-objects-in">Working with <em>model objects</em><br> in <i class="fab fa-r-project"></i></h2>
+<section id="modelling-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="modelling-in-r"><i class="far fa-chart-bar gray"></i> Modelling in R</h3>
+<div class="incremental">
+<ul class="incremental">
+<li>There are many R-packages that fit all kinds of models, e.g.
+<ul class="incremental">
+<li><code>mgcv</code> fits generalized additive models,</li>
+<li><code>rstanarm</code> fits Bayesian regression models using Stan, and</li>
+<li><code>fable</code> fits forecast models,</li>
+<li>many other contributions by the community.</li>
+</ul></li>
+<li>There are a lot of new R-packages contributed — some implementing the latest research results.</li>
+<li>This means that if you want to use the state-of-the-art research, then you need to work with model objects beyond the standard <code>lm</code> and <code>glm</code>.</li>
+</ul>
+</div>
+<section id="example-with-bayesian-regression" class="level4">
+<h4 class="anchored" data-anchor-id="example-with-bayesian-regression">Example with Bayesian regression</h4>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-34_66f4137bedb3ac62455aff2f215258d4">
+<div class="sourceCode cell-code" id="cb71" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>fit_stan <span class="ot">&lt;-</span> <span class="fu">stan_lm</span>(mpg <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> wt, <span class="at">data =</span> mtcars,</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prior =</span> <span class="fu">R2</span>(<span class="fl">0.7528</span>, <span class="at">what =</span> <span class="st">"mean"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-35_2a039d2f84530a4bb88ff24185cdc110">
+<div class="sourceCode cell-code" id="cb72" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(fit_stan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="s3-object-classes" class="level3">
+<h3 class="anchored" data-anchor-id="s3-object-classes">S3 Object classes</h3>
+<ul>
+<li><p>So how do you find out the functions that work with model objects?</p></li>
+<li><p>First notice the class of the object <code>fit</code>:</p></li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-36_8af7b85cd6d0d9ef1bfabab42309a69b">
+<div class="sourceCode cell-code" id="cb73" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "lm"</code></pre>
+</div>
+</div>
+<ul>
+<li>The methods associated with this can be found using:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-37_e420d92768163469da0e4d736d135f2e">
+<div class="sourceCode cell-code" id="cb75" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">methods</span>(<span class="at">class =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] add1           alias          anova          case.names     coerce        
+ [6] confint        cooks.distance deviance       dfbeta         dfbetas       
+[11] drop1          dummy.coef     effects        extractAIC     family        
+[16] formula        fortify        hatvalues      influence      initialize    
+[21] kappa          labels         logLik         model.frame    model.matrix  
+[26] nobs           plot           predict        print          proj          
+[31] qqnorm         qr             residuals      rstandard      rstudent      
+[36] show           simulate       slotsFromS3    summary        variable.names
+[41] vcov          
+see '?methods' for accessing help and source code</code></pre>
+</div>
+</div>
+<div class="ba absolute bottom-1 right-1 pa3 monash-bg-white">
+<p>Where is <code>coef()</code>?</p>
+</div>
+</section>
+<section id="case-study-broomtidy" class="level3">
+<h3 class="anchored" data-anchor-id="case-study-broomtidy">Case study <code>broom::tidy</code></h3>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-38_d6b0f71e8124108872adc7065caaec1d">
+<div class="sourceCode cell-code" id="cb77" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "lm"</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-39_83238a00220f0b415600707f573b74d6">
+<div class="sourceCode cell-code" id="cb79" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span>tidy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (x, ...) 
+{
+    UseMethod("tidy")
+}
+&lt;bytecode: 0x00000286efd3e960&gt;
+&lt;environment: namespace:generics&gt;</code></pre>
+</div>
+</div>
+<p>There is no <code>tidy.stanreg</code> method so uses the <code>broom:::tidy.glm</code> instead.</p>
+</section>
+</section>
+<section id="case-study-broomtidy-1" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-broomtidy-1">Case study <code>broom::tidy</code></h2>
+<div class="cell" data-layout-align="center" data-output-location="fragment" data-hash="cache/unnamed-chunk-40_15669a5924cd908c53df4794e7d56683">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb81-2"><a href="#cb81-2"></a></span>
+<span id="cb81-3"><a href="#cb81-3"></a>tidy.stanreg <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb81-4"><a href="#cb81-4"></a>  est <span class="ot">&lt;-</span> x<span class="sc">$</span>coefficients</span>
+<span id="cb81-5"><a href="#cb81-5"></a>  <span class="fu">tibble</span>(<span class="at">term =</span> <span class="fu">names</span>(est), </span>
+<span id="cb81-6"><a href="#cb81-6"></a>         <span class="at">estimate =</span> <span class="fu">unname</span>(est),</span>
+<span id="cb81-7"><a href="#cb81-7"></a>         <span class="at">std.error =</span> x<span class="sc">$</span>ses)</span>
+<span id="cb81-8"><a href="#cb81-8"></a>}</span>
+<span id="cb81-9"><a href="#cb81-9"></a></span>
+<span id="cb81-10"><a href="#cb81-10"></a><span class="fu">tidy</span>(fit_stan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="working-with-model-objects" class="level1">
+<h1><i class="fas fa-clipboard-list"></i> Working with model objects</h1>
+<ul>
+<li>Is this only for R though?</li>
+<li>How do you work with model objects in general?</li>
+</ul>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python"><i class="fab fa-python"></i> Python</h2>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| output-location: fragment</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(r.mtcars[<span class="st">'wt'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(r.mtcars[<span class="st">'mpg'</span>])</span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression().fit(x, y)</span>
+<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>[model.intercept_, model.coef_]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><i class="fab fa-r-project"></i></p>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-41_b7e91652431c7ac7dc4a8b948275a1f8">
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)          wt 
+  37.285126   -5.344472 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Model objects are usually a <code>list</code> returning multiple output from the model fit</li>
+<li>When working with model objects, check the object structure and find the methods associated with it (and of course check the documentation)</li>
+<li>You should be able to work (or at least know how to get started) with all sort of model objects</li>
+<li>We revised how to create functions in R</li>
+<li>We applied S3 object-oriented programming in R</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://adv-r.hadley.nz/s3.html">Wickham (2019) Advanced R, 2nd edition, Chapman &amp; Hall, Chapter 13</a></li>
+<li><a href="https://www.tidymodels.org/learn/develop/broom/#implement-tidying-methods">Create your own broom tidier methods</a></li>
+<li>Learn R <a href="https://learnr.numbat.space/chapter2">Chapter 2: R Programming Basics</a> and <a href="https://learnr.numbat.space/chapter7">Chapter 7: Linear Regression with R</a></li>
+</ul>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Yvesypher - Lecture 2: Introduction to web technologies</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="../site_libs/visjs-7.4.9/vis-timeline-graph2d.min.css" rel="stylesheet">
+<script src="../site_libs/visjs-7.4.9/vis-timeline-graph2d.min.js"></script>
+<link href="../site_libs/timeline-0.4/timevis.css" rel="stylesheet">
+<script src="../site_libs/timevis-binding-2.1.0/timevis.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+
+<link rel="stylesheet" href="../assets/all.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Yvesypher</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-etc5523" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">ETC5523</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-etc5523">    
+        <li class="dropdown-header">2023S2 Etc5523</li>
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-01.html" rel="" target="">
+ <span class="dropdown-text">Lecture 1: Basic communication theory and practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-02.html" rel="" target="">
+ <span class="dropdown-text">Lecture 2: Introduction to web technologies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-03.html" rel="" target="">
+ <span class="dropdown-text">Lecture 3: Communicating data with interactive web apps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-04.html" rel="" target="">
+ <span class="dropdown-text">Lecture 4: Data storytelling on the web</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05A.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5A: Statistical model outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05B.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5B: Data tables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-06.html" rel="" target="">
+ <span class="dropdown-text">Lecture 6: Effective data visualisation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-07.html" rel="" target="">
+ <span class="dropdown-text">Lecture 7: Captivating statistical presentations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-08.html" rel="" target="">
+ <span class="dropdown-text">Lecture 8: Clearly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-09.html" rel="" target="">
+ <span class="dropdown-text">Lecture 9: Stylishly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-10.html" rel="" target="">
+ <span class="dropdown-text">Lecture 10: Narrative</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2023S2-etc5523/lecture-01.html">2023S2 Etc5523</a></li><li class="breadcrumb-item"><a href="../2023S2-etc5523/lecture-02.html">Lecture 2: Introduction to web technologies</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">2023S2 Etc5523</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Basic communication theory and practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 2: Introduction to web technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Communicating data with interactive web apps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Data storytelling on the web</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05A.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5A: Statistical model outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5B: Data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Effective data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Captivating statistical presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Clearly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Stylishly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Narrative</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim"></a></li>
+  <li><a href="#world-wide-web-www" id="toc-world-wide-web-www" class="nav-link" data-scroll-target="#world-wide-web-www">🌐 World Wide Web (WWW)</a></li>
+  <li><a href="#web-documents-are-handy" id="toc-web-documents-are-handy" class="nav-link" data-scroll-target="#web-documents-are-handy">🔨 Web Documents are Handy</a></li>
+  <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html"><i class="fab fa-html5 monash-orange2"></i> Hyper Text Markup Language</a>
+  <ul class="collapse">
+  <li><a href="#simple-html-example" id="toc-simple-html-example" class="nav-link" data-scroll-target="#simple-html-example"><i class="fab fa-html5 monash-orange2"></i> Simple HTML example</a></li>
+  <li><a href="#html-structure" id="toc-html-structure" class="nav-link" data-scroll-target="#html-structure"><span class="fa-layers fa-fw"><i class="fas fa-square monash-white" data-fa-transform="shrink-5"></i><i class="fab fa-html5 monash-orange2"></i></span> HTML Structure</a></li>
+  <li><a href="#html-syntax" id="toc-html-syntax" class="nav-link" data-scroll-target="#html-syntax"><i class="fab fa-html5 monash-orange2"></i> HTML Syntax</a></li>
+  <li><a href="#not-all-html-tags-have-an-end-tag" id="toc-not-all-html-tags-have-an-end-tag" class="nav-link" data-scroll-target="#not-all-html-tags-have-an-end-tag">Not all HTML tags have an end tag</a></li>
+  <li><a href="#some-html-elements" id="toc-some-html-elements" class="nav-link" data-scroll-target="#some-html-elements"><i class="fab fa-html5 monash-orange2"></i> Some HTML elements</a></li>
+  </ul></li>
+  <li><a href="#css" id="toc-css" class="nav-link" data-scroll-target="#css"><i class="fab fa-css3-alt monash-blue2"></i> Cascading Style Sheet (CSS)</a>
+  <ul class="collapse">
+  <li><a href="#css-syntax" id="toc-css-syntax" class="nav-link" data-scroll-target="#css-syntax"><i class="fab fa-css3-alt monash-blue2"></i> CSS Syntax</a></li>
+  <li><a href="#you-may-have-multiple-properties-for-a-single-css-selector" id="toc-you-may-have-multiple-properties-for-a-single-css-selector" class="nav-link" data-scroll-target="#you-may-have-multiple-properties-for-a-single-css-selector">You may have multiple properties for a single CSS selector</a></li>
+  <li><a href="#some-css-properties" id="toc-some-css-properties" class="nav-link" data-scroll-target="#some-css-properties"><i class="fab fa-css3-alt monash-blue2"></i> Some CSS properties</a></li>
+  </ul></li>
+  <li><a href="#selector" id="toc-selector" class="nav-link" data-scroll-target="#selector"><i class="fab fa-css3-alt monash-blue2"></i> CSS Selector</a></li>
+  <li><a href="#js" id="toc-js" class="nav-link" data-scroll-target="#js"><i class="fab fa-js-square monash-green2"></i> JavaScript (JS)</a></li>
+  <li><a href="#html-outputs-with-rmd-documents" id="toc-html-outputs-with-rmd-documents" class="nav-link" data-scroll-target="#html-outputs-with-rmd-documents">HTML outputs with <br><span class="monash-blue">Rmd documents</span></a>
+  <ul class="collapse">
+  <li><a href="#inserting-css-in-rmd-documents-part-1" id="toc-inserting-css-in-rmd-documents-part-1" class="nav-link" data-scroll-target="#inserting-css-in-rmd-documents-part-1"><i class="fab fa-css3-alt monash-blue2"></i> Inserting CSS in Rmd documents <span class="f4">Part 1</span></a></li>
+  <li><a href="#inserting-css-in-rmd-documents-part-2" id="toc-inserting-css-in-rmd-documents-part-2" class="nav-link" data-scroll-target="#inserting-css-in-rmd-documents-part-2"><i class="fab fa-css3-alt monash-blue2"></i> Inserting CSS in Rmd documents <span class="f4">Part 2</span></a></li>
+  <li><a href="#inserting-js-into-rmd-documents-part-1" id="toc-inserting-js-into-rmd-documents-part-1" class="nav-link" data-scroll-target="#inserting-js-into-rmd-documents-part-1"><i class="fab fa-js-square monash-green2"></i> Inserting JS into Rmd documents <span class="f4">Part 1</span></a></li>
+  <li><a href="#inserting-js-into-rmd-documents-part-2" id="toc-inserting-js-into-rmd-documents-part-2" class="nav-link" data-scroll-target="#inserting-js-into-rmd-documents-part-2"><i class="fab fa-js-square monash-green2"></i> Inserting JS into Rmd documents <span class="f4">Part 2</span></a></li>
+  <li><a href="#community-web-enhancements" id="toc-community-web-enhancements" class="nav-link" data-scroll-target="#community-web-enhancements"><i class="fas fa-user-friends"></i> Community Web Enhancements</a></li>
+  <li><a href="#communication-in-the-web" id="toc-communication-in-the-web" class="nav-link" data-scroll-target="#communication-in-the-web">☁️ Communication in the Web</a></li>
+  <li><a href="#web-standard" id="toc-web-standard" class="nav-link" data-scroll-target="#web-standard">📋 Web Standard</a></li>
+  <li><a href="#mdn-web-docs-live-demo" id="toc-mdn-web-docs-live-demo" class="nav-link" data-scroll-target="#mdn-web-docs-live-demo">📜 MDN Web Docs <span class="f4">LIVE DEMO</span></a></li>
+  <li><a href="#htmltidy" id="toc-htmltidy" class="nav-link" data-scroll-target="#htmltidy">Writing HTML</a></li>
+  </ul></li>
+  <li><a href="#cheatsheets" id="toc-cheatsheets" class="nav-link" data-scroll-target="#cheatsheets">📝 Interactive Cheatsheets</a>
+  <ul class="collapse">
+  <li><a href="#inspect-element-live-demo" id="toc-inspect-element-live-demo" class="nav-link" data-scroll-target="#inspect-element-live-demo">🔎 Inspect Element <span class="f4">LIVE DEMO</span></a></li>
+  <li><a href="#week-2-lesson" id="toc-week-2-lesson" class="nav-link" data-scroll-target="#week-2-lesson">Week 2 Lesson</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 2: Introduction to web technologies</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="aim" class="level2" data-background="white">
+<h2 data-background="white" class="anchored" data-anchor-id="aim"></h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aim
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Understand the make up of web documents, i.e.&nbsp;HTML, CSS and JS</li>
+<li>Write basic HTML and CSS with valid syntax</li>
+<li>Use CSS selectors to apply new styles</li>
+<li>Integrate CSS and JS to R markdown documents with HTML output</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Basic web development skills are necessary for customising HTML documents</li>
+<li>This hard skill will be necessary later for when you are communicating with web documents and web apps</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="world-wide-web-www" class="level2">
+<h2 class="anchored" data-anchor-id="world-wide-web-www">🌐 World Wide Web (WWW)</h2>
+<ul>
+<li>WWW (or the <strong>Web</strong>) is the information system where documents (web pages) are identified by Uniform Resource Locators (<strong>URL</strong>s)</li>
+</ul>
+<div class="incremental">
+<ul class="incremental">
+<li><p>A web page consists of:</p>
+<ul class="incremental">
+<li><i class="fab fa-html5 monash-orange2"></i> <strong>HTML</strong> provides the basic structure of the web page</li>
+<li><i class="fab fa-css3-alt monash-blue2"></i> <strong>CSS</strong> controls the look of the web page (optional)</li>
+<li><i class="fab fa-js-square monash-green2"></i> <strong>JS</strong> is a programming language that can modify the behaviour of elements of the web page (optional)</li>
+</ul></li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>Keep in mind that you are not a web developer <span class="f4">(or maybe you are)</span> so you don’t need to know these in-depth, but you require some knowledge in web technologies if you want to do some low-level customisation of HTML documents.</li>
+</ul>
+</div>
+</section>
+<section id="web-documents-are-handy" class="level2">
+<h2 class="anchored" data-anchor-id="web-documents-are-handy">🔨 Web Documents are Handy</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>HTML documents are really handy for including interactive elements and supported in almost all computer devices.</li>
+<li>Naturally, this ties in well with <span class="monash-blue">interactive data visualisation</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Below is an interactive timeline visualisation of historical developments of HTML/CSS/JS:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-2_7cebddacdd45d2065db93c6ddefc9c47">
+<div class="cell-output-display">
+<div id="htmlwidget-34582fa99f7bc187d2a2" class="timevis html-widget " style="width:100%;height:250px;">
+<div class="btn-group zoom-menu">
+<button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
+<button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
+</div>
+</div>
+<script type="application/json" data-for="htmlwidget-34582fa99f7bc187d2a2">{"x":{"items":[{"id":"1","content":"CSS 1","start":"1996-12-17","style":"font-size:10pt"},{"id":"2","content":"CSS 2","start":"1998-05-01","style":"font-size:10pt"},{"id":"3","content":"CSS","start":"1999-06-01","style":"font-size:10pt;"},{"id":"4","content":"HTML","start":"1989-01-01","style":"font-size:10pt"},{"id":"5","content":"HTML 2","start":"1995-11-24","style":"font-size:10pt"},{"id":"6","content":"HTML 3","start":"1997-01-14","style":"font-size:10pt"},{"id":"7","content":"HTML 4","start":"1997-12-18","style":"font-size:10pt"},{"id":"8","content":"HTML","start":"2014-10-28","style":"font-size:10pt"},{"id":"9","content":"CSS","start":"1994-10-10","style":"font-size:10pt"},{"id":"10","content":"JS","start":"1995-12-04","style":"font-size:10pt"}],"groups":null,"showZoom":true,"zoomFactor":0.5,"fit":true,"options":[],"height":"250px","timezone":null,"api":[]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</section>
+<section id="html" class="level2">
+<h2 class="anchored" data-anchor-id="html"><i class="fab fa-html5 monash-orange2"></i> Hyper Text Markup Language</h2>
+<ul>
+<li>HTML files have the extension <code>.html</code>.</li>
+<li>HTML files are often rendered using a web browser via an URL.</li>
+<li>HTML files are just text files that follows a special syntax that alerts web browsers how to render it.</li>
+</ul>
+<section id="simple-html-example" class="level3">
+<h3 class="anchored" data-anchor-id="simple-html-example"><i class="fab fa-html5 monash-orange2"></i> Simple HTML example</h3>
+<center>
+<a href="simple-example.html" download=""><i class="fas fa-download"></i></a> <code>simple-example.html</code>
+</center>
+<div class="flex">
+<div class="w-50 pr3">
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="fas fa-font"></i></span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">&lt;h1&gt;</span>ETC5523: Communicating with Data<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">&lt;h2&gt;</span>Lecturer<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">&lt;li&gt;</span>Michael Lydeamore (Chief Examiner)<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">&lt;h2&gt;</span>Tutors<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">&lt;li&gt;</span>Janith Wanniarachchi<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="kw">&lt;li&gt;</span>Cynthia Huang<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="w-50">
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="far fa-window-maximize"></i></span></p>
+<iframe src="simple-example.html" height="100%">
+</iframe>
+</div>
+</div>
+</section>
+<section id="html-structure" class="level3">
+<h3 class="anchored" data-anchor-id="html-structure"><span class="fa-layers fa-fw"><i class="fas fa-square monash-white" data-fa-transform="shrink-5"></i><i class="fab fa-html5 monash-orange2"></i></span> HTML Structure</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">&lt;!--This is a comment and ignored by web client.--&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="co">&lt;!--This section contains web page metadata.--&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">&lt;title&gt;</span>Communicating with Data<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">"author"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"Emi Tanaka"</span><span class="kw">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"css/styles.css"</span><span class="kw">&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">&lt;!--This section contains what you want to display on your web page.--&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="kw">&lt;h1&gt;</span>I'm a first level header<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="kw">&lt;p&gt;</span>This is a paragraph.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="html-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="html-syntax"><i class="fab fa-html5 monash-orange2"></i> HTML Syntax</h3>
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="fas fa-font"></i></span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">style</span><span class="ot">=</span><span class="st">"color:blue;"</span><span class="kw">&gt;</span>Author content<span class="kw">&lt;/span&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="far fa-window-maximize"></i></span> <span style="color:blue;">Author content</span></p>
+<div class="fragment">
+<p>The breakdown of this HTML syntax:</p>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">start tag:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">end tag:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">content:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">element name:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">attribute:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">attribute name:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">attribute value:</td>
+<td>&lt;span style=“color:blue;”&gt;Author content&lt;/span&gt;</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="not-all-html-tags-have-an-end-tag" class="level3">
+<h3 class="anchored" data-anchor-id="not-all-html-tags-have-an-end-tag">Not all HTML tags have an end tag</h3>
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="fas fa-font"></i></span></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">height</span><span class="ot">=</span><span class="st">"200px"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://tinyurl.com/rlogo-svg"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br> <span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="far fa-window-maximize"></i></span></p>
+<p><img src="https://tinyurl.com/rlogo-svg" height="200px"></p>
+</section>
+<section id="some-html-elements" class="level3">
+<h3 class="anchored" data-anchor-id="some-html-elements"><i class="fab fa-html5 monash-orange2"></i> Some HTML elements</h3>
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 72%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">block element:</td>
+<td>&lt;div&gt;content&lt;/div&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">inline element:</td>
+<td>&lt;span&gt;content&lt;/span&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">paragraph:</td>
+<td>&lt;p&gt;content&lt;/p&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">header level 1:</td>
+<td>&lt;h1&gt;content&lt;/h1&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">header level 2:</td>
+<td>&lt;h2&gt;content&lt;/h2&gt; (note: only up to 6 levels)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">italic:</td>
+<td>&lt;i&gt;content&lt;/i&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">emphasised text:</td>
+<td>&lt;em&gt;content&lt;/em&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">bold:</td>
+<td>&lt;b&gt;content&lt;/b&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">strong importance:</td>
+<td>&lt;strong&gt;content&lt;/strong&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">link:</td>
+<td>&lt;a href=“https://cwd.numbat.space/”&gt;content&lt;/a&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">insert new line:</td>
+<td>&lt;br&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">unordered list:</td>
+<td>&lt;ul&gt;<br>
+&lt;li&gt;item 1&lt;/li&gt;<br>
+&lt;li&gt;item 2&lt;/li&gt;<br>
+&lt;/ul&gt;</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>How these are rendered to the browser depends on the <strong>browser default style values</strong>, <strong>style attribute</strong> or <strong>CSS</strong>…</p>
+</div>
+</section>
+</section>
+<section id="css" class="level2">
+<h2 class="anchored" data-anchor-id="css"><i class="fab fa-css3-alt monash-blue2"></i> Cascading Style Sheet (CSS)</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>CSS files have the extension <code>.css</code> <span class="f4">and styles also XHTML, plain XML, SVG and XUL</span>.</p></li>
+<li><p>There are 3 ways to style elements in HTML:</p>
+<ul class="incremental">
+<li><strong>inline</strong> by using the <code>style</code> attribute inside HTML start tag:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1</span> <span class="er">style</span><span class="ot">=</span><span class="st">"color:blue;"</span><span class="kw">&gt;</span>Blue Header<span class="kw">&lt;/h1&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul class="incremental">
+<li><strong>externally</strong> by using the <code>&lt;link&gt;</code> element:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"styles.css"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul class="incremental">
+<li><strong>internally</strong> by defining within <code>&lt;style&gt;</code> element:<br></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span><span class="kw">&gt;</span> h1 { <span class="kw">color</span>: <span class="cn">blue</span><span class="op">;</span> } <span class="kw">&lt;/style&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>By convention, the <code>&lt;style&gt;</code> and <code>&lt;link&gt;</code> elements tend to go into the <code>&lt;head&gt;</code> section of the HTML document.</li>
+</ul>
+</div>
+<section id="css-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="css-syntax"><i class="fab fa-css3-alt monash-blue2"></i> CSS Syntax</h3>
+<div class="flex">
+<div class="w-50 pr3">
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="fas fa-font"></i></span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span><span class="kw">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>h1 { <span class="kw">color</span>: <span class="cn">blue</span><span class="op">;</span> }</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>This is a header<span class="kw">&lt;/h1&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="w-50">
+<p><span class="monash-bg-orange2 monash-white" style="padding:5px;font-size:18pt;vertical-align: middle;border:1px dashed black;"><i class="fas fa-eye"></i><i class="far fa-window-maximize"></i></span></p>
+<h1 style="color:blue">
+<p>This is a header</p>
+</h1>
+</div>
+</div>
+<div class="fragment">
+<p>The breakdown of the CSS syntax:</p>
+</div>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">selector:</td>
+<td>h1 { color: blue; }</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">property:</td>
+<td>h1 { color: blue; }</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">property name:</td>
+<td>h1 { color: blue; }</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">property value:</td>
+<td>h1 { color: blue; }</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="you-may-have-multiple-properties-for-a-single-css-selector" class="level3">
+<h3 class="anchored" data-anchor-id="you-may-have-multiple-properties-for-a-single-css-selector">You may have multiple properties for a single CSS selector</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span>: <span class="dv">monospace</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="cn">yellow</span><span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<h1 style="color: blue;font-family: monospace;background: yellow;">
+<p>This is a header</p>
+</h1>
+</section>
+<section id="some-css-properties" class="level3">
+<h3 class="anchored" data-anchor-id="some-css-properties"><i class="fab fa-css3-alt monash-blue2"></i> Some CSS properties</h3>
+<center>
+<code>&lt;div&gt; Sample text &lt;/div&gt;</code>
+</center>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 47%">
+<col style="width: 20%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">background color:</td>
+<td>div { background-color: yellow; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">text color:</td>
+<td>div { color: purple; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">border:</td>
+<td>div { border: 1px dashed brown; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">left border only:</td>
+<td>div { border-left: 10px solid pink; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">text size:</td>
+<td>div { font-size: 10pt; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">padding:</td>
+<td>div { background-color: yellow;<br>
+   &nbsp;padding: 10px; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">margin:</td>
+<td>div { background-color: yellow;<br>
+   &nbsp;margin: 10px; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">horizontally center text:</td>
+<td>div { background-color: yellow;<br>
+   &nbsp;padding-top: 20px;<br>
+   &nbsp;text-align: center; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">font family:</td>
+<td>div { font-family: Marker Felt, times; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">strike:</td>
+<td>div { text-decoration: line-through; }</td>
+<td><del>Sample text</del></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">underline:</td>
+<td>div { text-decoration: underline; }</td>
+<td>Sample text</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">opacity:</td>
+<td>div { opacity: 0.3 }</td>
+<td>Sample text</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="selector" class="level2">
+<h2 class="anchored" data-anchor-id="selector"><i class="fab fa-css3-alt monash-blue2"></i> CSS Selector</h2>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>`*`</td>
+<td></td>
+<td>selects all elements</td>
+</tr>
+<tr class="even">
+<td>`div`</td>
+<td></td>
+<td>selects all &lt;div&gt; elements</td>
+</tr>
+<tr class="odd">
+<td>`div, p`</td>
+<td></td>
+<td>selects all &lt;div&gt; and &lt;p&gt; elements</td>
+</tr>
+<tr class="even">
+<td>`div p`</td>
+<td></td>
+<td>selects all &lt;p&gt; within &lt;div&gt;</td>
+</tr>
+<tr class="odd">
+<td>`div &gt; p`</td>
+<td></td>
+<td>selects all &lt;p&gt; one level deep in &lt;div&gt;</td>
+</tr>
+<tr class="even">
+<td>`div + p`</td>
+<td></td>
+<td>selects all &lt;p&gt; immediately after a &lt;div&gt;</td>
+</tr>
+<tr class="odd">
+<td>`div ~ p`</td>
+<td></td>
+<td>selects all &lt;p&gt; preceded by a &lt;div&gt;</td>
+</tr>
+<tr class="even">
+<td>`.classname`</td>
+<td></td>
+<td>selects all elements with the attribute class=“classname”.</td>
+</tr>
+<tr class="odd">
+<td>`.c1.c2`</td>
+<td></td>
+<td>selects all elements with <em>both</em> c1 and c2 within its class attribute.</td>
+</tr>
+<tr class="even">
+<td>`.c1 .c2`</td>
+<td></td>
+<td>selects all elements with class c2 that is a descendant of an element with class c1.</td>
+</tr>
+<tr class="odd">
+<td>`#idname`</td>
+<td></td>
+<td>selects all elements with the attribute id=“idname”.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="js" class="level2">
+<h2 class="anchored" data-anchor-id="js"><i class="fab fa-js-square monash-green2"></i> JavaScript (JS)</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>JS is a programming language and enable interactive components in HTML documents.</p></li>
+<li><p>You can insert JS into a HTML document in two ways:</p>
+<ul class="incremental">
+<li><strong>internally</strong> by defining within <code>&lt;script&gt;</code> element:</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"p1"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"content"</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul class="incremental">
+<li><strong>externally</strong> by using the <code>src</code> attribute to refer to the external file:</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"myjava.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>You are <em>not</em> expected to be able to do any JS in this course.</p></li>
+</ul>
+</div>
+</section>
+<section id="html-outputs-with-rmd-documents" class="level2">
+<h2 class="anchored" data-anchor-id="html-outputs-with-rmd-documents">HTML outputs with <br><span class="monash-blue">Rmd documents</span></h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> bookdown::html_document2</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="inserting-css-in-rmd-documents-part-1" class="level3">
+<h3 class="anchored" data-anchor-id="inserting-css-in-rmd-documents-part-1"><i class="fab fa-css3-alt monash-blue2"></i> Inserting CSS in Rmd documents <span class="f4">Part 1</span></h3>
+<ul>
+<li>There is a <code>css</code> engine:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-3_ef2f21a6f0f8e31206e5f367f8de6593">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{css}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>h1 <span class="op">{</span> color<span class="op">:</span> #3B3E79<span class="op">;</span> <span class="op">}</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<style type="text/css">
+h1 { color: #3B3E79; }
+</style>
+</div>
+<p>. . .</p>
+<ul>
+<li>This inserts the following output into the document:</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span><span class="kw">&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>h1 { <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span> }</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>. . .</p>
+<ul>
+<li>If the output is a HTML document then the defined styles will apply to the output document.</li>
+</ul>
+</section>
+<section id="inserting-css-in-rmd-documents-part-2" class="level3">
+<h3 class="anchored" data-anchor-id="inserting-css-in-rmd-documents-part-2"><i class="fab fa-css3-alt monash-blue2"></i> Inserting CSS in Rmd documents <span class="f4">Part 2</span></h3>
+<ul>
+<li>If you have an external file, say <code>styles.css</code>, that you define the styles, then most HTML outputs will support this with YAML argument <code>css</code></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1"></a><span class="pp">---</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"styles.css"</span><span class="kw">]</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or say</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1"></a><span class="pp">---</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="at">  bookdown:</span><span class="fu">:html_document2</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"styles.css"</span><span class="kw">,</span><span class="at"> </span><span class="st">"custom.css"</span><span class="kw">]</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inserting-js-into-rmd-documents-part-1" class="level3">
+<h3 class="anchored" data-anchor-id="inserting-js-into-rmd-documents-part-1"><i class="fab fa-js-square monash-green2"></i> Inserting JS into Rmd documents <span class="f4">Part 1</span></h3>
+<ul>
+<li>There is a <code>js</code> engine:</li>
+</ul>
+<div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-4_6ec99d9f08f346017987aba6ed531cfe">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{js}</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"p1"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"content"</span><span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+document.getElementById("p1").innerHTML = "content";
+</script>
+</div>
+<div class="fragment">
+<p>which inserts:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"text/javascript"</span><span class="kw">&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"p1"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"content"</span><span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li>If you have an external file, say <code>myjava.js</code>, then you can directly insert this in the body of the Rmd file as:</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">"myjava.js"</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="inserting-js-into-rmd-documents-part-2" class="level3">
+<h3 class="anchored" data-anchor-id="inserting-js-into-rmd-documents-part-2"><i class="fab fa-js-square monash-green2"></i> Inserting JS into Rmd documents <span class="f4">Part 2</span></h3>
+<p>If you need to insert at a specific location within the document then you can use <code>includes</code>:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">includes</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"header.html"</span><span class="kw">]</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before_body</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"before_body.html"</span><span class="kw">]</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after_body</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"after_body.html"</span><span class="kw">]</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>where <code>header.html</code>, <code>before_body.html</code>, <code>after_body.html</code> includes the JS code, e.g.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"myjava.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"text/javascript"</span><span class="kw">&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"p1"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"content"</span><span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="community-web-enhancements" class="level3">
+<h3 class="anchored" data-anchor-id="community-web-enhancements"><i class="fas fa-user-friends"></i> Community Web Enhancements</h3>
+<ul>
+<li><a href="https://getbootstrap.com/">Bootstrap</a> is a free open-source CSS and JS that is widely adopted.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li><a href="https://jquery.com/">jQuery</a> is a widely used JS library for object selection and manipulation.<sup>1</sup></li>
+<li><a href="https://www.mathjax.org/">MathJax</a> is a JS library for displaying mathematics.<sup>1</sup></li>
+<li><a href="https://fontawesome.com/">Font Awesome</a> inserts icons to web using their CSS.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+<li><a href="https://d3js.org/">D3.js</a> is one of the most popular JS library for interactive data visualisation.</li>
+</ul>
+</section>
+<section id="communication-in-the-web" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="communication-in-the-web">☁️ Communication in the Web</h3>
+<ul>
+<li>Hypertext Transfer Protocol (<strong>HTTP</strong>) functions as the communicator in the Web</li>
+<li>HTTPS is the secure version of HTTP where communications are encrypted</li>
+</ul>
+<center>
+<img src="images/lecture-02/client-server.png" class="bg-white" width="650px">
+</center>
+<div class="fragment">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Different clients may work differently! E.g. Internet Explorer and Chrome may render the same web page differently.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="web-standard" class="level3">
+<h3 class="anchored" data-anchor-id="web-standard">📋 Web Standard</h3>
+<div class="f2">
+<ul>
+<li>There are 3 major groups that govern the standard for the Web:
+<ul>
+<li>World Wide Web Consortium (<strong>W3C</strong>) formed in 1994 maintains the <a href="https://www.w3.org/Style/CSS/">CSS specifications</a> <i class="fab fa-css3-alt blue"></i></li>
+<li>Web Hypertext Application Technology Working Group (<strong>WHATWG</strong>) formed in 2004 and is the publisher of the <a href="https://html.spec.whatwg.org/">HTML and DOM standards</a> <i class="fab fa-html5 orange"></i></li>
+<li><strong>TC39 technical committee</strong> of <a href="http://www.ecma-international.org/publications/standards/Standard.htm">Ecma International</a>, renamed from European Computer Manufacturers Association (ECMA) in 1994, maintains the standards for JS <span class="fa-layers"><i class="fas fa-square black" data-fa-transform="shrink-2"></i><i class="fab fa-js-square yellow"></i></span></li>
+</ul></li>
+<li>These groups consist of Mozilla, <i class="fab fa-apple"></i> Apple, <i class="fab fa-google"></i> Google, <i class="fab fa-microsoft"></i> Microsoft and other invited members.</li>
+</ul>
+</div>
+</section>
+<section id="mdn-web-docs-live-demo" class="level3">
+<h3 class="anchored" data-anchor-id="mdn-web-docs-live-demo">📜 MDN Web Docs <span class="f4">LIVE DEMO</span></h3>
+<p><span class="f2"><a href="https://developer.mozilla.org/" class="uri">https://developer.mozilla.org/</a></span></p>
+<div class="f2">
+<ul>
+<li><p>Documentation of web standards maintained by the community.</p></li>
+<li><p>Includes status of use:</p>
+<center>
+<p><img src="images/lecture-02/obsolete.png"></p>
+</center></li>
+<li><p>As well as its compatibility with web clients:</p>
+<center>
+<p><img src="images/lecture-02/browser-compatibility.png" width="450px"></p>
+</center></li>
+</ul>
+</div>
+</section>
+<section id="htmltidy" class="level3">
+<h3 class="anchored" data-anchor-id="htmltidy">Writing HTML</h3>
+<p><span class="f2">You can play at <a href="https://htmltidy.net/" class="uri">https://htmltidy.net/</a></span></p>
+<center>
+<img src="images/lecture-02/htmltidy.gif" class="ba" width="900px">
+</center>
+</section>
+</section>
+<section id="cheatsheets" class="level1">
+<h1>📝 Interactive Cheatsheets</h1>
+<div class="r-fit-text">
+<p><i class="fab fa-html5 monash-orange2"></i> HTML Cheatsheet <a href="https://htmlcheatsheet.com/" class="uri">https://htmlcheatsheet.com/</a></p>
+<p><i class="fab fa-css3-alt monash-blue2"></i> CSS Cheatsheet <a href="https://htmlcheatsheet.com/css/" class="uri">https://htmlcheatsheet.com/css/</a></p>
+<p><i class="fab fa-js-square monash-green2"></i> JS Cheatsheet <a href="https://htmlcheatsheet.com/js/" class="uri">https://htmlcheatsheet.com/js/</a></p>
+</div>
+<section id="inspect-element-live-demo" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-element-live-demo">🔎 Inspect Element <span class="f4">LIVE DEMO</span></h2>
+<p>Below GIF shows interactive use of Inspect Element<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> available from the menu in most web browsers when you right click on the web page<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>:</p>
+<center>
+<img src="images/lecture-02/inspect-element.gif" class="ba" width="620px">
+</center>
+<p>˜</p>
+</section>
+<section id="week-2-lesson" class="level2">
+<h2 class="anchored" data-anchor-id="week-2-lesson">Week 2 Lesson</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>We went through the basics of HTML, CSS and JS</li>
+<li>You should be more comfortable with writing HTML and CSS</li>
+<li>You learnt how to include CSS and JS into HTML documents created from R Markdown</li>
+<li>You know the tools to interactively learn HTML and CSS</li>
+</ul>
+</div>
+</div>
+<div class="fragment callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://www.stat.auckland.ac.nz/~paul/ItDT/itdt-2010-11-01.pdf">Introduction to Data Technologies Ch 2-4 by Paul Murrell</a></li>
+<li><a href="#cheatsheets">Interactive HTML/CSS/JS cheatsheets</a></li>
+<li><a href="#htmltidy">HTML Tidy .Net</a></li>
+</ul>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Included in the default <code>rmarkdown::html_document</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Sometimes included in certain Rmd HTML documents.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Or called Inspect.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Note: this is for inspection and doesn’t actual make changes to the files.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
