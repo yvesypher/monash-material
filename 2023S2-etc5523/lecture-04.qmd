@@ -25,7 +25,6 @@ fa_file <- function(ext) {
 }
 ```
 
-
 ##  {#aim background="white"}
 
 ::: callout-important
@@ -58,17 +57,13 @@ fa_file <- function(ext) {
 
 ## `r fa_file("qmd")` Quarto
 
-* (multi-language, next generation version of R Markdown), developed by RStudio (or [Posit](https://www.rstudio.com/blog/rstudio-is-becoming-posit/) from October 2022) team.
+-   (multi-language, next generation version of R Markdown), developed by RStudio (or [Posit](https://www.rstudio.com/blog/rstudio-is-becoming-posit/) from October 2022) team.
 
 ## Quarto system
 
 <center><img src="images/drawn/qmd-system.png"/></center>
 
-**Changes**
--   The reproducible workflow is no longer dependant on R
--   Better multi-language support (e.g. Python, Julia, JavaScript, R, etc) and multi-engine support (e.g. Jupyter, Knitr, Observable)
--   Consistency in systems across all formats (e.g. layouts, cross references)
--   Some specifications for YAML and chunk options
+**Changes** - The reproducible workflow is no longer dependant on R - Better multi-language support (e.g. Python, Julia, JavaScript, R, etc) and multi-engine support (e.g. Jupyter, Knitr, Observable) - Consistency in systems across all formats (e.g. layouts, cross references) - Some specifications for YAML and chunk options
 
 ### Overall syntax comparison
 
@@ -120,11 +115,12 @@ library(tidyverse)
 :::
 :::
 
-## Do we use Rmd or Qmd?
+### Do we use Rmd or Qmd?
 
 -   If your computation uses only R, Rmd is completely fine.
 
 -   In this unit, we will be using Quarto for making:
+
     -   websites (including blogs) and
     -   presentation slides.
 
@@ -292,9 +288,10 @@ title-block-banner: true
 usethis::use_git()
 usethis::use_github() # or manually link with your local folder
 ```
-* **Step 1:**  Push your directory to your Github repo, say `mysite`.
-* **Step 2:**  Go to your GitHub repo settings and enable "GitHub Pages".
-* **Step 3:**  Your website will be available with url: http://username.github.io/mysite
+
+-   **Step 1:** Push your directory to your Github repo, say `mysite`.
+-   **Step 2:** Go to your GitHub repo settings and enable "GitHub Pages".
+-   **Step 3:** Your website will be available with url: http://username.github.io/mysite
 
 Alternatively use:
 
@@ -302,10 +299,11 @@ Alternatively use:
 
 #### **Sharing on the web with Netlify**
 
-* **Step 1:**  Go to <https://app.netlify.com> and log in
-* **Step 2:**  Drag and drop your site folder which contains the `index.html` to:
+-   **Step 1:** Go to <https://app.netlify.com> and log in
 
-* **Step 3:**  Do go to `Site settings > Change site name` for a more sensible domain name.
+-   **Step 2:** Drag and drop your site folder which contains the `index.html` to:
+
+-   **Step 3:** Do go to `Site settings > Change site name` for a more sensible domain name.
 
 <center><img src="images/lecture-04/netlify-dropoff.png" width="800px"/></center>
 

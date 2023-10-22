@@ -96,10 +96,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../assets/all.css">
-<link rel="stylesheet" href="../assets/monash.scss">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -139,12 +139,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Lecture 4: Data storytelling on the web</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05A.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5A: Statistical model outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05B.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5B: Data tables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-06.html" rel="" target="">
+ <span class="dropdown-text">Lecture 6: Effective data visualisation</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../2023S2-etc5523/lecture-07.html" rel="" target="">
  <span class="dropdown-text">Lecture 7: Captivating statistical presentations</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../2023S2-etc5523/lecture-08.html" rel="" target="">
  <span class="dropdown-text">Lecture 8: Clearly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-09.html" rel="" target="">
+ <span class="dropdown-text">Lecture 9: Stylishly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-10.html" rel="" target="">
+ <span class="dropdown-text">Lecture 10: Narrative</span></a>
   </li>  
     </ul>
   </li>
@@ -206,6 +226,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05A.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5A: Statistical model outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5B: Data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Effective data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../2023S2-etc5523/lecture-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 7: Captivating statistical presentations</span></a>
   </div>
@@ -214,6 +252,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../2023S2-etc5523/lecture-08.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 8: Clearly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Stylishly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Narrative</span></a>
   </div>
 </li>
       </ul>
@@ -234,8 +284,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#quarto-system" id="toc-quarto-system" class="nav-link" data-scroll-target="#quarto-system">Quarto system</a>
   <ul class="collapse">
   <li><a href="#overall-syntax-comparison" id="toc-overall-syntax-comparison" class="nav-link" data-scroll-target="#overall-syntax-comparison">Overall syntax comparison</a></li>
-  </ul></li>
   <li><a href="#do-we-use-rmd-or-qmd" id="toc-do-we-use-rmd-or-qmd" class="nav-link" data-scroll-target="#do-we-use-rmd-or-qmd">Do we use Rmd or Qmd?</a></li>
+  </ul></li>
   <li><a href="#how-to-use-quarto" id="toc-how-to-use-quarto" class="nav-link" data-scroll-target="#how-to-use-quarto">How to use Quarto</a></li>
   <li><a href="#making-websites-with-quarto" id="toc-making-websites-with-quarto" class="nav-link" data-scroll-target="#making-websites-with-quarto">Making Websites with Quarto</a>
   <ul class="collapse">
@@ -381,9 +431,8 @@ Why
 </div>
 </div>
 </section>
-</section>
-<section id="do-we-use-rmd-or-qmd" class="level2">
-<h2 class="anchored" data-anchor-id="do-we-use-rmd-or-qmd">Do we use Rmd or Qmd?</h2>
+<section id="do-we-use-rmd-or-qmd" class="level3">
+<h3 class="anchored" data-anchor-id="do-we-use-rmd-or-qmd">Do we use Rmd or Qmd?</h3>
 <ul>
 <li><p>If your computation uses only R, Rmd is completely fine.</p></li>
 <li><p>In this unit, we will be using Quarto for making:</p>
@@ -402,6 +451,7 @@ Why
 </iframe>
 </div>
 </div>
+</section>
 </section>
 <section id="how-to-use-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-use-quarto">How to use Quarto</h2>

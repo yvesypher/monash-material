@@ -1,5 +1,75 @@
 [
   {
+    "objectID": "2023S2-etc5523/lecture-10.html",
+    "href": "2023S2-etc5523/lecture-10.html",
+    "title": "Lecture 10: Narrative",
+    "section": "",
+    "text": "Aim\n\n\n\n\nCompose effective data stories by:\n\nidentifying the goals,\nselecting appropriate data, visualisations and aesthetic designs, and\nreceiving feedback.\n\nUnderstand and apply narrative structures and techniques to enhance communication with data"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#aim",
+    "href": "2023S2-etc5523/lecture-10.html#aim",
+    "title": "Lecture 10: Narrative",
+    "section": "",
+    "text": "Aim\n\n\n\n\nCompose effective data stories by:\n\nidentifying the goals,\nselecting appropriate data, visualisations and aesthetic designs, and\nreceiving feedback.\n\nUnderstand and apply narrative structures and techniques to enhance communication with data"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#recall-communication-is-a-process",
+    "href": "2023S2-etc5523/lecture-10.html#recall-communication-is-a-process",
+    "title": "Lecture 10: Narrative",
+    "section": "Recall: Communication is a process",
+    "text": "Recall: Communication is a process\nTransactional communication model\n\n\n\n\nCommunication problems\nThe technical problem\nHow accurately can the symbols of communication be transmitted?\nThe semantic problem\nHow precisely do the transmitted symbols convey the desired meaning?\nThe effectiveness problem\nHow effectively does the received meaning affect conduct in the desired way?\n\n\nJones (2014) Communicating Data with Tableau\n\n\nPrinciples of Communicating Data\n\nKnow your goal (target audience, intended message, desired effect)\nUse the right data\nSelect suitable visualisations\nDesign for aesthetics\nChoose an effective medium and channel\nCheck the results, i.e. get feedback\n\n\n\nJones (2014) Communicating Data with Tableau\n\n\nRecall: Communicating with Data\n\n\n\n\n\nRecall: Rhetorics\n\nThe art of effective or persuasive speaking or writing\n\n\n\nRhetorical triangle\n\n\n\nRhetorical situation\n\nWriter or Speaker\nPurpose\nMessage\nAudience\nContext\n\n\n\n\nNo one ever made a decision because of a number. They need a story.\n– Daniel Kahneman"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#basic-story-types",
+    "href": "2023S2-etc5523/lecture-10.html#basic-story-types",
+    "title": "Lecture 10: Narrative",
+    "section": "Basic Story Types",
+    "text": "Basic Story Types\n\nOne Story Type\n\nConflict\n\n\n\nFoster-Harris, William (1959) The Basic Patterns of Plot.\n\n\nSeven Story Types\n\nOvercoming the monster\nRags to riches\nThe quest\nVoyage and return\nComedy\nTragedy\nRebirth\n\n\n\nBooker, Christopher (2004) The Seven Basic Plots: Why We Tell Stories.\n\n\nTwenty Story Types\n\n\n\nQuest\nAdventure\nPursuit\nRescue\nEscape\nRevenge\nThe Riddle\n\n\n\n\nRivalry\nUnderdog\nTemptation\nMetamorphosis\nTransformation\nMaturation\nLove\n\n\n\n\nForbidden Love\nSacrifice\nDiscovery\nWretched Excess\nAscension\nDescension.\n\n\n\n\n\nTobias, Ronald B. (1993) 20 Master Plots."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#basic-data-story-types",
+    "href": "2023S2-etc5523/lecture-10.html#basic-data-story-types",
+    "title": "Lecture 10: Narrative",
+    "section": "Basic Data Story Types",
+    "text": "Basic Data Story Types\n\nData Story Types\n\n\n\n\n      \n\n\n\nJones, Ben (2015) Seven Data Story Types. Tapestry Conference."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#data-key-crop-yields",
+    "href": "2023S2-etc5523/lecture-10.html#data-key-crop-yields",
+    "title": "Lecture 10: Narrative",
+    "section": "Data: key crop yields",
+    "text": "Data: key crop yields\n\n# devtools::install_github(\"etc5523-2022/cwdata\")\ncwdata::key_crop_yields\n\n# A tibble: 143,825 × 5\n   entity      code   year crop     yield\n   &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;\n 1 Afghanistan AFG    1961 wheat     1.02\n 2 Afghanistan AFG    1961 rice      1.52\n 3 Afghanistan AFG    1961 maize     1.4 \n 4 Afghanistan AFG    1961 soybeans NA   \n 5 Afghanistan AFG    1961 potatoes  8.67\n 6 Afghanistan AFG    1961 beans    NA   \n 7 Afghanistan AFG    1961 peas     NA   \n 8 Afghanistan AFG    1961 cassava  NA   \n 9 Afghanistan AFG    1961 barley    1.08\n10 Afghanistan AFG    1961 cocoa    NA   \n# ℹ 143,815 more rows\n\n\nOne data, many stories\n\n Change over time\n\n\n\n\n\n\n\n\n\n\n\n Drill down\n\n\n\n\n\n\n\n\n\n\n\n Contrast\n\n\n\n\n\n\n\n\n\n\n\n Factors\n\n\n\n\n\n\n\n\n\n\n\n Intersections\n\n\n\n\n\n\n\n\n\n\n\n Outliers\n\nKuwait, NZ & USA have highest potato yields, 2018"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#narrative-structure",
+    "href": "2023S2-etc5523/lecture-10.html#narrative-structure",
+    "title": "Lecture 10: Narrative",
+    "section": "Narrative structure",
+    "text": "Narrative structure\n\nNarrative structure\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nElements of statistical persuasion\n\nMagnitude of effects: the strength of a statistical argument is enhanced in accord with the quantitative magnitude of support for its qualitative claim.\nArticulation of results: the degree of comprehensible detail in which conclusions are phrased.\nGenerality of effects: the replicability of the results.\nInterestingness of argument: the potential to change people believe.\nCredibility of argument: the believability of a claim.\n\n\n\nNarrative techniques\n\nMetaphor, simile, analogy or anecdotes, e.g. “one in three households is wasting the equivalent of a shopping bag full of food each week.”\nComparisons, e.g. “While the average Australian man has $52,786 in their savings account right now, the average woman sits at around half that figure – $26,132.”\nFlow of information, e.g. new information before old, simple before complex information."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#improving-communication",
+    "href": "2023S2-etc5523/lecture-10.html#improving-communication",
+    "title": "Lecture 10: Narrative",
+    "section": "Improving communication",
+    "text": "Improving communication\n\nFeedback loops\n\nRecall there is no single, ideal way to communicate.\nGet in a habit to seek feedback from others about:\n\nReach: Did the audience even receive your message at all? Who did and who didn’t?\nUnderstanding: Did the audience interpret the data message in the way you intended?\nImpact: Did the audience react in the way you wanted them to react?\n\n\n\n\nJones (2014) Communicating Data with Tableau\n\n\nAnscombe’s Quartet\n\n\n\n\n\n\n\nx1\nx2\nx3\nx4\ny1\ny2\ny3\ny4\n\n\n\n\n10\n10\n10\n8\n8.04\n9.14\n7.46\n6.58\n\n\n8\n8\n8\n8\n6.95\n8.14\n6.77\n5.76\n\n\n13\n13\n13\n8\n7.58\n8.74\n12.74\n7.71\n\n\n9\n9\n9\n8\n8.81\n8.77\n7.11\n8.84\n\n\n11\n11\n11\n8\n8.33\n9.26\n7.81\n8.47\n\n\n14\n14\n14\n8\n9.96\n8.10\n8.84\n7.04\n\n\n6\n6\n6\n8\n7.24\n6.13\n6.08\n5.25\n\n\n4\n4\n4\n19\n4.26\n3.10\n5.39\n12.50\n\n\n12\n12\n12\n8\n10.84\n9.13\n8.15\n5.56\n\n\n7\n7\n7\n8\n4.82\n7.26\n6.42\n7.91\n\n\n5\n5\n5\n8\n5.68\n4.74\n5.73\n6.89\n\n\n\n\n\n\n\n\n\nSummary statistics\n\n\n\n\n\nset\ncor\nsd_x\nsd_y\nmean_x\nmean_y\nintercept\nslope\n\n\n\n\n1\n0.816\n3.317\n2.032\n9\n7.501\n3.000\n0.5\n\n\n2\n0.816\n3.317\n2.032\n9\n7.501\n3.001\n0.5\n\n\n3\n0.816\n3.317\n2.030\n9\n7.500\n3.002\n0.5\n\n\n4\n0.817\n3.317\n2.031\n9\n7.501\n3.002\n0.5\n\n\n\n\n\n\n\n\n… show hardly any differences between sets.\n\n\n\n\n\nAnscombe’s Quartet\n\n\n\n\n\n\n\n\n\n\n\nSame Stats, Different Graphs\n\n\n\n\n\n\n\n\n\n\n\nUncovering Simpson’s paradox\n\n\n\n\n\n\n\n\n\n\n\nAdvantages of visualisation\n\nAbility to “see” large amounts of data\nReveals properties or structures in data that are not apparent in numerical summaries\nFacilitates understanding of both large-scale and small-scale features of the data\n\n\n\nA model of visual information processing\n\n\n\n\n\nWare, Colin (2021) Information Visualisation: Perception for Design.\n\n\nVisual encodings\n\n\n\n\n\nSpencer (2022, Feb. 17). Data in Wonderland.\n\n\nEffectiveness of visual encoding\n\n\n\n\n\nSpencer (2022, Feb. 17). Data in Wonderland.\n\n\nEffectiveness of visual encoding by data type\n\n\n\n\n\nSpencer (2022, Feb. 17). Data in Wonderland.\n\n\nAffectiveness by color\n\n\n\n\n\nBartram et al. (2017) Affective Color in Visualization. CHI Conference\n\n\nUser Interactions\n\n\n\nUser Inputs\n\n\n\nOverview"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#state-of-the-art-for-interactive-plots",
+    "href": "2023S2-etc5523/lecture-10.html#state-of-the-art-for-interactive-plots",
+    "title": "Lecture 10: Narrative",
+    "section": "State of the art forinteractive plots",
+    "text": "State of the art forinteractive plots\n\nInteractive plots with JS\n\nState-of-the-art for interactive plots is JS\nSome of the most popular and free JS library for plotting are:\n\n\n\n\n\n\n\nChart.js\nDygraphs\nD3.js\n\n\n\n\nECharts\nGoogle Charts\nHighcharts\n\n\n\n\nPlotly\nVis.js\n\n\n\n\nRising JS libraries that are based on the Grammar of Graphics:\n\n\n\n\n\n\n\nObservable Plot\n\n\n\n\nVega and Vega-Lite\n\n\n\n\n\nInteractive plots with JS through R\n\nNo need to learn JS!\nMany JS library for plotting are available via an R package:\n\n\n\n\nJS\nR package\n\n\n\n\nChart.js\nchartjs, charter\n\n\nDygraphs\ndygraphs\n\n\nD3.js\nr2d3, networkD3\n\n\nECharts\necharts4r\n\n\nGoogle Charts\ngoogleVis\n\n\nHighcharts\nhighcharter\n\n\nPlotly\nplotly\n\n\nVis.js\nvisNetwork\n\n\nObservable Plot\nobsplot\n\n\nVega and Vega-Lite\nvegawidget, altair, virgo, vegabrite"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-10.html#plotly",
+    "href": "2023S2-etc5523/lecture-10.html#plotly",
+    "title": "Lecture 10: Narrative",
+    "section": "Plotly",
+    "text": "Plotly\n\nPlotly\nPlotly is a high-level, declarative library for plotting build on d3.js and stack.gl (open software ecosystem for WebGL).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlotly for ggplot2\n\nlibrary(ggplot2)\ng &lt;- ggplot(ggplot2::diamonds, aes(x = cut, fill = clarity)) +\n    geom_bar(position = \"dodge\") +\n    scale_fill_brewer(palette = \"Accent\")\n\nplotly::ggplotly(g)\n\n\n\n\n\n\n\n\n\nPlotly with drop down menu\n\n\n\n\n\n\n\n\nCode for Plotly with drop down menu\n\nyields &lt;- na.omit(cwdata::key_crop_yields)\ncrops &lt;- sort(unique(yields$crop))\n\nmap(crops, ~ {\n    yields %&gt;%\n        filter(crop == .x) %&gt;%\n        plotly::plot_ly(\n            x = ~year,\n            y = ~yield,\n            type = \"scatter\",\n            mode = \"lines\",\n            color = ~crop,\n            transforms = list(\n                list(\n                    type = \"filter\",\n                    target = ~entity,\n                    operation = \"=\",\n                    value = \"Afghanistan\"\n                )\n            )\n        )\n}) %&gt;%\n    subplot(nrows = 3) %&gt;%\n    layout(\n        showlegend = FALSE,\n        annotations = imap(crops, ~ {\n            list(\n                x = 0 + 1 / 4 * (.y - 1) - 1 / 4 * 4 * (.y &gt; 4) - 1 / 4 * 4 * (.y &gt; 8),\n                y = 1 - 0.05 - 1 / 3 * (.y &gt; 4) - 1 / 3 * (.y &gt; 8),\n                font = list(size = 18),\n                text = .x,\n                xref = \"paper\",\n                yref = \"paper\",\n                xanchor = \"center\",\n                yanchor = \"bottom\",\n                showarrow = FALSE\n            )\n        }),\n        updatemenus = list(list(\n            type = \"dropdown\",\n            active = 0,\n            buttons = map(\n                unique(yields$entity),\n                ~ list(\n                    method = \"restyle\",\n                    args = list(\"transforms[0].value\", .x),\n                    label = .x\n                )\n            )\n        ))\n    )\n\n\n\nDifference to Shiny\ncwdata::run_app() \n\n\n\nCode for Shiny app\n\nlibrary(shiny)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(cwdata)\n\nui &lt;- fluidPage(\n    br(),\n    sidebarLayout(\n        sidebarPanel(\n            selectizeInput(\"entity\",\n                \"Select a country or region:\",\n                choices = sort(unique(key_crop_yields$entity)),\n                selected = \"Australia\"\n            )\n        ),\n        mainPanel(\n            plotOutput(\"tsplot\")\n        )\n    )\n)\n\nserver &lt;- function(input, output, session) {\n    output$tsplot &lt;- renderPlot({\n        key_crop_yields %&gt;%\n            filter(entity == input$entity) %&gt;%\n            ggplot(aes(year, yield)) +\n            geom_line() +\n            geom_point() +\n            facet_wrap(~crop, scale = \"free_y\")\n    })\n}\n\nshinyApp(ui, server)\n\n\n\n\n\n\n\nSummary\n\n\n\n\nStorytelling is a powerful technique to communicate data\nCompose effective data stories requires you to\n\nknow your the goals (audience, message, desired effect),\nselecting appropriate data, visualisations and aesthetic designs, and\nreceiving feedback.\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\nSpencer (2022, Feb. 17). Data in Wonderland. Section 1.\nJones (2014) Communicating Data with Tableau"
+  },
+  {
     "objectID": "2023S2-etc5523/lecture-08.html",
     "href": "2023S2-etc5523/lecture-08.html",
     "title": "Lecture 8: Clearly communicating with code",
@@ -217,95 +287,438 @@
     "text": "Week 8 Lesson\n\n\n\n\n\n\nSummary\n\n\n\n\n\nHow to enhance communication in code by adopting a consistent styling.\nR packages are flexible containers to share R code, data, and app amongst other things.\nAn R package can be set up, documented, and tried out with usethis and devtools.\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\nFilazzola & Lortie (2022) A call for clean code to effectively communicate science\nR Packages 2nd edition by Hadley Wickham and Jenny Bryan"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html",
-    "href": "2023S2-etc5523/lecture-04.html",
-    "title": "Lecture 4: Data storytelling on the web",
+    "objectID": "2023S2-etc5523/lecture-06.html#aim",
+    "href": "2023S2-etc5523/lecture-06.html#aim",
+    "title": "Lecture 6: Effective data visualisation",
     "section": "",
-    "text": "Aim\n\n\n\n\nUnderstand a website structure and its difference to a webpage\nLearn how to use Quarto\nAdopt reproducible workflows using Quarto\nHost web content using either Quarto Pub, GitHub Pages or Netlify\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nCommunication on the web is increasingly common\nThere are challenges to streamline reproducible data analysis on the web"
+    "text": "Aim\n\n\n\n\nApply principles and practices for data visualisation that effectively and efficiently convey intended messages to viewers\nUse data visualisation to create effective data stories\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\n“A picture is worth a thousand words”.\nData visualisation can make large, complex data more accessible, understandable and usable."
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#aim",
-    "href": "2023S2-etc5523/lecture-04.html#aim",
-    "title": "Lecture 4: Data storytelling on the web",
+    "objectID": "2023S2-etc5523/lecture-06.html#data-visualisation",
+    "href": "2023S2-etc5523/lecture-06.html#data-visualisation",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Data Visualisation",
+    "text": "Data Visualisation\n\nData visualization is part art and part science. The challenge is to get the art right without getting the science wrong and vice versa.\n– Claus O. Wilke, Fundamentals of Data Visualization\n\n\n\n\n\n\n\nRole\n\n\n\n\nA data visualization has to accurately communicate the data to the intended audience.\nA data visualization must not mislead or distort information from the data."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#communicating-with-data-visualisation",
+    "href": "2023S2-etc5523/lecture-06.html#communicating-with-data-visualisation",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "💬️ Communicating with data visualisation",
+    "text": "💬️ Communicating with data visualisation\n\n\n\n\n\n\nCommunication\n\n\n\nEffective data visualisation means to design your data plot to effectively use human visual system to improve cognition about a targeted information from the data.\n\n\n\nI interchangeably use the terms data visualisation, plot, data plot, graphic, statistical graphic, and figure.\n\n\nBirth place from the 2021 Australian Census\n\ndf2021 %&gt;% \n  mutate(count = scales::comma(count, 1),\n         percentage = scales::comma(percentage, 0.1)) %&gt;% \n  knitr::kable(col.names = c(\"Birth place\", \"Count\", \"%\"),\n               align = \"lrr\") %&gt;% \n  kableExtra::kable_classic(full_width = FALSE)\n\n\n\n\nBirth place\nCount\n%\n\n\n\n\nAustralia\n17,020,422\n66.9\n\n\nNot Stated\n1,358,658\n5.3\n\n\nEngland\n927,490\n3.6\n\n\nOther\n759,173\n3.0\n\n\nIndia\n673,352\n2.6\n\n\nChina\n549,618\n2.2\n\n\nNew Zealand\n530,492\n2.1\n\n\nPhilippines\n293,892\n1.2\n\n\nVietnam\n257,997\n1.0\n\n\nSouth Africa\n189,207\n0.7\n\n\nMalaysia\n165,616\n0.7\n\n\nItaly\n163,326\n0.6\n\n\nSri Lanka\n131,904\n0.5\n\n\nNepal\n122,506\n0.5\n\n\nScotland\n118,496\n0.5\n\n\nKorea South\n102,092\n0.4\n\n\nUnited States America\n101,309\n0.4\n\n\nGermany\n101,255\n0.4\n\n\nHong Kong\n100,148\n0.4\n\n\nIraq\n92,922\n0.4\n\n\nGreece\n92,314\n0.4\n\n\nPakistan\n89,633\n0.4\n\n\nLebanon\n87,340\n0.3\n\n\nIndonesia\n87,075\n0.3\n\n\nThailand\n83,779\n0.3\n\n\nIreland\n80,927\n0.3\n\n\nIran\n70,899\n0.3\n\n\nFiji\n68,947\n0.3\n\n\nNetherlands\n66,481\n0.3\n\n\nSingapore\n61,056\n0.2\n\n\nAfghanistan\n59,797\n0.2\n\n\nBangladesh\n51,491\n0.2\n\n\nCanada\n50,223\n0.2\n\n\nTaiwan\n49,511\n0.2\n\n\nBrazil\n46,720\n0.2\n\n\nPoland\n45,884\n0.2\n\n\nJapan\n45,267\n0.2\n\n\nCroatia\n43,302\n0.2\n\n\nEgypt\n43,213\n0.2\n\n\nNorth Macedonia\n41,786\n0.2\n\n\nZimbabwe\n39,714\n0.2\n\n\nMyanmar\n39,171\n0.2\n\n\nCambodia\n39,043\n0.2\n\n\nTurkey\n38,568\n0.2\n\n\nFrance\n36,019\n0.1\n\n\nMalta\n35,413\n0.1\n\n\nPapua New Guinea\n29,984\n0.1\n\n\nChile\n29,860\n0.1\n\n\nWales\n29,250\n0.1\n\n\nSamoa\n28,107\n0.1\n\n\nBosnia Herzegov\n26,171\n0.1\n\n\nMauritius\n25,981\n0.1\n\n\n\n\n\n\n\n\ndf2021 %&gt;% \n  ggplot(aes(birth, percentage)) +\n  geom_col() +\n  theme(text = element_text(size = 18),\n        axis.text.x = element_text(angle = 45, size = 10, hjust = 1)) + \n  labs(x = \"\", y = \"Percentage\", caption = \"Data source: Australian Census 2021\")\n\n\n\n\n\n\n\n\nWhich birth place is the third largest among people in Australia?"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#birth-place-from-the-2021-australian-census-1",
+    "href": "2023S2-etc5523/lecture-06.html#birth-place-from-the-2021-australian-census-1",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Birth place from the 2021 Australian Census",
+    "text": "Birth place from the 2021 Australian Census\n\ndf2021 %&gt;% \n  mutate(birth = fct_reorder(birth, -percentage)) %&gt;% \n  ggplot(aes(birth, percentage)) +\n  geom_col() +\n  theme(text = element_text(size = 18),\n        axis.text.x = element_text(angle = 45, size = 10, hjust = 1)) + \n  labs(x = \"\", y = \"Percentage\", caption = \"Data source: Australian Census 2021\")\n\n\n\n\n\n\n\n\n Can you read the labels without tilting your head?\n\ndf2021 %&gt;% \n  mutate(birth = fct_reorder(birth, percentage)) %&gt;% \n  ggplot(aes(percentage, birth)) +\n  geom_col() +\n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8)) + \n  labs(y = \"\", x = \"Percentage\", caption = \"Data source: Australian Census 2021\")\n\n\n\n\n\n\n\n\nWhat’s the data story?\n\nIndia now third most common place of birth of Australian residents, census results show\n\n\n\ntotal2021 &lt;- df %&gt;% \n  filter(birth==\"Total\" & census==2021) %&gt;% \n  pull(count)\nauperc2021 &lt;- df %&gt;% \n  filter(birth==\"Australia\" & census==2021) %&gt;% \n  pull(percentage)\nnsperc2021 &lt;- df %&gt;% \n  filter(birth==\"Not Stated\" & census==2021) %&gt;% \n  pull(percentage)\ndf2021 %&gt;% \n  arrange(desc(percentage)) %&gt;% \n  filter(!birth %in% c(\"Australia\", \"Other\", \"Not Stated\")) %&gt;% \n  slice(1:5) %&gt;% \n  mutate(birth = fct_reorder(birth, count)) %&gt;% \n  ggplot(aes(count, birth)) +\n  geom_col() +\n  geom_col(data = ~filter(.x, birth==\"India\"),\n           fill = \"#006DAE\") + \n  geom_text(aes(label = scales::percent(percentage/100, 0.1)),\n            nudge_x = -50000, color = \"white\") +\n  scale_x_continuous(labels = scales::comma) +\n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8),\n        plot.title.position = \"plot\") + \n  labs(y = \"Birth place\", x = \"Number of Australian residents\\n\", caption = \"Data source: Australian Census 2021\",\n       title = \"Top 5 countries of birth outside Australia\")\n\n\n\n\n\n\n\n\n\n\n\n\nThe text on the bar shows the percentage out of 25,422,788 Australian residents born in that place.\nThere were 5.3% of Australian residents who did not state their birth place.\nThe top country of birth place is Australia with 66.9% of Australian residents born in Australia.\n\n Story from The Guardian."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#another-look",
+    "href": "2023S2-etc5523/lecture-06.html#another-look",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Another look",
+    "text": "Another look\n\n\n\n\n\n\nData Story\n\n\n\nIndia has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found.\n– The Guardian\n\n\n\ndf2 %&gt;% \n  select(-rank) %&gt;% \n  mutate(count = scales::comma(count, 1),\n         percentage = scales::comma(percentage, 0.1)) %&gt;% \n  knitr::kable(col.names = c(\"Birth place\", \"Count\", \"%\", \"Census Year\"),\n               align = \"lrrr\") %&gt;% \n  kableExtra::kable_classic(full_width = FALSE)\n\n\n\n\nBirth place\nCount\n%\nCensus Year\n\n\n\n\nEngland\n907,570\n3.9\n2016\n\n\nNew Zealand\n518,466\n2.2\n2016\n\n\nChina\n509,555\n2.2\n2016\n\n\nIndia\n455,389\n1.9\n2016\n\n\nPhilippines\n232,386\n1.0\n2016\n\n\nEngland\n927,490\n3.6\n2021\n\n\nIndia\n673,352\n2.6\n2021\n\n\nChina\n549,618\n2.2\n2021\n\n\nNew Zealand\n530,492\n2.1\n2021\n\n\nPhilippines\n293,892\n1.2\n2021"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found",
+    "href": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\ndf2  %&gt;% \n  mutate(birth = fct_reorder(birth, count, sum)) %&gt;% \n  ggplot(aes(count, birth)) +\n  geom_col() + \n  geom_col(data = ~filter(.x, birth==\"India\"),\n           fill = \"#006DAE\") + \n  geom_text(aes(label = scales::percent(percentage/100, 0.1)),\n            nudge_x = -70000, color = \"white\") +\n  scale_x_continuous(labels = scales::comma) +\n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8),\n        plot.title.position = \"plot\") +\n  facet_wrap(~census) + \n  scale_x_continuous(labels = scales::comma) +\n  labs(y = \"Birth place\", x = \"Number of Australian residents\\n\", caption = \"Data source: Australian Census 2016 and 2021\",\n       title = \"Top 5 countries of birth outside Australia\")\n\n\n\n\n\n\n\n\nDoes this show that India overtook China and New Zealand?"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1",
+    "href": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-1",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\ndf2 %&gt;% \n  ggplot(aes(factor(census), count, color = birth)) +\n  geom_line(aes(group = birth))  +\n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8),\n        plot.title.position = \"plot\") + \n  geom_point() + \n  scale_y_continuous(labels = scales::comma) +\n  labs(y = \"Number of \\nAustralian residents\\n\", caption = \"Data source: Australian Census 2016 and 2021\", x = \"Census Year\", color = \"Birth place\",\n       title = \"Top 5 countries of birth outside Australia\")\n\n\n\n\n\n\n\n\nShould we show percentage instead of counts?"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2",
+    "href": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-2",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\ndf2 %&gt;% \n  ggplot(aes(factor(census), percentage/100, color = birth)) +\n  geom_line(aes(group = birth)) + \n  geom_point() + \n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8),\n        plot.title.position = \"plot\") + \n  scale_y_continuous(labels = scales::percent) +\n  labs(y = \"Percentage of\\nAustralian residents\\n\", caption = \"Data source: Australian Census 2016 and 2021\", x = \"Census Year\", color = \"Birth place\",\n       title = \"Top 5 countries of birth outside Australia\")\n\n\n\n\n\n\n\n\nThe legend and the line order is different…"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3",
+    "href": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-3",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\ndf2 %&gt;% \n  arrange(census, birth) %&gt;% \n  mutate(birth = fct_reorder2(birth, census, percentage, last2)) %&gt;% \n  ggplot(aes(factor(census), percentage/100, color = birth)) +\n  geom_line(aes(group = birth)) + \n  geom_point() + \n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8),\n        plot.title.position = \"plot\") + \n  scale_y_continuous(labels = scales::percent) +\n  labs(y = \"Percentage of\\nAustralian residents\\n\", caption = \"Data source: Australian Census 2016 and 2021\", x = \"Census Year\", color = \"Birth place\",\n       title = \"Top 5 countries of birth outside Australia\")\n\n\n\n\n\n\n\n\nMaybe we can put the labels directly in the plot?"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4",
+    "href": "2023S2-etc5523/lecture-06.html#india-has-overtaken-china-and-new-zealand-to-become-the-third-largest-country-of-birth-for-australian-residents-2021-census-data-has-found-4",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found",
+    "text": "India has overtaken China and New Zealand to become the third largest country of birth for Australian residents, 2021 census data has found\n\ndf2 %&gt;% \n  arrange(census, birth) %&gt;% \n  ggplot(aes(factor(census), percentage/100, color = birth)) +\n  geom_line(aes(group = birth)) + \n  geom_point() + \n  theme(text = element_text(size = 18),\n        axis.text.y = element_text(size = 8),\n        plot.title.position = \"plot\",\n        legend.position = \"none\") + \n  scale_y_continuous(labels = scales::percent) +\n  geom_text(aes(label = birth), \n            data = ~{ .x %&gt;% \n                filter(census==2021) %&gt;% \n                mutate(percentage = case_when(birth==\"China\" ~ percentage + 0.05,\n                                              birth==\"New Zealand\" ~ percentage - 0.05,\n                                              TRUE ~ percentage))}, \n            hjust = 0, nudge_x = 0.05) +\n  labs(y = \"Percentage of\\nAustralian residents\\n\", caption = \"Data source: Australian Census 2016 and 2021\", x = \"Census Year\", color = \"Birth place\",\n       title = \"Top 5 countries of birth outside Australia\")"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#data-visualisation-catalogue",
+    "href": "2023S2-etc5523/lecture-06.html#data-visualisation-catalogue",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "🛒 Data Visualisation Catalogue",
+    "text": "🛒 Data Visualisation Catalogue\n Non-exhaustive\n&lt;img src=“images/lecture-06/vis-barplot-vertical.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-piechart.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-stacked-barplot.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-grouped-barplot.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-stacked-percentage-barplot.svg” style=“padding-left:20px;”&gt;\n&lt;img src=“images/lecture-06/vis-density.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-boxplot.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-violin.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-beeswarm.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-dot.svg” style=“padding-left:20px;”&gt;\n&lt;img src=“images/lecture-06/vis-hex.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-bubble.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-line.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-heatmap.svg” style=“padding-left:20px;”&gt;&lt;img src=“images/lecture-06/vis-map.svg” style=“padding-left:20px;”&gt;"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#composite-plots",
+    "href": "2023S2-etc5523/lecture-06.html#composite-plots",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": " Composite plots",
+    "text": "Composite plots\n\nYour data plot may be made from multiple plot types:\n\n\nggplot(palmerpenguins::penguins, aes(species, bill_length_mm)) + \n  geom_violin() + geom_boxplot(width = 0.1) +\n  labs(x = \"Species\", y = \"Bill length (mm)\")"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#composite-plots-1",
+    "href": "2023S2-etc5523/lecture-06.html#composite-plots-1",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": " Composite plots",
+    "text": "Composite plots\n\nYour data plot may be composed of multiple subplots:\n\n\ng1 &lt;- ggplot(palmerpenguins::penguins, aes(species, bill_length_mm, fill = species)) +\n  geom_violin() + \n  scale_fill_discrete_qualitative() + \n  guides(fill = FALSE) + \n  labs(x = \"\", y = \"Bill length (mm)\")\ng2 &lt;- ggplot(palmerpenguins::penguins, aes(bill_depth_mm, bill_length_mm)) + \n  geom_point(aes(color = species)) + \n  scale_color_discrete_qualitative() + \n  labs(x = \"Bill depth (mm)\", y = \"\",\n       color = \"Species\") + \n  theme(axis.text.y = element_blank())\ng1 + g2 + plot_layout(guides = \"collect\")"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#why-is-a-3d-pie-chart-considered-a-bad-plot",
+    "href": "2023S2-etc5523/lecture-06.html#why-is-a-3d-pie-chart-considered-a-bad-plot",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Why is a 3D pie chart considered a “bad plot”?",
+    "text": "Why is a 3D pie chart considered a “bad plot”?\n\npar(bg = 'transparent', fg = 'black')\ndfv &lt;- df %&gt;% \n  filter(census == 2021,\n         !birth %in% \"Total\") %&gt;% \n  mutate(birth = fct_lump(birth, w = count,  n = 6)) %&gt;% \n  group_by(birth) %&gt;% \n  summarise(count = sum(count),\n            percentage = sum(percentage))\nplotrix::pie3D(dfv$percentage, labels = dfv$birth, explode = 0.1, radius = 0.8, start = 2)"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#what-about-2d-pie-charts",
+    "href": "2023S2-etc5523/lecture-06.html#what-about-2d-pie-charts",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "What about 2D pie charts?",
+    "text": "What about 2D pie charts?\n\nhelp(\"pie\")\n\n\nPie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data.\n\n\nThis comes from empirical research of Cleveland & McGill (1984) among others.\n\n\n\nCleveland, William S., and Robert Mc Gill. (1984) “Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.”"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#elementary-perceptual-tasks",
+    "href": "2023S2-etc5523/lecture-06.html#elementary-perceptual-tasks",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Elementary Perceptual Tasks",
+    "text": "Elementary Perceptual Tasks\n Non-exhaustive\n&lt;img src=“images/lecture-06/task-position-non-aligned-scale-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-length-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-direction-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-angle-1.svg” style=“padding-left:10px;”&gt;\n&lt;img src=“images/lecture-06/task-volume-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-curvature-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-texture.svg” style=“padding-left:10px;” width=“220pt” height=“172pt”&gt;&lt;img src=“images/lecture-06/task-shape-1.svg” style=“padding-left:10px;”&gt;\n&lt;img src=“images/lecture-06/task-color-chroma-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-color-luminance-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-color-saturation-1.svg” style=“padding-left:10px;”&gt;&lt;img src=“images/lecture-06/task-color-shade-1.svg” style=“padding-left:10px;”&gt;"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#rank-1",
+    "href": "2023S2-etc5523/lecture-06.html#rank-1",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Rank 1",
+    "text": "Rank 1\n\nExample"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#rank-2",
+    "href": "2023S2-etc5523/lecture-06.html#rank-2",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Rank 2",
+    "text": "Rank 2\n\nExample"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#rank-3",
+    "href": "2023S2-etc5523/lecture-06.html#rank-3",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Rank 3",
+    "text": "Rank 3\n  \nExample"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#rank-4",
+    "href": "2023S2-etc5523/lecture-06.html#rank-4",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Rank 4",
+    "text": "Rank 4\n\nExample"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#rank-5",
+    "href": "2023S2-etc5523/lecture-06.html#rank-5",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Rank 5",
+    "text": "Rank 5\n \nExample"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#rank-6",
+    "href": "2023S2-etc5523/lecture-06.html#rank-6",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Rank 6",
+    "text": "Rank 6\n \nExample"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#preattentive-processing",
+    "href": "2023S2-etc5523/lecture-06.html#preattentive-processing",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Preattentive processing",
+    "text": "Preattentive processing\n\nViewers can notice certain features are absent or present without focussing their attention on particular regions.\nWhich plot helps you to distinguish the data points?\n\n\n  \n\n\n\nHealey, Christopher G., and James T. Enns (2012) “Attention and Visual Memory in Visualization and Computer Graphics.” IEEE Transactions on Visualization and Computer Graphics 18 (7): 1170–88."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#law-of-proximity",
+    "href": "2023S2-etc5523/lecture-06.html#law-of-proximity",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Law of Proximity",
+    "text": "Law of Proximity\n\nBy placing elements closer together, it makes it easier for you to group elements together as well as make comparisons.\n\n\ndfsex %&gt;% \n  ggplot(aes(count, birth)) + \n  geom_col() + \n  facet_wrap(~sex, nrow = 1) +\n  scale_x_continuous(labels = scales::comma) + \n  labs(y = \"Birth place\", x = \"Number of Australian Residents\",\n       caption = \"Data Source: Australian Census 2021\",\n       title = \"Top 5 countries of birth outside Australia by sex\")\n\n\n\n\n\n\n\n\nCan you tell which birth place have more women than men amongst the Australian residents?"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#law-of-proximity-1",
+    "href": "2023S2-etc5523/lecture-06.html#law-of-proximity-1",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Law of Proximity",
+    "text": "Law of Proximity\n\ngprox &lt;- dfsex %&gt;% \n  ggplot(aes(count, birth, fill = sex)) + \n  geom_col(position = \"dodge\") + \n  scale_x_continuous(labels = scales::comma) + \n  labs(y = \"Birth place\", x = \"Number of Australian Residents\",\n       caption = \"Data Source: Australian Census 2021\",\n       title = \"Top 5 countries of birth outside Australia by sex\",\n       fill = \"Sex\")\ngprox\n\n\n\n\n\n\n\n\nData story\nCensus 2021 shows far more women born in Phillipines and China migrate to Australia than men born in their respective countries, whilst more men born in India migrate to Australia than women born in India."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#law-of-similarity",
+    "href": "2023S2-etc5523/lecture-06.html#law-of-similarity",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Law of Similarity",
+    "text": "Law of Similarity\n\nWhen objects share similar attributes, they are perceived as being part of the same group.\n\n\nspan &lt;- function(color, text) glue::glue(\"&lt;b style='color:{color};'&gt;{text}&lt;/b&gt;\")\ndfsex %&gt;% \n  mutate(birth = case_when(birth == \"England\" ~ span(\"#006DAE\", \"England\"),\n                           birth == \"India\" ~ span(\"#C8008F\", \"India\"),\n                           birth == \"China\" ~ span(\"#C8008F\", \"China\"),\n                           birth == \"Philippines\" ~ span(\"#C8008F\", \"Philippines\"),\n                           birth == \"New Zealand\" ~ span(\"#008A25\", \"New Zealand\")),\n         birth = fct_reorder(birth, count)) %&gt;% \n  ggplot(aes(count, birth, fill = sex)) + \n  geom_col(position = \"dodge\") + \n  scale_x_continuous(labels = scales::comma) + \n  labs(y = \"Birth place\", x = \"Number of Australian Residents\",\n       caption = \"Data Source: Australian Census 2021\",\n       title = \"Top 5 countries of birth outside Australia by sex\",\n       fill = \"Sex\") +\n  theme(axis.text.y = ggtext::element_markdown())\n\n\n\n\n\n\n\n\nNotice that the countries are colored by their continent (Europe, Asia, and Oceania)."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#law-of-closure",
+    "href": "2023S2-etc5523/lecture-06.html#law-of-closure",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Law of Closure",
+    "text": "Law of Closure\n\nObjects collected within a boundary-like structure are perceived as a group.\n\n\nspan &lt;- function(color, text) glue::glue(\"&lt;b style='color:{color};'&gt;{text}&lt;/b&gt;\")\ndfsex %&gt;% \n  mutate(group = case_when(birth == \"England\" ~ \"Europe\",\n                           birth == \"India\" ~ \"Asia\",\n                           birth == \"China\" ~ \"Asia\",\n                           birth == \"Philippines\" ~ \"Asia\",\n                           birth == \"New Zealand\" ~ \"Oceania\")) %&gt;% \n  ggplot(aes(count/1000, birth, fill = sex)) + \n  geom_col(position = \"dodge\") + \n  scale_x_continuous(labels = scales::comma) + \n  labs(y = \"Birth place\", x = \"Number of Australian Residents ('000s)\",\n       caption = \"Data Source: Australian Census 2021\",\n       title = \"Top 5 countries of birth outside Australia by sex\",\n       fill = \"Sex\") +\n  facet_wrap(~group, scales = \"free\") +\n  theme(axis.text.y = ggtext::element_markdown())"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#qualitative-palettes",
+    "href": "2023S2-etc5523/lecture-06.html#qualitative-palettes",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Qualitative palettes",
+    "text": "Qualitative palettes\n\nDesigned for categorical variable with no particular ordering\n\n\ncolorspace::hcl_palettes(\"Qualitative\", plot = TRUE, n = 7)"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#sequential-palettes",
+    "href": "2023S2-etc5523/lecture-06.html#sequential-palettes",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Sequential palettes",
+    "text": "Sequential palettes\n\nDesigned for ordered categorical variable or number going from low to high (or vice-versa)\n\n\ncolorspace::hcl_palettes(\"Sequential\", plot = TRUE, n = 7)"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#diverging-palettes",
+    "href": "2023S2-etc5523/lecture-06.html#diverging-palettes",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Diverging palettes",
+    "text": "Diverging palettes\n\nDesigned for ordered categorical variable or number going from low to high (or vice-versa) with a neutral value in between\n\n\ncolorspace::hcl_palettes(\"Diverging\", plot = TRUE, n = 7)"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#colorblindness",
+    "href": "2023S2-etc5523/lecture-06.html#colorblindness",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Colorblindness",
+    "text": "Colorblindness\nColorblindness affect roughly 1 in 8 men.\n\ncolorblindr::cvd_grid(gprox)\n\n\n\n\n\n\n\n\nCheck your color choices using the colorblindr package or otherwise."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#week-6-lesson",
+    "href": "2023S2-etc5523/lecture-06.html#week-6-lesson",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Week 6 Lesson",
+    "text": "Week 6 Lesson\n\n\n\n\n\n\nSummary\n\n\n\n\nWe went some examples of constructing data plots to illustrate your data story\nWe looked at some plot types and elementary perceptual tasks\nWe examined the empirical results of the information retrieval from elementary perceptual tasks\nWe studied at some cognitive concepts, like preattentive processing and Gestalt principles, for data visualisation\nWe saw the different types of color palettes and considered color choices for colorblind audiences"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-06.html#week-6-lesson-1",
+    "href": "2023S2-etc5523/lecture-06.html#week-6-lesson-1",
+    "title": "Lecture 6: Effective data visualisation",
+    "section": "Week 6 Lesson",
+    "text": "Week 6 Lesson\n\n\n\n\n\n\nResources\n\n\n\n\nFrom Data to Viz\nThe R Graph Gallery\nFundamentals of Data Visualization by Claus O. Wilke\nLearn R Chapter 6 Data Visualisation\nUtilizing Gestalt Principles to Improve Your Data Visualization Design"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-05A.html",
+    "href": "2023S2-etc5523/lecture-05A.html",
+    "title": "Lecture 5A: Statistical model outputs",
     "section": "",
-    "text": "Aim\n\n\n\n\nUnderstand a website structure and its difference to a webpage\nLearn how to use Quarto\nAdopt reproducible workflows using Quarto\nHost web content using either Quarto Pub, GitHub Pages or Netlify\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nCommunication on the web is increasingly common\nThere are challenges to streamline reproducible data analysis on the web"
+    "text": "Aim\n\n\n\n\nExtract information from model objects\n\nUnderstand and create functions in R\nUnderstand and apply S3 object-oriented programming in R\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nWorking with model objects is necessary for you to get the information you need for communication\nThese concepts will be helpful later when we start developing R-packages"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#rmd-r-markdown",
-    "href": "2023S2-etc5523/lecture-04.html#rmd-r-markdown",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "Rmd R Markdown",
-    "text": "Rmd R Markdown\n\n\n\nBenefits\n\nBetter reproducibility for analytical results via R\nChange output document type easily (thanks to Pandoc)\nActive maintenance and development by RStudio a.k.a. Posit team"
+    "objectID": "2023S2-etc5523/lecture-05A.html#aim",
+    "href": "2023S2-etc5523/lecture-05A.html#aim",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "",
+    "text": "Aim\n\n\n\n\nExtract information from model objects\n\nUnderstand and create functions in R\nUnderstand and apply S3 object-oriented programming in R\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nWorking with model objects is necessary for you to get the information you need for communication\nThese concepts will be helpful later when we start developing R-packages"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#qmd-quarto",
-    "href": "2023S2-etc5523/lecture-04.html#qmd-quarto",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "qmd Quarto",
-    "text": "qmd Quarto\n\n(multi-language, next generation version of R Markdown), developed by RStudio (or Posit from October 2022) team."
+    "objectID": "2023S2-etc5523/lecture-05A.html#statistical-models",
+    "href": "2023S2-etc5523/lecture-05A.html#statistical-models",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "📈 Statistical models",
+    "text": "📈 Statistical models\n\n\nAll models are approximations of the unknown data generating process\nHow good of an approximation depends on the collected data and the model choice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n🎯 Characterise mpg in terms of wt.\n\n\nWe fit the model:\n\n\\[\\texttt{mpg}_i = \\beta_0 + \\beta_1\\texttt{wt}_i + e_i\\]\n\n\nParameter details\n\n\n\n\\(\\texttt{mpg}_i\\) is the miles per gallon of the \\(i\\)-th car,\n\\(\\texttt{wt}_i\\) is the weight of the \\(i\\)-th car,\n\\(\\beta_0\\) is the intercept,\n\\(\\beta_1\\) is the slope, and\n\\(e_i\\) is random error, usually assumed \\(e_i \\sim NID(0, \\sigma^2)\\)"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#quarto-system",
-    "href": "2023S2-etc5523/lecture-04.html#quarto-system",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "Quarto system",
-    "text": "Quarto system\n\n\n\nChanges - The reproducible workflow is no longer dependant on R - Better multi-language support (e.g. Python, Julia, JavaScript, R, etc) and multi-engine support (e.g. Jupyter, Knitr, Observable) - Consistency in systems across all formats (e.g. layouts, cross references) - Some specifications for YAML and chunk options\n\nOverall syntax comparison\n\n\nRmd\n---\ntitle: \"My document\"\noutput:\n  html_document:\n    toc: true\n    css: styles.css\n---\n\n```{r, warning = FALSE, message = FALSE}\nknitr::opts_chunk$set(echo = FALSE,\n                      fig.width = 8, \n                      fig.height = 6)\nlibrary(tidyverse)\n```\n\n\nQmd\n---\ntitle: \"My document\"\nexecute: \n  echo: false\nformat:\n  html:\n    toc: true\n    css: styles.css\n    fig-width: 8\n    fig-height: 6\n    html-math-method: katex \n---\n\n```{r}\n#| warning: false\n#| message: false\nlibrary(tidyverse)\n```"
+    "objectID": "2023S2-etc5523/lecture-05A.html#fitting-linear-models-in-r",
+    "href": "2023S2-etc5523/lecture-05A.html#fitting-linear-models-in-r",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "Fitting linear models in R",
+    "text": "Fitting linear models in R\n\\[\\texttt{mpg}_i = \\beta_0 + \\beta_1\\texttt{wt}_i + e_i\\]\n\n\nIn R we fit this as\n\nfit &lt;- lm(mpg ~ wt, data = mtcars)\n\n\nwhich is the same as\n\nfit &lt;- lm(mpg ~ 1 + wt, data = mtcars)\nfit\n\n\nCall:\nlm(formula = mpg ~ 1 + wt, data = mtcars)\n\nCoefficients:\n(Intercept)           wt  \n     37.285       -5.344  \n\n\n\n\n\\(\\hat{\\beta}_0 = 37.285\\) and \\(\\hat{\\beta}_1 = -5.344\\)"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#do-we-use-rmd-or-qmd",
-    "href": "2023S2-etc5523/lecture-04.html#do-we-use-rmd-or-qmd",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "Do we use Rmd or Qmd?",
-    "text": "Do we use Rmd or Qmd?\n\nIf your computation uses only R, Rmd is completely fine.\nIn this unit, we will be using Quarto for making:\n\nwebsites (including blogs) and\npresentation slides."
+    "objectID": "2023S2-etc5523/lecture-05A.html#ℹ-extracting-information-from-the-fitted-model",
+    "href": "2023S2-etc5523/lecture-05A.html#ℹ-extracting-information-from-the-fitted-model",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "ℹ️ Extracting information from the fitted model",
+    "text": "ℹ️ Extracting information from the fitted model\n\n\nWhen you fit a model, there would be a number of information you will be interested in extracting from the fit including:\n\nthe model parameter estimates,\nmodel-related summary statistics, e.g. \\(R^2\\), AIC and BIC,\nmodel-related values, e.g. residuals, fitted values and predictions.\n\nSo how do you extract these values from the fit?\nWhat does fit even contain?\n\n\n\nstr(fit)\n\nList of 12\n $ coefficients : Named num [1:2] 37.29 -5.34\n  ..- attr(*, \"names\")= chr [1:2] \"(Intercept)\" \"wt\"\n $ residuals    : Named num [1:32] -2.28 -0.92 -2.09 1.3 -0.2 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ effects      : Named num [1:32] -113.65 -29.116 -1.661 1.631 0.111 ...\n  ..- attr(*, \"names\")= chr [1:32] \"(Intercept)\" \"wt\" \"\" \"\" ...\n $ rank         : int 2\n $ fitted.values: Named num [1:32] 23.3 21.9 24.9 20.1 18.9 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ assign       : int [1:2] 0 1\n $ qr           :List of 5\n  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n  .. .. ..$ : chr [1:2] \"(Intercept)\" \"wt\"\n  .. ..- attr(*, \"assign\")= int [1:2] 0 1\n  ..$ qraux: num [1:2] 1.18 1.05\n  ..$ pivot: int [1:2] 1 2\n  ..$ tol  : num 1e-07\n  ..$ rank : int 2\n  ..- attr(*, \"class\")= chr \"qr\"\n $ df.residual  : int 30\n $ xlevels      : Named list()\n $ call         : language lm(formula = mpg ~ 1 + wt, data = mtcars)\n $ terms        :Classes 'terms', 'formula'  language mpg ~ 1 + wt\n  .. ..- attr(*, \"variables\")= language list(mpg, wt)\n  .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. ..$ : chr [1:2] \"mpg\" \"wt\"\n  .. .. .. ..$ : chr \"wt\"\n  .. ..- attr(*, \"term.labels\")= chr \"wt\"\n  .. ..- attr(*, \"order\")= int 1\n  .. ..- attr(*, \"intercept\")= int 1\n  .. ..- attr(*, \"response\")= int 1\n  .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. ..- attr(*, \"predvars\")= language list(mpg, wt)\n  .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"wt\"\n $ model        :'data.frame':  32 obs. of  2 variables:\n  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n  ..$ wt : num [1:32] 2.62 2.88 2.32 3.21 3.44 ...\n  ..- attr(*, \"terms\")=Classes 'terms', 'formula'  language mpg ~ 1 + wt\n  .. .. ..- attr(*, \"variables\")= language list(mpg, wt)\n  .. .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. .. ..$ : chr [1:2] \"mpg\" \"wt\"\n  .. .. .. .. ..$ : chr \"wt\"\n  .. .. ..- attr(*, \"term.labels\")= chr \"wt\"\n  .. .. ..- attr(*, \"order\")= int 1\n  .. .. ..- attr(*, \"intercept\")= int 1\n  .. .. ..- attr(*, \"response\")= int 1\n  .. .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. .. ..- attr(*, \"predvars\")= language list(mpg, wt)\n  .. .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"wt\"\n - attr(*, \"class\")= chr \"lm\"\n\n\n\nAccessing model parameter estimates\n\nfit$coefficients\n\n(Intercept)          wt \n  37.285126   -5.344472 \n\n# OR using\ncoef(fit)\n\n(Intercept)          wt \n  37.285126   -5.344472 \n\n\nThis gives us the estimates of \\(\\beta_0\\) and \\(\\beta_1\\).\nBut what about \\(\\sigma^2\\)? Recall \\(e_i \\sim NID(0, \\sigma^2)\\).\n\nsigma(fit)^2\n\n[1] 9.277398\n\n\n\n\nSummary of the model object\n\nsummary(fit)\n\n\nCall:\nlm(formula = mpg ~ 1 + wt, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.5432 -2.3647 -0.1252  1.4096  6.8727 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***\nwt           -5.3445     0.5591  -9.559 1.29e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 \nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\nExtract summary values\n\nbroom::tidy(fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    37.3      1.88      19.9  8.24e-19\n2 wt             -5.34     0.559     -9.56 1.29e-10\n\n\n\nbroom::glance(fit)\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     0.753         0.745  3.05      91.4 1.29e-10     1  -80.0  166.  170.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;\n\n\n\nbroom::augment(fit)\n\n# A tibble: 32 × 9\n   .rownames           mpg    wt .fitted .resid   .hat .sigma .cooksd .std.resid\n   &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;\n 1 Mazda RX4          21    2.62    23.3 -2.28  0.0433   3.07 1.33e-2    -0.766 \n 2 Mazda RX4 Wag      21    2.88    21.9 -0.920 0.0352   3.09 1.72e-3    -0.307 \n 3 Datsun 710         22.8  2.32    24.9 -2.09  0.0584   3.07 1.54e-2    -0.706 \n 4 Hornet 4 Drive     21.4  3.22    20.1  1.30  0.0313   3.09 3.02e-3     0.433 \n 5 Hornet Sportabout  18.7  3.44    18.9 -0.200 0.0329   3.10 7.60e-5    -0.0668\n 6 Valiant            18.1  3.46    18.8 -0.693 0.0332   3.10 9.21e-4    -0.231 \n 7 Duster 360         14.3  3.57    18.2 -3.91  0.0354   3.01 3.13e-2    -1.31  \n 8 Merc 240D          24.4  3.19    20.2  4.16  0.0313   3.00 3.11e-2     1.39  \n 9 Merc 230           22.8  3.15    20.5  2.35  0.0314   3.07 9.96e-3     0.784 \n10 Merc 280           19.2  3.44    18.9  0.300 0.0329   3.10 1.71e-4     0.100 \n# ℹ 22 more rows"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#how-to-use-quarto",
-    "href": "2023S2-etc5523/lecture-04.html#how-to-use-quarto",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "How to use Quarto",
-    "text": "How to use Quarto\n\nQuarto is quite NEW – v1 was released only on 20th July 2022! \nThe best documentaton is at https://quarto.org/"
+    "objectID": "2023S2-etc5523/lecture-05A.html#functions-in",
+    "href": "2023S2-etc5523/lecture-05A.html#functions-in",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "Functions in ",
+    "text": "Functions in \nRevise about functions at Learn R\n\nFunctions in R\n\n\nFunctions can be broken into three components:\n\nformals(), the list of arguments,\nbody(), the code inside the function, and\nenvironment()\n\nFunctions in R are created using function() with binding to a name using &lt;- or =\n\n\n\nf1 &lt;- function(x) sum(x) / length(x)\n\n\nformals(f1)\n\n$x\n\n\n\nbody(f1)\n\nsum(x)/length(x)\n\n\n\nenvironment(f1)\n\n&lt;environment: R_GlobalEnv&gt;\n\n\n\n Function Example 1\n\nf1 &lt;- function(x) sum(x) / length(x)\n\n\nx1 &lt;- c(1, 1, 2, 2)\nf1(x1)\n\n[1] 1.5\n\n\n What if there are missing values in the vector or the values are dates?\n\nx2 &lt;- c(1, 1, 2, 2, NA)\nf1(x2)\n\n[1] NA\n\n\n\nx3 &lt;- as.Date(c(\"2021-08-04\", \"2021-08-11\"))\nf1(x3)\n\nError in Summary.Date(structure(c(18843, 18850), class = \"Date\"), na.rm = FALSE): sum not defined for \"Date\" objects\n\n\n\n\n Function Example 2\n\nf2 &lt;- function(x, na.rm = TRUE) {\n  n &lt;- sum(!is.na(x))\n  sum(x, na.rm = na.rm) / n\n}\n\n\n\nf2(x1)\n\n[1] 1.5\n\n\n\nf2(x2)\n\n[1] 1.5\n\n\n\nf2(x3)\n\nError in Summary.Date(structure(c(18843, 18850), class = \"Date\"), na.rm = TRUE): sum not defined for \"Date\" objects\n\n\n\n\n Function Example 3\n\nf3 &lt;- function(x, na.rm = TRUE) {\n  n &lt;- sum(!is.na(x))\n  out &lt;- sum(as.numeric(x), na.rm = na.rm) / n \n  if(class(x)==\"Date\") { \n    return(as.Date(out, \n                   origin = \"1970-01-01\")) \n  } \n  out\n}\n\n\nf3(x1)\n\n[1] 1.5\n\n\n\nf3(x2)\n\n[1] 1.5\n\n\n\nf3(x3)\n\n[1] \"2021-08-07\"\n\n\n\nWhat about for another object class?\n\n\nx4 &lt;- as.POSIXct(c(\"2021-08-11 18:00\", \"2021-08-11 20:00\"), tz = \"UTC\")\n\n\n\n\nS3 Object oriented programming (OOP)\n\nThe S3 system is the most widely used OOP system in R but there are other OOP systems in R, e.g. the S4 system is used for model objects in lme4 R-package, but it will be out of scope for this unit\n\n\nclass(x1)\n\n[1] \"numeric\"\n\nclass(x2)\n\n[1] \"numeric\"\n\nclass(x3)\n\n[1] \"Date\"\n\nclass(x4)\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\nHere I create a generic called f4:\n\n\nf4 &lt;- function(x, ...) UseMethod(\"f4\")\n\n\nAnd an associated default method:\n\n\nf4.default &lt;- function(x, na.rm = TRUE) {\n  sum(x, na.rm = na.rm) / sum(!is.na(x))\n}\n\n\nAnd an associated specific method for the Date class:\n\n\nf4.Date &lt;- function(x, na.rm = TRUE) {\n  out &lt;- f4.default(as.numeric(x), na.rm = na.rm)\n  as.Date(out, origin = \"1970-01-01\")\n}\n\n\nf4(x1)\n\n[1] 1.5\n\nf4(x2)\n\n[1] 1.5\n\nf4(x3)\n\n[1] \"2021-08-07\"\n\n\n\nclass(x4)\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\nf4.POSIXct &lt;- function(x, na.rm = TRUE) {\n  out &lt;- f4.default(as.numeric(x), na.rm = na.rm)\n  as.POSIXct(out, \n             tz = attr(x, \"tzone\"), \n             origin = \"1970-01-01\")\n}\n\n\nf4(x4)\n\n[1] \"2021-08-11 19:00:00 UTC\"\n\n\n\n\nA method is created by using the form generic.class.\nWhen using a method for class, you can omit the .class from the function.\nE.g. f4(x4) is the same as f4.POSIXct(x4) since the class of x4 is POSIXct (and POSIXt).\nBut notice f4.numeric doesn’t exist, instead there is f4.default.\ndefault is a special class and when a generic doesn’t have a method for the corresponding class, it falls back to generic.default"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#making-websites-with-quarto",
-    "href": "2023S2-etc5523/lecture-04.html#making-websites-with-quarto",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "Making Websites with Quarto",
-    "text": "Making Websites with Quarto\n\nWebpage vs. Website\n\n\n\n\nA webpage is a single document written in HTML.\nWhile a website is a collection of webpages where it usually share a common navigation bar (or tab), and possibly a common footer.\nA webpage is like a page of a book while a website is like the book\n\n\n\nWeb server directory index\n\nindex.html is a special reserved name for the “index” page\nIf you go to https://cwd.numbat.space/, this in fact is loading https://cwd.numbat.space/index.html\nAny other file name and folder structure requires you to append it to the domain or subdomain, e.g. https://cwd.numbat.space/lectures/lecture-00.html"
+    "objectID": "2023S2-etc5523/lecture-05A.html#working-with-model-objects-in",
+    "href": "2023S2-etc5523/lecture-05A.html#working-with-model-objects-in",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "Working with model objects in ",
+    "text": "Working with model objects in \n\n Modelling in R\n\n\nThere are many R-packages that fit all kinds of models, e.g.\n\nmgcv fits generalized additive models,\nrstanarm fits Bayesian regression models using Stan, and\nfable fits forecast models,\nmany other contributions by the community.\n\nThere are a lot of new R-packages contributed — some implementing the latest research results.\nThis means that if you want to use the state-of-the-art research, then you need to work with model objects beyond the standard lm and glm.\n\n\n\nExample with Bayesian regression\n\nlibrary(rstanarm)\nfit_stan &lt;- stan_lm(mpg ~ 1 + wt, data = mtcars,\n                    prior = R2(0.7528, what = \"mean\"))\n\n\nbroom::tidy(fit_stan)\n\n\n\n\nS3 Object classes\n\nSo how do you find out the functions that work with model objects?\nFirst notice the class of the object fit:\n\n\nclass(fit)\n\n[1] \"lm\"\n\n\n\nThe methods associated with this can be found using:\n\n\nmethods(class = \"lm\")\n\n [1] add1           alias          anova          case.names     coerce        \n [6] confint        cooks.distance deviance       dfbeta         dfbetas       \n[11] drop1          dummy.coef     effects        extractAIC     family        \n[16] formula        fortify        hatvalues      influence      initialize    \n[21] kappa          labels         logLik         model.frame    model.matrix  \n[26] nobs           plot           predict        print          proj          \n[31] qqnorm         qr             residuals      rstandard      rstudent      \n[36] show           simulate       slotsFromS3    summary        variable.names\n[41] vcov          \nsee '?methods' for accessing help and source code\n\n\n\nWhere is coef()?\n\n\n\nCase study broom::tidy\n\nclass(fit)\n\n[1] \"lm\"\n\n\n\nbroom::tidy\n\nfunction (x, ...) \n{\n    UseMethod(\"tidy\")\n}\n&lt;bytecode: 0x00000286efd3e960&gt;\n&lt;environment: namespace:generics&gt;\n\n\nThere is no tidy.stanreg method so uses the broom:::tidy.glm instead."
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#getting-started-with-quarto-blog",
-    "href": "2023S2-etc5523/lecture-04.html#getting-started-with-quarto-blog",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "Getting started with Quarto blog",
-    "text": "Getting started with Quarto blog\n\n\n\n\n\n\nUsing RStudio IDE\n\n\n\nFile &gt; New Project &gt; New Directory &gt; Quarto Blog\n\n\n\n\n\n\n\n\nCommand line\n\n\n\nRun in the terminal:\n{{}} quarto create-project myblog --type website:blog\nThis creates a basic file structure in the myblog directory."
+    "objectID": "2023S2-etc5523/lecture-05A.html#case-study-broomtidy-1",
+    "href": "2023S2-etc5523/lecture-05A.html#case-study-broomtidy-1",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": "Case study broom::tidy",
+    "text": "Case study broom::tidy\n\nlibrary(broom)\n\ntidy.stanreg &lt;- function(x, ...) {\n  est &lt;- x$coefficients\n  tibble(term = names(est), \n         estimate = unname(est),\n         std.error = x$ses)\n}\n\ntidy(fit_stan)"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#quarto-blog-template",
-    "href": "2023S2-etc5523/lecture-04.html#quarto-blog-template",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": "Quarto blog template",
-    "text": "Quarto blog template\n\n\n\nQuarto blog structure\n├── _quarto.yml \n      ├── index.qmd \n      ├── about.qmd \n      ├── profile.jpg \n      ├── styles.css \n      └── posts     \n          ├── _metadata.yml     \n          ├── welcome     \n          │   ├── thumbnail.jpg     \n          │   └── index.qmd     \n          └── post-with-code         \n          ├── image.jpg         \n          └── index.qmd\n\n\nQuarto workflow\n\nFor a live preview of the website (when developing):\n\nquarto preview\n\nFor rendering the website (default folder is _site):\n\nquarto render\n\n\n_quarto.yml\nproject:\n  type: website\n\nwebsite:\n  title: \"myblog\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/\n      - icon: twitter\n        href: https://twitter.com\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n\n\nindex.qmd\n\n---\ntitle: \"myblog\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\npage-layout: full\ntitle-block-banner: true\n---"
+    "objectID": "2023S2-etc5523/lecture-05A.html#python",
+    "href": "2023S2-etc5523/lecture-05A.html#python",
+    "title": "Lecture 5A: Statistical model outputs",
+    "section": " Python",
+    "text": "Python\n#| output-location: fragment\nimport pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nx = np.array(r.mtcars['wt']).reshape(-1, 1)\ny = np.array(r.mtcars['mpg'])\nmodel = LinearRegression().fit(x, y)\n\n[model.intercept_, model.coef_]\n\n\n\n(Intercept)          wt \n  37.285126   -5.344472 \n\n\n\n\n\n\n\n\nSummary\n\n\n\n\nModel objects are usually a list returning multiple output from the model fit\nWhen working with model objects, check the object structure and find the methods associated with it (and of course check the documentation)\nYou should be able to work (or at least know how to get started) with all sort of model objects\nWe revised how to create functions in R\nWe applied S3 object-oriented programming in R\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nWickham (2019) Advanced R, 2nd edition, Chapman & Hall, Chapter 13\nCreate your own broom tidier methods\nLearn R Chapter 2: R Programming Basics and Chapter 7: Linear Regression with R"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-04.html#publishing-websites",
-    "href": "2023S2-etc5523/lecture-04.html#publishing-websites",
-    "title": "Lecture 4: Data storytelling on the web",
-    "section": " Publishing websites",
-    "text": "Publishing websites\n\nWeb hosting\n\n\n\n\nSharing on the web with Quarto Pub\n\nGo to https://quartopub.com/ and log in\nIn the terminal, run\n\nquarto publish quarto-pub\n\nThe website will be published at https://username.quarto.pub/mysite/ where\n\nusername is your Quarto Pub username\nmysite is the site name\n\n\n\n\nSharing on the web with GitHub Pages\nusethis::use_git()\nusethis::use_github() # or manually link with your local folder\n\nStep 1: Push your directory to your Github repo, say mysite.\nStep 2: Go to your GitHub repo settings and enable “GitHub Pages”.\nStep 3: Your website will be available with url: http://username.github.io/mysite\n\nAlternatively use:\n{{}} quarto publish gh-pages\n\n\nSharing on the web with Netlify\n\nStep 1: Go to https://app.netlify.com and log in\nStep 2: Drag and drop your site folder which contains the index.html to:\nStep 3: Do go to Site settings &gt; Change site name for a more sensible domain name.\n\n\n\n\nAlternatively use:\n{{}} quarto publish netlify\n\n\n\n\n\n\nSummary\n\n\n\n\nWe looked at a website structure\nWe built a website using the Quarto system\nWe learnt how to host websites using Quarto Pub, GitHub Pages or Netlify\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nQuarto: Creating a Blog\nQuarto: Execution Options\nQuarto: Article Layout\nQuarto: Cross References\nQuarto: Document Listings"
+    "objectID": "2023S2-etc5523/lecture-03.html",
+    "href": "2023S2-etc5523/lecture-03.html",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "",
+    "text": "Aim\n\n\n\n\nUse interactivity to enable data exploration, understanding and communication\nDesign web apps with displays that fit for the purpose\nMake web applications using shiny\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\nInteractive web apps can\n\nconnect people and data,\nmake systems playful,\nprompt self-reflection,\npersonalise the view, and\nreduce cognitive load."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#aim",
+    "href": "2023S2-etc5523/lecture-03.html#aim",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "",
+    "text": "Aim\n\n\n\n\nUse interactivity to enable data exploration, understanding and communication\nDesign web apps with displays that fit for the purpose\nMake web applications using shiny\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\nInteractive web apps can\n\nconnect people and data,\nmake systems playful,\nprompt self-reflection,\npersonalise the view, and\nreduce cognitive load."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#human-computer-interaction",
+    "href": "2023S2-etc5523/lecture-03.html#human-computer-interaction",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "Human Computer Interaction",
+    "text": "Human Computer Interaction\n\n\n\n\n\n\nOpen-ended dialogue between the user and the computer\n\n\n\n\n\nEnable audience to some degree co-author narrative, i.e. narratives moves away from being author-guided to audience-driven.\nLeverage user interaction techniques to improve user experience, e.g.\n\nShow details on demand\nReduce overall cognitive load\nPersonalised view"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#user-interactions",
+    "href": "2023S2-etc5523/lecture-03.html#user-interactions",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "User Interactions",
+    "text": "User Interactions\n\n\nImage from Spencer (2022, Feb. 17). Data in Wonderland. Retrieved from https://ssp3nc3r.github.io/data_in_wonderland"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#user-inputs",
+    "href": "2023S2-etc5523/lecture-03.html#user-inputs",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "User Inputs",
+    "text": "User Inputs\n\n\nImage from Spencer (2022, Feb. 17). Data in Wonderland. Retrieved from https://ssp3nc3r.github.io/data_in_wonderland"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#criteria-for-the-design-of-interactive-data-visualisation",
+    "href": "2023S2-etc5523/lecture-03.html#criteria-for-the-design-of-interactive-data-visualisation",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "Criteria for the Design of Interactive Data Visualisation",
+    "text": "Criteria for the Design of Interactive Data Visualisation\nTominski, Christian, and Heidrun Schumann (2020) Interactive Visual Data Analysis. CRC Press.\n\nQuality criteria\n\n\n\n\n\n\n\nExpressiveness (Mandatory Condition)\n\n\n\nAn interactive visual representation is expressive if it allows the user to carry out the actions needed to acquire the desired information in the data.\n\n\n\n\n\n\n\n\n\n\nEffectiveness (Goal-Oriented Condition)\n\n\n\nA measure of how well the user can convey an interaction intent to the computer.\n\n\n\n\n\n\n\n\n\n\nEfficiency (Desired Condition)\n\n\n\nThe balance of benefits and costs for using an interactive visualisation approach. E.g. does the human effort of building the interactive visualisation outweigh its benefits? Are the efforts of users to interact with it offset the information gained for users?\n\n\n\n\n\nGoals\n\n\nExploration promotes undirected search\nDescription characterises observations by associated data elements\nExplanation identifies contributing causes behind an observation\nConfirmation find concrete evidences for or against a hypothesis\nPresentation communicates results of a confirmed analysis\n\n\n\nExample: Global Temperature\n\nhttps://climate.nasa.gov/vital-signs/global-temperature/\n\n\nExample: How you will die\n\nhttps://flowingdata.com/2016/01/19/how-you-will-die/"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#what-is-shiny",
+    "href": "2023S2-etc5523/lecture-03.html#what-is-shiny",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "What is shiny?",
+    "text": "What is shiny?\n Demo App\n\nHow to get started with shiny?\n\n\nRStudio &gt; File &gt; New File &gt; Shiny Web App…\nUsing snippet: Type shinyapp and Shift + Tab\n\n\n\n\nUser Interface\n\nWriting HTML from R\n\nlibrary(shiny) # exported from `htmltools`\ntags$html(\n  tags$body(\n    h1('My first heading'),\n    p('My first paragraph, with some ', strong('bold'), ' text.'),\n    div(id = 'myDiv', class = 'simpleDiv',\n        'Here is a div with some attributes.')\n  )\n)\n\n\n\nMy first heading\n\nMy first paragraph, with some \nbold\n text.\n\nHere is a div with some attributes.\n\n\n\n\n&lt;html&gt;\n  &lt;body&gt;\n    &lt;h1&gt;My first heading&lt;/h1&gt;\n    &lt;p&gt;\n      My first paragraph, with some \n      &lt;strong&gt;bold&lt;/strong&gt;\n       text.\n    &lt;/p&gt;\n    &lt;div id=\"myDiv\" class=\"simpleDiv\"&gt;Here is a div with some attributes.&lt;/div&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n\nUse includeCSS() and includeScript() to include CSS and JS files\n\n\n\nHTML Inputs\n\n\n\nactionButton(\"id1\", \"Push\")\n\nPush\n\n\n\n\n\nactionLink(\"id2\", \"Link\")\n\nLink\n\n\n\n\n\n\ncheckboxGroupInput(\"id3\", \"Select\", \n                   choices = c(\"Mon\", \"Tue\", \"Wed\"),\n                   selected = \"Mon\")\n\n\nSelect\n\n\n\n\nMon\n\n\n\n\n\nTue\n\n\n\n\n\nWed\n\n\n\n\n\n\n\n\n\n\ncheckboxInput(\"id4\", \"I accept\")\n\n\n\n\n\nI accept\n\n\n\n\n\n\n\n\n\nfileInput(\"id5\", \"Upload file\")\n\n\nUpload file\n\n\n\nBrowse...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnumericInput(\"id6\", \"Enter number\", \n             value = 1, min = 1, max = 10, step = 1)\n\n\nEnter number\n\n\n\n\n\n\n\n\nradioButtons(\"id7\", \"Select one\", \n             choices = c(\"Pizza\", \"Dumplings\", \"Sushi\"))\n\n\nSelect one\n\n\n\n\nPizza\n\n\n\n\n\nDumplings\n\n\n\n\n\nSushi\n\n\n\n\n\n\n\n\n\n\npasswordInput(\"id8\", \"Enter password\")\n\n\nEnter password\n\n\n\n\n\n\n\n\ntextInput(\"id9\", \"Enter text\", value = \"Enter coments here\")\n\n\nEnter text\n\n\n\n\n\n\n\n\nNote: calendar date picker pop up doesn’t show up here.\n\ndateInput(\"id10\", \"Select day\")\n\n\nSelect day\n\n\n\ndateRangeInput(\"id11\", \"Select days\")\n\n\nSelect days\n\n\n\n to \n\n\n\n\n\n\n\n\n\n\nselectInput(\"id12\", \"Select a drink\", choices = c(\"Tea\", \"Coffee\"))\n\n\nSelect a drink\n\nTea\nCoffee\n\n\n\n\n\n\n\n\n\nsliderInput(\"id13\", \"How many?\", min = 0, max = 10, value = 0)\n\n\nHow many?\n\n\n\n\n\n\n\n\nLayouts\n\nfluidRow + columns\nThis is using bootstrap\nfluidPage(\n  fluidRow(column(width = 4,\n                  h3(\"Some informative table\"),\n                  tableOutput(\"mytable\")),\n           column(width = 4, offset = 3,\n                  h3(\"Fancy plot\"),\n                  plotOutput(\"myplot\"))),\n  fluidRow(column(width = 12, \n                  \"Minimum width is 1 and maximum width is 12\"))\n)\n&lt;div class=\"container-fluid\"&gt;\n  &lt;div class=\"row\"&gt;\n    &lt;div class=\"col-sm-4\"&gt;\n      &lt;h3&gt;Some informative table&lt;/h3&gt;\n      &lt;div id=\"mytable\" class=\"shiny-html-output\"&gt;&lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"col-sm-4 offset-md-3 col-sm-offset-3\"&gt;\n      &lt;h3&gt;Fancy plot&lt;/h3&gt;\n      &lt;div id=\"myplot\" class=\"shiny-plot-output\" style=\"width:100%;height:400px;\"&gt;&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=\"row\"&gt;\n    &lt;div class=\"col-sm-12\"&gt;Minimum width is 1 and maximum width is 12&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n\nsidebarLayout\nfluidPage(sidebarLayout(\n  sidebarPanel(h3(\"User control\"),\n               actionButton(\"id1\", \"Push\")),\n  mainPanel(h3(\"Main Panel\"),\n            plotOutput(\"myplot\"))\n))\n&lt;div class=\"container-fluid\"&gt;\n  &lt;div class=\"row\"&gt;\n    &lt;div class=\"col-sm-4\"&gt;\n      &lt;form class=\"well\" role=\"complementary\"&gt;\n        &lt;h3&gt;User control&lt;/h3&gt;\n        &lt;button id=\"id1\" type=\"button\" class=\"btn btn-default action-button\"&gt;Push&lt;/button&gt;\n      &lt;/form&gt;\n    &lt;/div&gt;\n    &lt;div class=\"col-sm-8\" role=\"main\"&gt;\n      &lt;h3&gt;Main Panel&lt;/h3&gt;\n      &lt;div id=\"myplot\" class=\"shiny-plot-output\" style=\"width:100%;height:400px;\"&gt;&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n\n\nServer & Client Communication\n Demo App\n\n\n\nServer and User Interface Outputs\n\n\n\nserver\nui\n\n\n\n\nrenderDataTable\ndataTableOutput\n\n\nrenderImage\nimageOutput\n\n\nrenderPlot\nplotOutput\n\n\nrenderPrint\nverbatimTextOutput\n\n\nrenderTable\ntableOutput\n\n\nrenderText\ntextOutput\n\n\nrenderUI\nuiOutput or htmlOutput\n\n\n\n\n\nReactivity\n\nreactiveValues creates your own reactive values\nisolate prevents reactions\nreactive caches its value to reduce computation and notifies its dependencies when it has been invalidated\nobserveEvent runs code when the first argument changes\nobserve runs code when any reactive elements within it changes"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#debugging",
+    "href": "2023S2-etc5523/lecture-03.html#debugging",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "Debugging",
+    "text": "Debugging\n\nbrowser() + breaking points"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-03.html#how-to-deploy-your-shiny-app",
+    "href": "2023S2-etc5523/lecture-03.html#how-to-deploy-your-shiny-app",
+    "title": "Lecture 3: Communicating data with interactive web apps",
+    "section": "How to deploy your Shiny app?",
+    "text": "How to deploy your Shiny app?\nshinyapps.io\n\n\n\n\n\n\nSummary\n\n\n\n\nWe went through the benefits of interactivity for communicating data\nWe considered how to design displays for web apps\nYou learnt how to use make web apps using shiny\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\n\nHohman, et al., “Communicating with Interactive Articles”, Distill, 2020.\nIntroduction to Shiny Tutorials Course Mastering Shiny\nDebugging Shiny Techniques Article\nCheatsheet for Shiny Cheatsheet"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html",
+    "href": "2023S2-etc5523/lecture-01.html",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "",
+    "text": "Aim\n\n\n\n\nBasic communication theory and its relevancy with communicating with data\nDemonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring\nIdentify and apply rhetorical elements to improve data storytelling\nClearly articulate and express technical problems for others to help you\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nEffective communication with data is a blend of hard and soft skills\nYou need the hard skills to process and understand the data\nBut you also need the soft skills to get the message across to others"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#aim",
+    "href": "2023S2-etc5523/lecture-01.html#aim",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "",
+    "text": "Aim\n\n\n\n\nBasic communication theory and its relevancy with communicating with data\nDemonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring\nIdentify and apply rhetorical elements to improve data storytelling\nClearly articulate and express technical problems for others to help you\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nEffective communication with data is a blend of hard and soft skills\nYou need the hard skills to process and understand the data\nBut you also need the soft skills to get the message across to others"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#communicating",
+    "href": "2023S2-etc5523/lecture-01.html#communicating",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "Communicating",
+    "text": "Communicating\n\nTo effectively communicate, we must realize that we are all different in the way we perceive the world and use this understanding as a guide to our communication with others.\n– Anthony Robbins"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#communicating-with-data",
+    "href": "2023S2-etc5523/lecture-01.html#communicating-with-data",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "Communicating with data",
+    "text": "Communicating with data\n\nThe two words ‘information’ and ‘communication’ are often used interchangeably, but they signify quite different things. Information is giving out; communication is getting through.\n– Sydney J. Harris"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#the-basics-of-communication-theory",
+    "href": "2023S2-etc5523/lecture-01.html#the-basics-of-communication-theory",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "The Basics of Communication Theory",
+    "text": "The Basics of Communication Theory\n\n\n\n\n\n\nCommunication here refers to human communication\n\n\n\nIn this section, communication refers to human communication.\n\n\n\nCommunication is symbolic\n\n\nArbitrary nature of symbols is overcome with linguistic rules\nAgreement among people about these rules is required to effectively communicate\nMeanings rest in people, not words\n\n\n\n\n\n\n\nCommunication is a process\nCommunication is often thought of as discrete, independent acts but in fact it is a continuous, ongoing process.\n\n\nLinear communication model\n\n\n\n\n\nTransactional communication model\n\n\n\n\n\n\n\nCommunication competence\n\n\nThere is no single, ideal way to communicate\nCompetence is situational and relational (where, what and who)\nAbility to select the most appropriate behaviour in a particular situation\nSkill to perform behaviour not just knowing them\nEmpathy or perspective taking\nCognitive complexity – ability to construct a variety of framework for viewing an issue\nSelf-monitoring – paying close to your own behaviour and use this to shape your behaviour\n\n\n\n\nTypes of communication\n\nIntrapersonal – communicating with one-self\nDyadic/interpersonal – two people interacting\nSmall group – two or more people interacting with group membership\nPublic – a group too large for all to contribute\nMass – messages transmitted to large, wide-spread audiences via media\n\n\n\n\n\n\n\n\nTutorial\n\n\n\nHow does your communication strategy change for different types of communication?\n\n\n\n\n\nEffective communication\n\n\nCommunication doesn’t always require complete understanding\nWe notice some messages more and ignore others, e.g. we tend to notice messages that are:\n\nintense,\nrepetitious, and\nconstrastive.\n\nMotives also determine what information we select from environment\n\n\n\n\nWe are influenced by what is most obvious"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#rhetorics",
+    "href": "2023S2-etc5523/lecture-01.html#rhetorics",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "Rhetorics",
+    "text": "Rhetorics\nThe art of effective or persuasive speaking or writing\n\nRhetorical Triangle\n\n\n\n\nEthos - Writer. Make it clear why people listen to you Pathos - Audience. Appeal to the audience to listen to you. Engage them. Logos - Context. Audience will put things in context for them. Make sure it will make sense. (Example)\n\n\n\nRhetorical Situation\n\nWriter or Speaker\nPurpose\nMessage\nAudience\nContext\n\n\nWriter or Speaker\n\n\nPurpose\n\n\nMessage\n\n\nAudience\n\n\nContext\n\n\nNo one ever made a decision because of a number. They need a story.\n– Daniel Kahneman\n\n\nMaybe stories are just data with a soul.\n– Brene Brown\n\n\n\nHans Rosling"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#communicating-your-problem",
+    "href": "2023S2-etc5523/lecture-01.html#communicating-your-problem",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "Communicating your problem",
+    "text": "Communicating your problem\n\nAsking for help, requires you to communicate what your problem is to another party.\nHow you communicate your problem, can assist you greatly in getting the answer to your problem.\n\n\n🆘 Asking for help\n\nExample 1:\n\n\n\n\n\nExample 2:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nggplot(df, aes(weight, height)) +\n  geom_point()\n\nggplot(df, aes(height, volume)) +\n  geom_point()\n```\n\n\n\ncould not find function “ggplot”\nthe package needs to be loaded\n\n\n\n\nExample 3:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nlibrary(ggplot2)\nggplot(df, aes(weight, height)) +\n  geom_point()\n\nggplot(df, aes(height, volume)) +\n  geom_point()\n```\n\n\n\nData df is not defined!\n\n\n\n\nExample 4:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nlibrary(ggplot2)\ndf &lt;- read.csv(\"mydata.csv\")\nggplot(df, aes(weight, height)) +\n  geom_point()\n\nggplot(df, aes(height, volume)) +\n  geom_point()\n```\n\n\n\nIs the data used in this question necessarily for the question?\nDo we even have a copy of mydata.csv??\n\n\n\n\nExample 5:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nlibrary(ggplot2)\nggplot(trees, aes(Girth, Height)) +\n  geom_point()\n\nggplot(trees, aes(Height, Volume)) +\n  geom_point()\n```\n\n\n\nAuthor is using the built-in dataset trees here\n\n\n\n\n\n❓ How to ask questions?\n\nChecklist (note: not an exhaustive checklist)\nIs the problem clearly and succinctly described? \nIs the expected solution or behaviour outlined? \nAre you asking the right people at the right place?  \n\n\nIf the question is asked in an public forum or similar:\nCan people who can answer your question find your question? E.g. does the post have appropriate tags or keywords to reach the right experts?  \n\n\nIf the problem is computer system related…\nCan the problem be easily reproduced on other people’s system?   Is the minimum reproducible code or steps supplied?  \n\n\nIf the problem is based on data …\nIs the data supplied?   If the data is big, could you cull your data further to communicate or reproduce the problem?  \n\n\n\n🆘 Asking for help\n\nExample 1:\n\n\n\n\n\nIs the problem clearly and succintly defined?   Is the expected solution or behaviour outlined?   Is the problem asked at the right place or person?  \nCan people who can answer your question find your question?  \nCan the problem be easily reproduced on other people’s system?   Is the minimum reproducible code or steps supplied?  \nIs the data supplied?   If the data is big, could you cull your data further to communicate or reproduce the problem?  \n\n\n\n\nExample 2:\n\n\n\nHow about the question on the right?\nWhat makes it hard or easy for people to answer this question?\n\n\n\n\n \n\n\n\n\n\nIn this example, the author provides the data but it requires work for others to read this data in.\n\n\n\n\n\nSession Information\nYou can easily get the session information in R using sessioninfo::session_info(). Scroll to see the packages used to make these slides.\n\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16 ucrt)\n os       Windows 11 x64 (build 22621)\n system   x86_64, mingw32\n ui       RTerm\n language (EN)\n collate  English_United States.utf8\n ctype    English_United States.utf8\n tz       Australia/Sydney\n date     2023-10-22\n pandoc   3.1.1 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version    date (UTC) lib source\n cli           3.6.1      2023-03-23 [1] CRAN (R 4.3.0)\n codetools     0.2-19     2023-02-01 [2] CRAN (R 4.3.1)\n colorspace  * 2.1-0      2023-01-23 [1] CRAN (R 4.3.0)\n crayon        1.5.2      2022-09-29 [1] CRAN (R 4.3.0)\n data.table    1.14.8     2023-02-17 [1] CRAN (R 4.3.0)\n digest        0.6.31     2022-12-11 [1] CRAN (R 4.3.0)\n dplyr       * 1.1.2      2023-04-20 [1] CRAN (R 4.3.0)\n ellipsis      0.3.2      2021-04-29 [1] CRAN (R 4.3.0)\n evaluate      0.21       2023-05-05 [1] CRAN (R 4.3.1)\n fansi         1.0.4      2023-01-22 [1] CRAN (R 4.3.0)\n farver        2.1.1      2022-07-06 [1] CRAN (R 4.3.0)\n fastmap       1.1.1      2023-02-24 [1] CRAN (R 4.3.0)\n forcats     * 1.0.0      2023-01-29 [1] CRAN (R 4.3.0)\n formattable * 0.2.1      2021-01-07 [1] CRAN (R 4.3.1)\n generics      0.1.3      2022-07-05 [1] CRAN (R 4.3.0)\n gganimate   * 1.0.8      2022-09-08 [1] CRAN (R 4.3.1)\n ggplot2     * 3.4.3      2023-08-14 [1] CRAN (R 4.3.1)\n glue          1.6.2      2022-02-24 [1] CRAN (R 4.3.0)\n gt          * 0.9.0      2023-03-31 [1] CRAN (R 4.3.1)\n gtable        0.3.4      2023-08-21 [1] CRAN (R 4.3.1)\n hms           1.1.3      2023-03-21 [1] CRAN (R 4.3.1)\n htmltools   * 0.5.5      2023-03-23 [1] CRAN (R 4.3.0)\n htmlwidgets * 1.6.2      2023-03-17 [1] CRAN (R 4.3.0)\n httpuv        1.6.11     2023-05-11 [1] CRAN (R 4.3.1)\n httr          1.4.7      2023-08-15 [1] CRAN (R 4.3.1)\n janitor     * 2.2.0      2023-02-02 [1] CRAN (R 4.3.0)\n jsonlite      1.8.7      2023-06-29 [1] CRAN (R 4.3.1)\n kableExtra  * 1.3.4.9000 2023-09-21 [1] Github (kupietz/kableExtra@3bf9b21)\n knitr       * 1.44       2023-09-11 [1] CRAN (R 4.3.1)\n later         1.3.1      2023-05-02 [1] CRAN (R 4.3.0)\n lazyeval      0.2.2      2019-03-15 [1] CRAN (R 4.3.0)\n lifecycle     1.0.3      2022-10-07 [1] CRAN (R 4.3.0)\n lubridate   * 1.9.2      2023-02-10 [1] CRAN (R 4.3.0)\n magick        2.7.5      2023-08-07 [1] CRAN (R 4.3.1)\n magrittr      2.0.3      2022-03-30 [1] CRAN (R 4.3.0)\n mime          0.12       2021-09-28 [1] CRAN (R 4.3.0)\n munsell       0.5.0      2018-06-12 [1] CRAN (R 4.3.0)\n patchwork   * 1.1.3      2023-08-14 [1] CRAN (R 4.3.1)\n pillar        1.9.0      2023-03-22 [1] CRAN (R 4.3.0)\n pkgconfig     2.0.3      2019-09-22 [1] CRAN (R 4.3.0)\n plotly      * 4.10.2     2023-06-03 [1] CRAN (R 4.3.1)\n prettyunits   1.1.1      2020-01-24 [1] CRAN (R 4.3.0)\n progress      1.2.2      2019-05-16 [1] CRAN (R 4.3.0)\n promises      1.2.1      2023-08-10 [1] CRAN (R 4.3.1)\n purrr       * 1.0.2      2023-08-10 [1] CRAN (R 4.3.1)\n R6            2.5.1      2021-08-19 [1] CRAN (R 4.3.0)\n Rcpp          1.0.11     2023-07-06 [1] CRAN (R 4.3.1)\n readr       * 2.1.4      2023-02-10 [1] CRAN (R 4.3.0)\n rlang         1.1.1      2023-04-28 [1] CRAN (R 4.3.1)\n rmarkdown     2.25       2023-09-18 [1] CRAN (R 4.3.1)\n rstudioapi    0.15.0     2023-07-07 [1] CRAN (R 4.3.1)\n rvest         1.0.3      2022-08-19 [1] CRAN (R 4.3.1)\n scales        1.2.1      2022-08-20 [1] CRAN (R 4.3.0)\n sessioninfo   1.2.2      2021-12-06 [1] CRAN (R 4.3.0)\n shiny       * 1.7.5      2023-08-12 [1] CRAN (R 4.3.1)\n snakecase     0.11.1     2023-08-27 [1] CRAN (R 4.3.1)\n stringi       1.7.12     2023-01-11 [1] CRAN (R 4.3.0)\n stringr     * 1.5.0      2022-12-02 [1] CRAN (R 4.3.0)\n svglite       2.1.1      2023-01-10 [1] CRAN (R 4.3.0)\n systemfonts   1.0.4      2022-02-11 [1] CRAN (R 4.3.0)\n tibble      * 3.2.1      2023-03-20 [1] CRAN (R 4.3.0)\n tidyr       * 1.3.0      2023-01-24 [1] CRAN (R 4.3.0)\n tidyselect    1.2.0      2022-10-10 [1] CRAN (R 4.3.0)\n tidyverse   * 2.0.0      2023-02-22 [1] CRAN (R 4.3.0)\n timechange    0.2.0      2023-01-11 [1] CRAN (R 4.3.0)\n timevis     * 2.1.0      2022-11-03 [1] CRAN (R 4.3.1)\n tweenr        2.0.2      2022-09-06 [1] CRAN (R 4.3.1)\n tzdb          0.4.0      2023-05-12 [1] CRAN (R 4.3.1)\n utf8          1.2.3      2023-01-31 [1] CRAN (R 4.3.0)\n vctrs         0.6.3      2023-06-14 [1] CRAN (R 4.3.1)\n viridisLite   0.4.2      2023-05-02 [1] CRAN (R 4.3.1)\n webshot       0.5.5      2023-06-26 [1] CRAN (R 4.3.1)\n widgetframe * 0.3.1      2017-12-20 [1] CRAN (R 4.3.1)\n withr         2.5.0      2022-03-03 [1] CRAN (R 4.3.0)\n xfun          0.39       2023-04-20 [1] CRAN (R 4.3.0)\n xml2          1.3.5      2023-07-06 [1] CRAN (R 4.3.1)\n xtable        1.8-4      2019-04-21 [1] CRAN (R 4.3.0)\n yaml          2.3.7      2023-01-23 [1] CRAN (R 4.3.0)\n\n [1] C:/Users/Admin/AppData/Local/R/win-library/4.3\n [2] C:/Program Files/R/R-4.3.1/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\n\n\n\n🎁 Reproducible Example with reprex\n\nCopy your minimum reproducible example then run\n\n\nreprex::reprex(session_info = TRUE)\n\n\nOnce you run the above command, your clipboard contains the formatted code and output for you to paste into places like GitHub issues, Stackoverflow and forums powered by Discourse, e.g. RStudio Community.\nFor general code questions, I suggest that you post to the community forums rather than Moodle."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-01.html#communicating-with-data-1",
+    "href": "2023S2-etc5523/lecture-01.html#communicating-with-data-1",
+    "title": "Lecture 1: Basic communication theory and practice",
+    "section": "Communicating with Data",
+    "text": "Communicating with Data\n\n\n\n\n\n\n\n\n\nSummary\n\n\n\n\nCommunication is a symbolic, ongoing process that requires getting through to other parties\nThere is no single ideal way to communicate – communication competence depends on situation and relations but a competent communicator can select and perform appropriate behaviour based on seeing other people’s perspectives and understanding their own behaviour\nWe discussed about the elements of rhetorics and how it relates to telling a compelling data story\nWe looked at the case study with communicating your problem to ask for help\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nSee more at Learn R Chapter 3: Troubleshooting and asking for help\nWatch more about storytelling with data at:\n\nWhy storytelling is so powerful in the digital era\nWhy storytelling is more trustworthy than presenting data\nMaking data mean more through storytelling"
   },
   {
     "objectID": "2023S2-etc5523/lecture-02.html",
     "href": "2023S2-etc5523/lecture-02.html",
     "title": "Lecture 2: Introduction to web technologies",
     "section": "",
-    "text": "WWW (or the Web) is the information system where documents (web pages) are identified by Uniform Resource Locators (URLs)\n\n\n\nA web page consists of:\n\n HTML provides the basic structure of the web page\n CSS controls the look of the web page (optional)\n JS is a programming language that can modify the behaviour of elements of the web page (optional)\n\n\n\n\n\nKeep in mind that you are not a web developer (or maybe you are) so you don’t need to know these in-depth, but you require some knowledge in web technologies if you want to do some low-level customisation of HTML documents."
+    "text": "Aim\n\n\n\n\nUnderstand the make up of web documents, i.e. HTML, CSS and JS\nWrite basic HTML and CSS with valid syntax\nUse CSS selectors to apply new styles\nIntegrate CSS and JS to R markdown documents with HTML output\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nBasic web development skills are necessary for customising HTML documents\nThis hard skill will be necessary later for when you are communicating with web documents and web apps"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-02.html#aim",
+    "href": "2023S2-etc5523/lecture-02.html#aim",
+    "title": "Lecture 2: Introduction to web technologies",
+    "section": "",
+    "text": "Aim\n\n\n\n\nUnderstand the make up of web documents, i.e. HTML, CSS and JS\nWrite basic HTML and CSS with valid syntax\nUse CSS selectors to apply new styles\nIntegrate CSS and JS to R markdown documents with HTML output\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nBasic web development skills are necessary for customising HTML documents\nThis hard skill will be necessary later for when you are communicating with web documents and web apps"
   },
   {
     "objectID": "2023S2-etc5523/lecture-02.html#world-wide-web-www",
     "href": "2023S2-etc5523/lecture-02.html#world-wide-web-www",
     "title": "Lecture 2: Introduction to web technologies",
-    "section": "",
-    "text": "WWW (or the Web) is the information system where documents (web pages) are identified by Uniform Resource Locators (URLs)\n\n\n\nA web page consists of:\n\n HTML provides the basic structure of the web page\n CSS controls the look of the web page (optional)\n JS is a programming language that can modify the behaviour of elements of the web page (optional)\n\n\n\n\n\nKeep in mind that you are not a web developer (or maybe you are) so you don’t need to know these in-depth, but you require some knowledge in web technologies if you want to do some low-level customisation of HTML documents."
+    "section": "🌐 World Wide Web (WWW)",
+    "text": "🌐 World Wide Web (WWW)\n\nWWW (or the Web) is the information system where documents (web pages) are identified by Uniform Resource Locators (URLs)\n\n\n\nA web page consists of:\n\n HTML provides the basic structure of the web page\n CSS controls the look of the web page (optional)\n JS is a programming language that can modify the behaviour of elements of the web page (optional)\n\n\n\n\n\nKeep in mind that you are not a web developer (or maybe you are) so you don’t need to know these in-depth, but you require some knowledge in web technologies if you want to do some low-level customisation of HTML documents."
   },
   {
     "objectID": "2023S2-etc5523/lecture-02.html#web-documents-are-handy",
@@ -371,123 +784,116 @@
     "text": "Footnotes\n\n\nIncluded in the default rmarkdown::html_document.↩︎\nSometimes included in certain Rmd HTML documents.↩︎\nOr called Inspect.↩︎\nNote: this is for inspection and doesn’t actual make changes to the files.↩︎"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html",
-    "href": "2023S2-etc5523/lecture-01.html",
-    "title": "Lecture 1: Basic communication theory and practice",
+    "objectID": "2023S2-etc5523/lecture-04.html",
+    "href": "2023S2-etc5523/lecture-04.html",
+    "title": "Lecture 4: Data storytelling on the web",
     "section": "",
-    "text": "To effectively communicate, we must realize that we are all different in the way we perceive the world and use this understanding as a guide to our communication with others.\n– Anthony Robbins"
+    "text": "Aim\n\n\n\n\nUnderstand a website structure and its difference to a webpage\nLearn how to use Quarto\nAdopt reproducible workflows using Quarto\nHost web content using either Quarto Pub, GitHub Pages or Netlify\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nCommunication on the web is increasingly common\nThere are challenges to streamline reproducible data analysis on the web"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html#communicating",
-    "href": "2023S2-etc5523/lecture-01.html#communicating",
-    "title": "Lecture 1: Basic communication theory and practice",
+    "objectID": "2023S2-etc5523/lecture-04.html#aim",
+    "href": "2023S2-etc5523/lecture-04.html#aim",
+    "title": "Lecture 4: Data storytelling on the web",
     "section": "",
-    "text": "To effectively communicate, we must realize that we are all different in the way we perceive the world and use this understanding as a guide to our communication with others.\n– Anthony Robbins"
+    "text": "Aim\n\n\n\n\nUnderstand a website structure and its difference to a webpage\nLearn how to use Quarto\nAdopt reproducible workflows using Quarto\nHost web content using either Quarto Pub, GitHub Pages or Netlify\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nCommunication on the web is increasingly common\nThere are challenges to streamline reproducible data analysis on the web"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html#communicating-with-data",
-    "href": "2023S2-etc5523/lecture-01.html#communicating-with-data",
-    "title": "Lecture 1: Basic communication theory and practice",
-    "section": "Communicating with data",
-    "text": "Communicating with data\n\nThe two words ‘information’ and ‘communication’ are often used interchangeably, but they signify quite different things. Information is giving out; communication is getting through.\n– Sydney J. Harris"
+    "objectID": "2023S2-etc5523/lecture-04.html#rmd-r-markdown",
+    "href": "2023S2-etc5523/lecture-04.html#rmd-r-markdown",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "Rmd R Markdown",
+    "text": "Rmd R Markdown\n\n\n\nBenefits\n\nBetter reproducibility for analytical results via R\nChange output document type easily (thanks to Pandoc)\nActive maintenance and development by RStudio a.k.a. Posit team"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html#the-basics-of-communication-theory",
-    "href": "2023S2-etc5523/lecture-01.html#the-basics-of-communication-theory",
-    "title": "Lecture 1: Basic communication theory and practice",
-    "section": "The Basics of Communication Theory",
-    "text": "The Basics of Communication Theory\n\n\n\n\n\n\nCommunication here refers to human communication\n\n\n\nIn this section, communication refers to human communication.\n\n\n\nCommunication is symbolic\n\n\nArbitrary nature of symbols is overcome with linguistic rules\nAgreement among people about these rules is required to effectively communicate\nMeanings rest in people, not words\n\n\n\n\n\n\n\nCommunication is a process\nCommunication is often thought of as discrete, independent acts but in fact it is a continuous, ongoing process.\n\n\nLinear communication model\n\n\n\n\n\nTransactional communication model\n\n\n\n\n\n\n\nCommunication competence\n\n\nThere is no single, ideal way to communicate\nCompetence is situational and relational (where, what and who)\nAbility to select the most appropriate behaviour in a particular situation\nSkill to perform behaviour not just knowing them\nEmpathy or perspective taking\nCognitive complexity – ability to construct a variety of framework for viewing an issue\nSelf-monitoring – paying close to your own behaviour and use this to shape your behaviour\n\n\n\n\nTypes of communication\n\nIntrapersonal – communicating with one-self\nDyadic/interpersonal – two people interacting\nSmall group – two or more people interacting with group membership\nPublic – a group too large for all to contribute\nMass – messages transmitted to large, wide-spread audiences via media\n\n\n\n\n\n\n\n\nTutorial\n\n\n\nHow does your communication strategy change for different types of communication?\n\n\n\n\n\nEffective communication\n\n\nCommunication doesn’t always require complete understanding\nWe notice some messages more and ignore others, e.g. we tend to notice messages that are:\n\nintense,\nrepetitious, and\nconstrastive.\n\nMotives also determine what information we select from environment\n\n\n\n\nWe are influenced by what is most obvious"
+    "objectID": "2023S2-etc5523/lecture-04.html#qmd-quarto",
+    "href": "2023S2-etc5523/lecture-04.html#qmd-quarto",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "qmd Quarto",
+    "text": "qmd Quarto\n\n(multi-language, next generation version of R Markdown), developed by RStudio (or Posit from October 2022) team."
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html#rhetorics",
-    "href": "2023S2-etc5523/lecture-01.html#rhetorics",
-    "title": "Lecture 1: Basic communication theory and practice",
-    "section": "Rhetorics",
-    "text": "Rhetorics\nThe art of effective or persuasive speaking or writing\n\nRhetorical Triangle\n\n\n\n\nEthos - Writer. Make it clear why people listen to you Pathos - Audience. Appeal to the audience to listen to you. Engage them. Logos - Context. Audience will put things in context for them. Make sure it will make sense. (Example)\n\n\n\nRhetorical Situation\n\nWriter or Speaker\nPurpose\nMessage\nAudience\nContext\n\n\nWriter or Speaker\n\n\nPurpose\n\n\nMessage\n\n\nAudience\n\n\nContext"
+    "objectID": "2023S2-etc5523/lecture-04.html#quarto-system",
+    "href": "2023S2-etc5523/lecture-04.html#quarto-system",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "Quarto system",
+    "text": "Quarto system\n\n\n\nChanges - The reproducible workflow is no longer dependant on R - Better multi-language support (e.g. Python, Julia, JavaScript, R, etc) and multi-engine support (e.g. Jupyter, Knitr, Observable) - Consistency in systems across all formats (e.g. layouts, cross references) - Some specifications for YAML and chunk options\n\nOverall syntax comparison\n\n\nRmd\n---\ntitle: \"My document\"\noutput:\n  html_document:\n    toc: true\n    css: styles.css\n---\n\n```{r, warning = FALSE, message = FALSE}\nknitr::opts_chunk$set(echo = FALSE,\n                      fig.width = 8, \n                      fig.height = 6)\nlibrary(tidyverse)\n```\n\n\nQmd\n---\ntitle: \"My document\"\nexecute: \n  echo: false\nformat:\n  html:\n    toc: true\n    css: styles.css\n    fig-width: 8\n    fig-height: 6\n    html-math-method: katex \n---\n\n```{r}\n#| warning: false\n#| message: false\nlibrary(tidyverse)\n```\n\n\n\n\nDo we use Rmd or Qmd?\n\nIf your computation uses only R, Rmd is completely fine.\nIn this unit, we will be using Quarto for making:\n\nwebsites (including blogs) and\npresentation slides."
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html#section",
-    "href": "2023S2-etc5523/lecture-01.html#section",
-    "title": "Lecture 1: Basic communication theory and practice",
+    "objectID": "2023S2-etc5523/lecture-04.html#how-to-use-quarto",
+    "href": "2023S2-etc5523/lecture-04.html#how-to-use-quarto",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "How to use Quarto",
+    "text": "How to use Quarto\n\nQuarto is quite NEW – v1 was released only on 20th July 2022! \nThe best documentaton is at https://quarto.org/"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-04.html#making-websites-with-quarto",
+    "href": "2023S2-etc5523/lecture-04.html#making-websites-with-quarto",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "Making Websites with Quarto",
+    "text": "Making Websites with Quarto\n\nWebpage vs. Website\n\n\n\n\nA webpage is a single document written in HTML.\nWhile a website is a collection of webpages where it usually share a common navigation bar (or tab), and possibly a common footer.\nA webpage is like a page of a book while a website is like the book\n\n\n\nWeb server directory index\n\nindex.html is a special reserved name for the “index” page\nIf you go to https://cwd.numbat.space/, this in fact is loading https://cwd.numbat.space/index.html\nAny other file name and folder structure requires you to append it to the domain or subdomain, e.g. https://cwd.numbat.space/lectures/lecture-00.html"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-04.html#getting-started-with-quarto-blog",
+    "href": "2023S2-etc5523/lecture-04.html#getting-started-with-quarto-blog",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "Getting started with Quarto blog",
+    "text": "Getting started with Quarto blog\n\n\n\n\n\n\nUsing RStudio IDE\n\n\n\nFile &gt; New Project &gt; New Directory &gt; Quarto Blog\n\n\n\n\n\n\n\n\nCommand line\n\n\n\nRun in the terminal:\n{{}} quarto create-project myblog --type website:blog\nThis creates a basic file structure in the myblog directory."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-04.html#quarto-blog-template",
+    "href": "2023S2-etc5523/lecture-04.html#quarto-blog-template",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": "Quarto blog template",
+    "text": "Quarto blog template\n\n\n\nQuarto blog structure\n├── _quarto.yml \n      ├── index.qmd \n      ├── about.qmd \n      ├── profile.jpg \n      ├── styles.css \n      └── posts     \n          ├── _metadata.yml     \n          ├── welcome     \n          │   ├── thumbnail.jpg     \n          │   └── index.qmd     \n          └── post-with-code         \n          ├── image.jpg         \n          └── index.qmd\n\n\nQuarto workflow\n\nFor a live preview of the website (when developing):\n\nquarto preview\n\nFor rendering the website (default folder is _site):\n\nquarto render\n\n\n_quarto.yml\nproject:\n  type: website\n\nwebsite:\n  title: \"myblog\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/\n      - icon: twitter\n        href: https://twitter.com\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n\n\nindex.qmd\n\n---\ntitle: \"myblog\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\npage-layout: full\ntitle-block-banner: true\n---"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-04.html#publishing-websites",
+    "href": "2023S2-etc5523/lecture-04.html#publishing-websites",
+    "title": "Lecture 4: Data storytelling on the web",
+    "section": " Publishing websites",
+    "text": "Publishing websites\n\nWeb hosting\n\n\n\n\nSharing on the web with Quarto Pub\n\nGo to https://quartopub.com/ and log in\nIn the terminal, run\n\nquarto publish quarto-pub\n\nThe website will be published at https://username.quarto.pub/mysite/ where\n\nusername is your Quarto Pub username\nmysite is the site name\n\n\n\n\nSharing on the web with GitHub Pages\nusethis::use_git()\nusethis::use_github() # or manually link with your local folder\n\nStep 1: Push your directory to your Github repo, say mysite.\nStep 2: Go to your GitHub repo settings and enable “GitHub Pages”.\nStep 3: Your website will be available with url: http://username.github.io/mysite\n\nAlternatively use:\n{{}} quarto publish gh-pages\n\n\nSharing on the web with Netlify\n\nStep 1: Go to https://app.netlify.com and log in\nStep 2: Drag and drop your site folder which contains the index.html to:\nStep 3: Do go to Site settings &gt; Change site name for a more sensible domain name.\n\n\n\n\nAlternatively use:\n{{}} quarto publish netlify\n\n\n\n\n\n\nSummary\n\n\n\n\nWe looked at a website structure\nWe built a website using the Quarto system\nWe learnt how to host websites using Quarto Pub, GitHub Pages or Netlify\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nQuarto: Creating a Blog\nQuarto: Execution Options\nQuarto: Article Layout\nQuarto: Cross References\nQuarto: Document Listings"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-05B.html",
+    "href": "2023S2-etc5523/lecture-05B.html",
+    "title": "Lecture 5B: Data tables",
     "section": "",
-    "text": "No one ever made a decision because of a number. They need a story.\n– Daniel Kahneman\n\n\nMaybe stories are just data with a soul.\n– Brene Brown\n\n\nHans Rosling"
+    "text": "Aim\n\n\n\n\nRecall and understand the motivations of various common tables that present statistical information\nLearn guidelines for communicating data with tables\nMake data tables with R\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nYour choice of statistical tables to present should consider the motivation of your audience\nYou need to be aware of the common convention of how to present information in tables"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-01.html#communicating-your-problem",
-    "href": "2023S2-etc5523/lecture-01.html#communicating-your-problem",
-    "title": "Lecture 1: Basic communication theory and practice",
-    "section": "Communicating your problem",
-    "text": "Communicating your problem\n\nAsking for help, requires you to communicate what your problem is to another party.\nHow you communicate your problem, can assist you greatly in getting the answer to your problem.\n\n\n🆘 Asking for help\n\nExample 1:\n\n\n\n\n\nExample 2:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nggplot(df, aes(weight, height)) +\n  geom_point()\n\nggplot(df, aes(height, volume)) +\n  geom_point()\n```\n\n\n\ncould not find function “ggplot”\nthe package needs to be loaded\n\n\n\n\nExample 3:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nlibrary(ggplot2)\nggplot(df, aes(weight, height)) +\n  geom_point()\n\nggplot(df, aes(height, volume)) +\n  geom_point()\n```\n\n\n\nData df is not defined!\n\n\n\n\nExample 4:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nlibrary(ggplot2)\ndf &lt;- read.csv(\"mydata.csv\")\nggplot(df, aes(weight, height)) +\n  geom_point()\n\nggplot(df, aes(height, volume)) +\n  geom_point()\n```\n\n\n\nIs the data used in this question necessarily for the question?\nDo we even have a copy of mydata.csv??\n\n\n\n\nExample 5:\n\nI am looking to adjust the size of two separate ggplots within the same R chunk in Rmarkdown. These plots must be different when outputted as a pdf, so defining the dimensions at the beginning of the chunk doesn’t work. Does anyone have any ideas? My code is below.\n```{r, fig.height = 3, fig.width = 3}\nlibrary(ggplot2)\nggplot(trees, aes(Girth, Height)) +\n  geom_point()\n\nggplot(trees, aes(Height, Volume)) +\n  geom_point()\n```\n\n\n\nAuthor is using the built-in dataset trees here\n\n\n\n\n\n❓ How to ask questions?\n\nChecklist (note: not an exhaustive checklist)\nIs the problem clearly and succinctly described? \nIs the expected solution or behaviour outlined? \nAre you asking the right people at the right place?  \n\n\nIf the question is asked in an public forum or similar:\nCan people who can answer your question find your question? E.g. does the post have appropriate tags or keywords to reach the right experts?  \n\n\nIf the problem is computer system related…\nCan the problem be easily reproduced on other people’s system?   Is the minimum reproducible code or steps supplied?  \n\n\nIf the problem is based on data …\nIs the data supplied?   If the data is big, could you cull your data further to communicate or reproduce the problem?  \n\n\n\n🆘 Asking for help\n\nExample 1:\n\n\n\n\n\nIs the problem clearly and succintly defined?   Is the expected solution or behaviour outlined?   Is the problem asked at the right place or person?  \nCan people who can answer your question find your question?  \nCan the problem be easily reproduced on other people’s system?   Is the minimum reproducible code or steps supplied?  \nIs the data supplied?   If the data is big, could you cull your data further to communicate or reproduce the problem?  \n\n\n\n\nExample 2:\n\n\n\nHow about the question on the right?\nWhat makes it hard or easy for people to answer this question?\n\n\n\n\n \n\n\n\n\n\nIn this example, the author provides the data but it requires work for others to read this data in.\n\n\n\n\n\nSession Information\nYou can easily get the session information in R using sessioninfo::session_info(). Scroll to see the packages used to make these slides.\n\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16 ucrt)\n os       Windows 11 x64 (build 22621)\n system   x86_64, mingw32\n ui       RTerm\n language (EN)\n collate  English_United States.utf8\n ctype    English_United States.utf8\n tz       Australia/Sydney\n date     2023-10-22\n pandoc   3.1.1 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)\n codetools     0.2-19  2023-02-01 [2] CRAN (R 4.3.1)\n digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)\n evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.1)\n fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)\n htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)\n htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.0)\n jsonlite      1.8.7   2023-06-29 [1] CRAN (R 4.3.1)\n knitr         1.44    2023-09-11 [1] CRAN (R 4.3.1)\n rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.1)\n rmarkdown     2.25    2023-09-18 [1] CRAN (R 4.3.1)\n rstudioapi    0.15.0  2023-07-07 [1] CRAN (R 4.3.1)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)\n xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)\n yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)\n\n [1] C:/Users/Admin/AppData/Local/R/win-library/4.3\n [2] C:/Program Files/R/R-4.3.1/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\n\n\n\n🎁 Reproducible Example with reprex\n\nCopy your minimum reproducible example then run\n\n\nreprex::reprex(session_info = TRUE)\n\n\nOnce you run the above command, your clipboard contains the formatted code and output for you to paste into places like GitHub issues, Stackoverflow and forums powered by Discourse, e.g. RStudio Community.\nFor general code questions, I suggest that you post to the community forums rather than Moodle."
-  },
-  {
-    "objectID": "2023S2-etc5523/lecture-01.html#communicating-with-data-1",
-    "href": "2023S2-etc5523/lecture-01.html#communicating-with-data-1",
-    "title": "Lecture 1: Basic communication theory and practice",
-    "section": "Communicating with Data",
-    "text": "Communicating with Data\n\n\n\n\n\n\n\n\n\nSummary\n\n\n\n\nCommunication is a symbolic, ongoing process that requires getting through to other parties\nThere is no single ideal way to communicate – communication competence depends on situation and relations but a competent communicator can select and perform appropriate behaviour based on seeing other people’s perspectives and understanding their own behaviour\nWe discussed about the elements of rhetorics and how it relates to telling a compelling data story\nWe looked at the case study with communicating your problem to ask for help\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nSee more at Learn R Chapter 3: Troubleshooting and asking for help\nWatch more about storytelling with data at:\n\nWhy storytelling is so powerful in the digital era\nWhy storytelling is more trustworthy than presenting data\nMaking data mean more through storytelling"
-  },
-  {
-    "objectID": "2023S2-etc5523/lecture-03.html",
-    "href": "2023S2-etc5523/lecture-03.html",
-    "title": "Lecture 3: Communicating data with interactive web apps",
+    "objectID": "2023S2-etc5523/lecture-05B.html#aim",
+    "href": "2023S2-etc5523/lecture-05B.html#aim",
+    "title": "Lecture 5B: Data tables",
     "section": "",
-    "text": "Aim\n\n\n\n\nUse interactivity to enable data exploration, understanding and communication\nDesign web apps with displays that fit for the purpose\nMake web applications using shiny\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\nInteractive web apps can\n\nconnect people and data,\nmake systems playful,\nprompt self-reflection,\npersonalise the view, and\nreduce cognitive load."
+    "text": "Aim\n\n\n\n\nRecall and understand the motivations of various common tables that present statistical information\nLearn guidelines for communicating data with tables\nMake data tables with R\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nYour choice of statistical tables to present should consider the motivation of your audience\nYou need to be aware of the common convention of how to present information in tables"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-03.html#aim",
-    "href": "2023S2-etc5523/lecture-03.html#aim",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "",
-    "text": "Aim\n\n\n\n\nUse interactivity to enable data exploration, understanding and communication\nDesign web apps with displays that fit for the purpose\nMake web applications using shiny\n\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\nInteractive web apps can\n\nconnect people and data,\nmake systems playful,\nprompt self-reflection,\npersonalise the view, and\nreduce cognitive load."
+    "objectID": "2023S2-etc5523/lecture-05B.html#some-common-tables",
+    "href": "2023S2-etc5523/lecture-05B.html#some-common-tables",
+    "title": "Lecture 5B: Data tables",
+    "section": " Some common tables",
+    "text": "Some common tables\n\nDescriptive summary statistics tables\n\nlibrary(tidyverse)\nmtcars %&gt;% \n  select(mpg, wt, vs, cyl) %&gt;% \n  glimpse()\n\nRows: 32\nColumns: 4\n$ mpg &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8, …\n$ wt  &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.4…\n$ vs  &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, …\n$ cyl &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 8, …\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\n(N=11)\n6\n(N=7)\n8\n(N=14)\nOverall\n(N=32)\n\n\n\n\nmpg\n\n\n\n\n\n\nMean (SD)\n26.7 (4.51)\n19.7 (1.45)\n15.1 (2.56)\n20.1 (6.03)\n\n\nMedian [Min, Max]\n26.0 [21.4, 33.9]\n19.7 [17.8, 21.4]\n15.2 [10.4, 19.2]\n19.2 [10.4, 33.9]\n\n\nwt\n\n\n\n\n\n\nMean (SD)\n2.29 (0.570)\n3.12 (0.356)\n4.00 (0.759)\n3.22 (0.978)\n\n\nMedian [Min, Max]\n2.20 [1.51, 3.19]\n3.22 [2.62, 3.46]\n3.76 [3.17, 5.42]\n3.33 [1.51, 5.42]\n\n\nvs\n\n\n\n\n\n\n0\n1 (9.1%)\n3 (42.9%)\n14 (100%)\n18 (56.3%)\n\n\n1\n10 (90.9%)\n4 (57.1%)\n0 (0%)\n14 (43.8%)\n\n\n\n\n\n\n\n\n\n\nRegression results tables\n\ndf &lt;- mutate(mtcars, \n             cyl = as.factor(cyl))\nfit1 &lt;- lm(mpg ~ wt + vs + cyl, data = df)\nfit2 &lt;- lm(mpg ~ wt + cyl,  data = df)\n\n\n\n\n\n\n\n  \n    \n    \n      Characteristic\n      \n        fit1\n      \n      \n        fit2\n      \n    \n    \n      Beta\n      95% CI1\n      p-value\n      Beta\n      95% CI1\n      p-value\n    \n  \n  \n    wt\n-3.3\n-4.9, -1.7\n&lt;0.001\n-3.2\n-4.7, -1.7\n&lt;0.001\n    vs\n0.86\n-2.5, 4.2\n0.6\n\n\n\n    cyl\n\n\n\n\n\n\n        4\n—\n—\n\n—\n—\n\n        6\n-3.9\n-7.1, -0.67\n0.020\n-4.3\n-7.1, -1.4\n0.005\n        8\n-5.1\n-10, -0.10\n0.046\n-6.1\n-9.5, -2.7\n&lt;0.001\n  \n  \n  \n    \n      1 CI = Confidence Interval\n    \n  \n\n\n\n\n\n\nWhat statistics to present?\n\n\nThis depends on what you want to convey and your audience.\nThere are two key purposes of the table:\n\ndisplay information; and\ncommunicate information.\n\nIn general, tables tend to be about display of information and graphs are preferred for communication.\nHowever, if precision matters then tables can be better at communicating this than graphs.\n\n\n\n\n Descriptive summary statistics\n\n\nThe main goal is to give a numerical summary to give a “feel” of what the data contains. These generally should convey:\n\nvariables in the data,\nthe number of observations for each variable,\nmissing values (if any),\nthe distribution, e.g. in the form of five number of summaries or counts/percentages for categorical variables.\n\n\n\n\nFor numerical variables, you may have a correlation table which displays the correlation coefficients of every pair of variables. Because it is symmetrical, you can omit out the upper triangle.\n\n\n\n\n\n\nVariables\nMean\nSD\n1.\n2.\n\n\n\n\n1. Miles per gallon\n20.09\n6.03\n\n\n\n\n2. Weight\n3.22\n0.98\n-0.87\n\n\n\n3. Horsepower\n146.69\n68.56\n-0.78\n0.66\n\n\n\n\n\n\n\n\nYou may have cross-tabulations (also called contingency tables)\n\n\n\n\n\n\ncyl/gear\n3\n4\n5\nTotal\n\n\n\n\n4\n3.1% (1)\n25.0% (8)\n6.2% (2)\n34.4% (11)\n\n\n6\n6.2% (2)\n12.5% (4)\n3.1% (1)\n21.9% (7)\n\n\n8\n37.5% (12)\n0.0% (0)\n6.2% (2)\n43.8% (14)\n\n\nTotal\n46.9% (15)\n37.5% (12)\n15.6% (5)\n100.0% (32)\n\n\n\n\n\n\n\n\n\n Regression results\n\n\nOr more generally, the important numerical characteristics of your model. This may include:\n\nparameter estimates of your model,\nthe standard error or confidence/credible interval of your estimates,\nmodel fit quality, e.g. \\(R^2\\), AIC, BIC and so on.\n\nYou see often the inclusion of \\(p\\)-value, usually from the significance test of the corresponding variable and some indicate the significance level by the amount of *.\nIt is important to convey the uncertainty for the estimates or predictions from your model.\n\n\n\nThere is also what is called the ANOVA table that shows the variation according to different sources.\n\n\nglimpse(ToothGrowth)\n\nRows: 60\nColumns: 3\n$ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5,…\n$ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V…\n$ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, …\n\n\n\n\n\n\n\n\n\nDf\nSum Sq\nMean Sq\nF value\nPr(&gt;F)\n\n\n\n\nsupp\n1\n205.350\n205.35000\n15.571979\n0.0002312\n\n\nfactor(dose)\n2\n2426.434\n1213.21717\n91.999965\n0.0000000\n\n\nsupp:factor(dose)\n2\n108.319\n54.15950\n4.106991\n0.0218603\n\n\nResiduals\n54\n712.106\n13.18715"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-03.html#human-computer-interaction",
-    "href": "2023S2-etc5523/lecture-03.html#human-computer-interaction",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "Human Computer Interaction",
-    "text": "Human Computer Interaction\n\n\n\n\n\n\nOpen-ended dialogue between the user and the computer\n\n\n\n\n\nEnable audience to some degree co-author narrative, i.e. narratives moves away from being author-guided to audience-driven.\nLeverage user interaction techniques to improve user experience, e.g.\n\nShow details on demand\nReduce overall cognitive load\nPersonalised view"
+    "objectID": "2023S2-etc5523/lecture-05B.html#communication-considerations-for-tables",
+    "href": "2023S2-etc5523/lecture-05B.html#communication-considerations-for-tables",
+    "title": "Lecture 5B: Data tables",
+    "section": "Communication considerations for tables",
+    "text": "Communication considerations for tables\n\n Numerical precision\n\nSelect an appropriate precision for your goal and audience:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeight\n\n\n\nCar brand\n5 d.p.\n2 d.p.\n0 d.p.\n\n\n\n\nMazda RX4\n2.61937\n2.62\n3\n\n\nMazda RX4 Wag\n2.87518\n2.88\n3\n\n\nDatsun 710\n2.31916\n2.32\n2\n\n\nHornet 4 Drive\n3.21660\n3.21\n3\n\n\n\n\n\n\n\n\nDisplay trailing zeroes to match selected precision of the column:\n\n\n\n\n\n\n\n\n\n\n\nTrailing zeroes\n\n\n\nYes\nNo\n\n\n\n\n0.233\n0.233\n\n\n0.320\n0.32\n\n\n0.400\n0.4\n\n\n0.343\n0.343\n\n\n\n\n\n\n\n\nChange and display units as appropriate:\n\n\n\n\n\n\n\nCar brand\nWeight (lbs)\nWeight (1000 lbs)\nWeight (kg)\nWeight (g)\nWeight (mg)\n\n\n\n\nMazda RX4\n2620\n2.620\n1188\n1190000\n1,188,000,000\n\n\nMazda RX4 Wag\n2875\n2.875\n1304\n1300000\n1,304,000,000\n\n\nDatsun 710\n2320\n2.320\n1052\n1050000\n1,052,000,000\n\n\nHornet 4 Drive\n3215\n3.215\n1458\n1460000\n1,458,000,000\n\n\n\n\n\n\n\n\n\nShow comma every 3 digits (or other marks as needed). E.g. 1000000 is harder to read than 1,000,000.\n\n\nscales::comma(c(439024, 4900343), accuracy = 1000)\n\n[1] \"439,000\"   \"4,900,000\"\n\n\n\n\n Column  alignment \n\nSpanner labels are usually aligned in center.\nRight-align numbers\nLeft-align texts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCar brand\n\n\nHorsepower\n\n\n\nLeft\nCenter\nRight\nLeft\nCenter\nRight\n\n\n\n\nMazda RX4\nMazda RX4\nMazda RX4\n110\n110\n110\n\n\nMazda RX4 Wag\nMazda RX4 Wag\nMazda RX4 Wag\n110\n110\n110\n\n\nDatsun 710\nDatsun 710\nDatsun 710\n93\n93\n93\n\n\nHornet 4 Drive\nHornet 4 Drive\nHornet 4 Drive\n110\n110\n110\n\n\n\n\n\n\n\n\n\n\n Labels within tables\n\nIt is possibly obvious, but tables designed as final product (e.g. in report) should have polished labels\nFor columns, the unit may be written in the column header label\nYou shouldn’t label the unit within the table\n\n\n\n\n✅\n\n\n\n\n\n\n\n\n\n\n\nCar brand\nWeight\n(1000 lbs)\nDisplacement\n(cubic inches)\n\n\n\n\nMazda RX4\n2.620\n160\n\n\nMazda RX4 Wag\n2.875\n160\n\n\nDatsun 710\n2.320\n108\n\n\nHornet 4 Drive\n3.215\n258\n\n\nHornet Sportabout\n3.440\n360\n\n\nValiant\n3.460\n225\n\n\n\n\n\n\n\n\n\n\n❌\n\n\n\n\n\n\ncar\nwt\ndisp\n\n\n\n\nMazda RX4\n2620 lbs\n160 cubic inches\n\n\nMazda RX4 Wag\n2875 lbs\n160 cubic inches\n\n\nDatsun 710\n2320 lbs\n108 cubic inches\n\n\nHornet 4 Drive\n3215 lbs\n258 cubic inches\n\n\nHornet Sportabout\n3440 lbs\n360 cubic inches\n\n\nValiant\n3460 lbs\n225 cubic inches\n\n\n\n\n\n\n\n\n\n\n\n Texts accompanying tables\n\n\nBesides the contents of table, a table may be accompanied with: table header, caption, footnotes and/or source notes.\nThe conventions of how and what to write will depend on your audience and medium of report\nGenerally if you are communicating information, your caption should:\n\nsummarise the take-away message, in other words, why should the audience care about this table?\ngive context of the table (e.g. “\\(R_0 &gt; 1\\) means that the virus is more infectious”)"
   },
   {
-    "objectID": "2023S2-etc5523/lecture-03.html#user-interactions",
-    "href": "2023S2-etc5523/lecture-03.html#user-interactions",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "User Interactions",
-    "text": "User Interactions\n\n\nImage from Spencer (2022, Feb. 17). Data in Wonderland. Retrieved from https://ssp3nc3r.github.io/data_in_wonderland"
+    "objectID": "2023S2-etc5523/lecture-05B.html#making-tables-with-r",
+    "href": "2023S2-etc5523/lecture-05B.html#making-tables-with-r",
+    "title": "Lecture 5B: Data tables",
+    "section": "Making tables with R",
+    "text": "Making tables with R\n\n🏗️ How to make tables in R?\n\n\nThere are many packages that make table in R, including ones that wrangle the data for you to make specialised table output. E.g. knitr::kable, kableExtra, formattable, gt, DT, pander, xtable, stargazer.\nYou can read the documentation for each packages to make the table you want (I mainly use knitr::kable, kableExtra and DT).\nWhatever package you use, it’s important that you understand the output and how it works with the medium you are trying to display the table.\n\n\n\n\n Table in Markdown\n\n\nIn markdown file:\n\nFirst Header  | Second Header\n------------- | -------------\nContent Cell  | Content Cell\nContent Cell  | Content Cell\n\n\nPossible display:\n\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell\n\n\n\n\n\n\n\n Table in HTML & PDF\n\n\nHTML → Web browser\n&lt;table&gt;\n&lt;thead&gt;\n&lt;tr&gt;\n&lt;th&gt;First Header&lt;/th&gt; &lt;th&gt;Second Header&lt;/th&gt;\n&lt;/tr&gt;\n&lt;/thead&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td&gt;Content Cell&lt;/td&gt; &lt;td&gt;Content Cell&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;Content Cell&lt;/td&gt; &lt;td&gt;Content Cell&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n\n\nLaTeX → PDF\n\\begin{tabular}{cc}\n\\hline\nFirst Header & Second Header\\\\\n\\hline\nContent Cell & Content Cell\\\\\nContent Cell & Content Cell\\\\\n\\hline\n\\end{tabular}\n\n\n\nHTML is for HTML output\nLaTeX is for PDF output\nMost HTML elements do not work in LaTeX and vice versa.\n\n\n\nCase study: Building static tables by components with gt\n\n\n\nSource: https://gt.rstudio.com/\n\nlibrary(gt)\ndf &lt;- select(head(mtcars), wt, disp, cyl)\ngt(df) %&gt;% \n  tab_header(title = \"Motor Trend Car Road Tests\",\n             subtitle = \"Design and performance of 1973-74 automobile models\") %&gt;% \n  tab_source_note(md(\"Source: 1974 *Motor Trend* US magazine\")) %&gt;% \n  cols_label( \n    wt = html(\"Weight&lt;br&gt;(1000lbs)\"), \n    disp = html(\"Displacement&lt;br&gt; (inch&lt;sup&gt;3&lt;/sup&gt;)\"), \n    cyl = html(\"Number of&lt;br&gt;cylinders\") \n  ) \n\n\n\n\n\n  \n    \n      Motor Trend Car Road Tests\n    \n    \n      Design and performance of 1973-74 automobile models\n    \n    \n      Weight(1000lbs)\n      Displacement (inch3)\n      Number ofcylinders\n    \n  \n  \n    2.620\n160\n6\n    2.875\n160\n6\n    2.320\n108\n4\n    3.215\n258\n6\n    3.440\n360\n8\n    3.460\n225\n6\n  \n  \n    \n      Source: 1974 Motor Trend US magazine\n    \n  \n  \n\n\n\n\n\n\nCase study: interactive tables with DT\n\n\nDT::datatable(mtcars, options = list(pageLength = 4))\n\n\n\n\n\n\n\n\nDT::datatable works best for HTML documents.\nFor PDF documents, it takes a webshot of the HTML table and inserts it as an image.\nIt’s useful for data exploration where the main goal of the table is display of information rather than communication.\n\n\n\nWhen do you make tables over plots?\n\nWhen you want to show exact values or the accuracy of the values are important to convey.\nYou can combine plots with tables!\n\n\n\n Case study heatmap table with formattable\n\nlibrary(formattable)\nmtcars %&gt;% \n  select(mpg, disp, wt, hp) %&gt;% \n  cor() %&gt;% \n  as.data.frame() %&gt;% \n  rownames_to_column(\"Variables\") %&gt;% \n  formattable(list(area(col = 2:5) ~ color_tile(\"#F5B7B1\", \"#7DCEA0\")))\n\n\n\n\n\n\nVariables\n\n\nmpg\n\n\ndisp\n\n\nwt\n\n\nhp\n\n\n\n\n\n\nmpg\n\n\n1.0000000\n\n\n-0.8475514\n\n\n-0.8676594\n\n\n-0.7761684\n\n\n\n\ndisp\n\n\n-0.8475514\n\n\n1.0000000\n\n\n0.8879799\n\n\n0.7909486\n\n\n\n\nwt\n\n\n-0.8676594\n\n\n0.8879799\n\n\n1.0000000\n\n\n0.6587479\n\n\n\n\nhp\n\n\n-0.7761684\n\n\n0.7909486\n\n\n0.6587479\n\n\n1.0000000\n\n\n\n\n\n\n\n\n\n Case study: inline plots with sparkline\n\nSparkline refers to a small chart drawn without axes or coordinates.\nThis will be out of scope for this unit."
   },
   {
-    "objectID": "2023S2-etc5523/lecture-03.html#user-inputs",
-    "href": "2023S2-etc5523/lecture-03.html#user-inputs",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "User Inputs",
-    "text": "User Inputs\n\n\nImage from Spencer (2022, Feb. 17). Data in Wonderland. Retrieved from https://ssp3nc3r.github.io/data_in_wonderland"
-  },
-  {
-    "objectID": "2023S2-etc5523/lecture-03.html#criteria-for-the-design-of-interactive-data-visualisation",
-    "href": "2023S2-etc5523/lecture-03.html#criteria-for-the-design-of-interactive-data-visualisation",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "Criteria for the Design of Interactive Data Visualisation",
-    "text": "Criteria for the Design of Interactive Data Visualisation\nTominski, Christian, and Heidrun Schumann (2020) Interactive Visual Data Analysis. CRC Press.\n\nQuality criteria\n\n\n\n\n\n\n\nExpressiveness (Mandatory Condition)\n\n\n\nAn interactive visual representation is expressive if it allows the user to carry out the actions needed to acquire the desired information in the data.\n\n\n\n\n\n\n\n\n\n\nEffectiveness (Goal-Oriented Condition)\n\n\n\nA measure of how well the user can convey an interaction intent to the computer.\n\n\n\n\n\n\n\n\n\n\nEfficiency (Desired Condition)\n\n\n\nThe balance of benefits and costs for using an interactive visualisation approach. E.g. does the human effort of building the interactive visualisation outweigh its benefits? Are the efforts of users to interact with it offset the information gained for users?\n\n\n\n\n\nGoals\n\n\nExploration promotes undirected search\nDescription characterises observations by associated data elements\nExplanation identifies contributing causes behind an observation\nConfirmation find concrete evidences for or against a hypothesis\nPresentation communicates results of a confirmed analysis\n\n\n\nExample: Global Temperature\n\nhttps://climate.nasa.gov/vital-signs/global-temperature/\n\n\nExample: How you will die\n\nhttps://flowingdata.com/2016/01/19/how-you-will-die/"
-  },
-  {
-    "objectID": "2023S2-etc5523/lecture-03.html#what-is-shiny",
-    "href": "2023S2-etc5523/lecture-03.html#what-is-shiny",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "What is shiny?",
-    "text": "What is shiny?\n Demo App\n\nHow to get started with shiny?\n\n\nRStudio &gt; File &gt; New File &gt; Shiny Web App…\nUsing snippet: Type shinyapp and Shift + Tab\n\n\n\n\nUser Interface\n\nWriting HTML from R\n\nlibrary(shiny) # exported from `htmltools`\ntags$html(\n  tags$body(\n    h1('My first heading'),\n    p('My first paragraph, with some ', strong('bold'), ' text.'),\n    div(id = 'myDiv', class = 'simpleDiv',\n        'Here is a div with some attributes.')\n  )\n)\n\n\n\nMy first heading\n\nMy first paragraph, with some \nbold\n text.\n\nHere is a div with some attributes.\n\n\n\n\n&lt;html&gt;\n  &lt;body&gt;\n    &lt;h1&gt;My first heading&lt;/h1&gt;\n    &lt;p&gt;\n      My first paragraph, with some \n      &lt;strong&gt;bold&lt;/strong&gt;\n       text.\n    &lt;/p&gt;\n    &lt;div id=\"myDiv\" class=\"simpleDiv\"&gt;Here is a div with some attributes.&lt;/div&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n\nUse includeCSS() and includeScript() to include CSS and JS files\n\n\n\nHTML Inputs\n\n\n\nactionButton(\"id1\", \"Push\")\n\nPush\n\n\n\n\n\nactionLink(\"id2\", \"Link\")\n\nLink\n\n\n\n\n\n\ncheckboxGroupInput(\"id3\", \"Select\", \n                   choices = c(\"Mon\", \"Tue\", \"Wed\"),\n                   selected = \"Mon\")\n\n\nSelect\n\n\n\n\nMon\n\n\n\n\n\nTue\n\n\n\n\n\nWed\n\n\n\n\n\n\n\n\n\n\ncheckboxInput(\"id4\", \"I accept\")\n\n\n\n\n\nI accept\n\n\n\n\n\n\n\n\n\nfileInput(\"id5\", \"Upload file\")\n\n\nUpload file\n\n\n\nBrowse...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnumericInput(\"id6\", \"Enter number\", \n             value = 1, min = 1, max = 10, step = 1)\n\n\nEnter number\n\n\n\n\n\n\n\n\nradioButtons(\"id7\", \"Select one\", \n             choices = c(\"Pizza\", \"Dumplings\", \"Sushi\"))\n\n\nSelect one\n\n\n\n\nPizza\n\n\n\n\n\nDumplings\n\n\n\n\n\nSushi\n\n\n\n\n\n\n\n\n\n\npasswordInput(\"id8\", \"Enter password\")\n\n\nEnter password\n\n\n\n\n\n\n\n\ntextInput(\"id9\", \"Enter text\", value = \"Enter coments here\")\n\n\nEnter text\n\n\n\n\n\n\n\n\nNote: calendar date picker pop up doesn’t show up here.\n\ndateInput(\"id10\", \"Select day\")\n\n\nSelect day\n\n\n\ndateRangeInput(\"id11\", \"Select days\")\n\n\nSelect days\n\n\n\n to \n\n\n\n\n\n\n\n\n\n\nselectInput(\"id12\", \"Select a drink\", choices = c(\"Tea\", \"Coffee\"))\n\n\nSelect a drink\n\nTea\nCoffee\n\n\n\n\n\n\n\n\n\nsliderInput(\"id13\", \"How many?\", min = 0, max = 10, value = 0)\n\n\nHow many?\n\n\n\n\n\n\n\n\nLayouts\n\nfluidRow + columns\nThis is using bootstrap\nfluidPage(\n  fluidRow(column(width = 4,\n                  h3(\"Some informative table\"),\n                  tableOutput(\"mytable\")),\n           column(width = 4, offset = 3,\n                  h3(\"Fancy plot\"),\n                  plotOutput(\"myplot\"))),\n  fluidRow(column(width = 12, \n                  \"Minimum width is 1 and maximum width is 12\"))\n)\n&lt;div class=\"container-fluid\"&gt;\n  &lt;div class=\"row\"&gt;\n    &lt;div class=\"col-sm-4\"&gt;\n      &lt;h3&gt;Some informative table&lt;/h3&gt;\n      &lt;div id=\"mytable\" class=\"shiny-html-output\"&gt;&lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"col-sm-4 offset-md-3 col-sm-offset-3\"&gt;\n      &lt;h3&gt;Fancy plot&lt;/h3&gt;\n      &lt;div id=\"myplot\" class=\"shiny-plot-output\" style=\"width:100%;height:400px;\"&gt;&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=\"row\"&gt;\n    &lt;div class=\"col-sm-12\"&gt;Minimum width is 1 and maximum width is 12&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n\nsidebarLayout\nfluidPage(sidebarLayout(\n  sidebarPanel(h3(\"User control\"),\n               actionButton(\"id1\", \"Push\")),\n  mainPanel(h3(\"Main Panel\"),\n            plotOutput(\"myplot\"))\n))\n&lt;div class=\"container-fluid\"&gt;\n  &lt;div class=\"row\"&gt;\n    &lt;div class=\"col-sm-4\"&gt;\n      &lt;form class=\"well\" role=\"complementary\"&gt;\n        &lt;h3&gt;User control&lt;/h3&gt;\n        &lt;button id=\"id1\" type=\"button\" class=\"btn btn-default action-button\"&gt;Push&lt;/button&gt;\n      &lt;/form&gt;\n    &lt;/div&gt;\n    &lt;div class=\"col-sm-8\" role=\"main\"&gt;\n      &lt;h3&gt;Main Panel&lt;/h3&gt;\n      &lt;div id=\"myplot\" class=\"shiny-plot-output\" style=\"width:100%;height:400px;\"&gt;&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n\n\nServer & Client Communication\n Demo App\n\n\n\nServer and User Interface Outputs\n\n\n\nserver\nui\n\n\n\n\nrenderDataTable\ndataTableOutput\n\n\nrenderImage\nimageOutput\n\n\nrenderPlot\nplotOutput\n\n\nrenderPrint\nverbatimTextOutput\n\n\nrenderTable\ntableOutput\n\n\nrenderText\ntextOutput\n\n\nrenderUI\nuiOutput or htmlOutput\n\n\n\n\n\nReactivity\n\nreactiveValues creates your own reactive values\nisolate prevents reactions\nreactive caches its value to reduce computation and notifies its dependencies when it has been invalidated\nobserveEvent runs code when the first argument changes\nobserve runs code when any reactive elements within it changes"
-  },
-  {
-    "objectID": "2023S2-etc5523/lecture-03.html#debugging",
-    "href": "2023S2-etc5523/lecture-03.html#debugging",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "Debugging",
-    "text": "Debugging\n\nbrowser() + breaking points"
-  },
-  {
-    "objectID": "2023S2-etc5523/lecture-03.html#how-to-deploy-your-shiny-app",
-    "href": "2023S2-etc5523/lecture-03.html#how-to-deploy-your-shiny-app",
-    "title": "Lecture 3: Communicating data with interactive web apps",
-    "section": "How to deploy your Shiny app?",
-    "text": "How to deploy your Shiny app?\nshinyapps.io\n\n\n\n\n\n\nSummary\n\n\n\n\nWe went through the benefits of interactivity for communicating data\nWe considered how to design displays for web apps\nYou learnt how to use make web apps using shiny\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\n\nHohman, et al., “Communicating with Interactive Articles”, Distill, 2020.\nIntroduction to Shiny Tutorials Course Mastering Shiny\nDebugging Shiny Techniques Article\nCheatsheet for Shiny Cheatsheet"
+    "objectID": "2023S2-etc5523/lecture-05B.html#week-5b-lesson",
+    "href": "2023S2-etc5523/lecture-05B.html#week-5b-lesson",
+    "title": "Lecture 5B: Data tables",
+    "section": "Week 5B Lesson",
+    "text": "Week 5B Lesson\n\n\n\n\n\n\nSummary\n\n\n\n\nYou saw various common tables that present information and the motivation behind it\nWe went through some guidelines for best way to communicate with tables\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nkableExtra documentation\nIntroduction to Creating gt Tables\nDT documentation\ngtsummary for summary tables\nmodelsummary for regression tables"
   },
   {
     "objectID": "2023S2-etc5523/lecture-07.html",
@@ -677,6 +1083,55 @@
     "title": "Lecture 7: Captivating statistical presentations",
     "section": "Week 7 Lesson",
     "text": "Week 7 Lesson\n\n\n\n\n\n\nResources\n\n\n\nNote: the books below are freely available online via Monash Library.\n\nBetter Presentations: A Guide for Scholars, Researchers, and Wonks by Jonathan Schwabish\nThe Craft of Scientific Presentations by Michael Alley\nslide:ology by Nancy Duarte*\n\nNote: the book below is not available on Monash library.\n\nPresentation zen: simple idea on presentation design and delivery by Garr Reynolds*\n\n* These books are made more for corporate presentations and some advice are not suitable for technical presentations."
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html",
+    "href": "2023S2-etc5523/lecture-09.html",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "",
+    "text": ":::"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html#aim",
+    "href": "2023S2-etc5523/lecture-09.html#aim",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "",
+    "text": "Aim\n\n\n\n\nDocument your functions\nCreate vignettes for your package\nImplement testing framework for your package\nDistribute your package\n\n\n\n\n\n\n\n\n\nWhy\n\n\n\n\nDocumentation informs users of how to use your package\nAdopting best practice development workflow will make package development easier\nTesting can increase the trust worthiness of the package\nDistributing your package is needed for adoption of your package by others"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html#demo-r-package-praise.me",
+    "href": "2023S2-etc5523/lecture-09.html#demo-r-package-praise.me",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "Demo R Package  praise.me",
+    "text": "Demo R Package  praise.me\n\nCommunicating about your R package\n\nWhat is the goal of the package?\nWhat does your function(s) do?\nHow do we use it?\nWhy should we use it?\nWhere do we find and install it?\n\n\n\npraise.me package\n\n\n\n\n\n\n The goal of the praise.me package is to give you or someone else a random word of praise.\n\n\n\n\nlibrary(praise.me)\npraise_me()\n\nYou are fantastic!\n\npraise_me()\n\nYou are fantastic!\n\npraise_someone(\"Patrick\")\n\nPatrick is brilliant!\n\npraise_someone(\"Harriet\")\n\nHarriet is astonishing!\n\n\n\n\npraise_me() function\n\npraise_me &lt;- function() {\n  praises &lt;- c(\n    \"exceptional\",\n    \"remarkable\",\n    \"extraordinary\",\n    \"delightful\",\n    \"wonderful\",\n    \"fantastic\",\n    \"phenomenal\",\n    \"brilliant\",\n    \"astonishing\",\n    \"splendid\"\n  )\n  affirmation &lt;- sample(praises, 1)\n  paste0(\"You are \", affirmation, \"!\")\n}\n\n\npraise_me()\n\n[1] \"You are astonishing!\"\n\n\n\n\npraise_someone() function\n\npraise_someone &lt;- function(who = NULL) {\n  praises &lt;- c(\n    \"exceptional\",\n    \"remarkable\",\n    \"extraordinary\",\n    \"delightful\",\n    \"wonderful\",\n    \"fantastic\",\n    \"phenomenal\",\n    \"brilliant\",\n    \"astonishing\",\n    \"splendid\"\n  )\n  affirmation &lt;- sample(praises, 1)\n  ifelse(is.null(who),\n    paste0(tools::toTitleCase(affirmation), \"!\"),\n    paste0(who, \" is \", affirmation, \"!\")\n  )\n}\n\n\npraise_someone()\n\n[1] \"Astonishing!\"\n\npraise_someone(\"Patrick\")\n\n[1] \"Patrick is wonderful!\"\n\n\n\n\nReduce repetition\n\n\ndata-raw/praises.R\n\npraises &lt;- data.frame(words = c(\n  \"exceptional\",\n  \"remarkable\",\n  \"extraordinary\",\n  \"delightful\",\n  \"wonderful\",\n  \"fantastic\",\n  \"phenomenal\",\n  \"brilliant\",\n  \"astonishing\",\n  \"splendid\"\n))\n\nusethis::use_data(praises, overwrite = TRUE)\n\nOr put code for praises in a file under R/ if not using as exported data.\n\n\nR/praise.R\n\n#' @export\npraise_me &lt;- function() {\n  affirmation &lt;- sample(praises$words, 1)\n  paste0(\"You are \", affirmation, \"!\")\n}\n\n#' @export\npraise_someone &lt;- function(who = NULL) {\n  affirmation &lt;- sample(praises$words, 1)\n  ifelse(is.null(who),\n    paste0(tools::toTitleCase(affirmation), \"!\"),\n    paste0(who, \" is \", affirmation, \"!\")\n  )\n}\n\n\n\n\n\nCustom print method\n\npraise_me()\n\n[1] \"You are extraordinary!\"\n\n\n\nprint is an S3 method and above is actually using print.default()\n\n\nprint\n\nfunction (x, ...) \nUseMethod(\"print\")\n&lt;bytecode: 0x00000117101f1940&gt;\n&lt;environment: namespace:base&gt;\n\n\n\nCustom print method for class praise:\n\n\n#' @export\nprint.praise &lt;- function(x, ...) {\n  cat(x, ...)\n}\n\n\n\nInternal functions to reduce repetition\nR/praise.R\n\n#' @export\npraise_me &lt;- function() {\n  affirmation &lt;- sample(praises$words, 1)\n  out &lt;- paste0(\"You are \", affirmation, \"!\")\n  praise_now(out)\n}\n\n#' @export\npraise_someone &lt;- function(who = NULL) {\n  affirmation &lt;- sample(praises$words, 1)\n  out &lt;- ifelse(is.null(who),\n    paste0(tools::toTitleCase(affirmation), \"!\"),\n    paste0(who, \" is \", affirmation, \"!\")\n  )\n  praise_now(out)\n}\n\npraise_now &lt;- function(praise) {\n  structure(praise, class = c(\"praise\", \"character\"))\n}\n\n#' @export\nprint.praise &lt;- function(x, ...) {\n  cat(x, ...)\n}\n\n\n\nComparison with new print\n\n\nOld\n\npraise_me()\n\n\n\n[1] \"You are astonishing!\"\n\n\n\npraise_someone()\n\n\n\n[1] \"Remarkable!\"\n\n\n\n\nNew\n\npraise_me()\n\nYou are phenomenal!\n\npraise_someone()\n\nExceptional!\n\n\n\n\n\nNote: the return object is still a character so you can store the object.\n\n\n\nx &lt;- cat(\"Hello\")\n\nHello\n\n\n\n\nx\n\nNULL\n\n\n\n\n\n\nx &lt;- praise_now(\"Hello\")\nx\n\nHello\n\n\n\n\n\n\nUsing pipe operator in your package\n\nTo add the %&gt;% operator in your package, you can import the magrittr package (used to import pipe operator in all tidyverse packages).\nAdd all essential elements automatically with:\n\n\nusethis::use_pipe()"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html#documentation",
+    "href": "2023S2-etc5523/lecture-09.html#documentation",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "Documentation",
+    "text": "Documentation\n\nDocumenting R functions with roxygen2\n\nuse #' above a function to write documentation for that function\nroxygen2 uses @ tags to structure documentation, e.g.\n\nany text after @description is the description\nany text after @param describes the arguments of the function\n@export signals that it is an exported function\nany text after @return describes the return object\nthe full list of Rd tags are found here\n\ndevtools::document() converts the Rd tags to appropriate sections of .Rd files written in the man/ folder\n\n\n\nDocumenting praise.me package\nR/praise.R\n\n#' Praises you or someone\n#'\n#' @description\n#' Praises you or someone with a random word.\n#'\n#' @param who A character of who to praise.\n#'\n#' @return An object of class `praise` and `character`.\n#'\n#' @examples\n#' praise_me()\n#' praise_someone()\n#' praise_someone(\"Joanna\")\n#'\n#' @export\npraise_me &lt;- function() {\n  affirmation &lt;- sample(praises$words, 1)\n  out &lt;- paste0(\"You are \", affirmation, \"!\")\n  praise_now(out)\n}\n\n#' @rdname praise_me\n#' @export\npraise_someone &lt;- function(who = NULL) {\n  affirmation &lt;- sample(praises$words, 1)\n  out &lt;- ifelse(is.null(who),\n    paste0(tools::toTitleCase(affirmation), \"!\"),\n    paste0(who, \" is \", affirmation, \"!\")\n  )\n  praise_now(out)\n}\n\npraise_now &lt;- function(praise) {\n  structure(praise, class = c(\"praise\", \"character\"))\n}\n\n#' @export\nprint.praise &lt;- function(x, ...) {\n  cat(x, ...)\n}\n\n\n\nDocumenting data\n\nusethis::use_data_raw() to store R code to process raw data,\nusethis::use_data() to save a binary file in data/ directory,\nThe data is named praises.\nDocumentation is contained in data.R or name-of-data.R\n\nR/data.R\n\n#' A list of praises\n#'\n#'\n#' @format A data frame with a single column.\n#' \\describe{\n#'   \\item{words}{A list of praises.}\n#' }\n#' @source \\url{https://www.vocabulary.com/lists/5167}\n\"praises\"\n\n\n\nMake package documentation\n\nAdd documentation of the “big picture” of your package\n\n\nusethis::use_package_doc()\n\n\nAbove creates the file below\n\nR/praise.me-package.R\n\n#' @keywords internal\n\"_PACKAGE\"\n\n## usethis namespace: start\n## usethis namespace: end\nNULL\n\n\nDefault package documentation is built from your DESCRIPTION file\n\n\nlibrary(praise.me)\n?praise.me\n\n\n\nVignette: a long-form documentation\n\nSome documentation doesn’t fit as a package or function documentation.\nYou may want to built a vignette (article) for these cases.\n\n\nusethis::use_vignette(name = \"my-amazing-package\", \n                      title = \"My amazing package\")\n\n\nEdit the created Rmd file\nKnit the vignette to see what it looks like\nUse devtools::build() to build package with vignettes included"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html#dependencies",
+    "href": "2023S2-etc5523/lecture-09.html#dependencies",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "Dependencies",
+    "text": "Dependencies\n\nAdding dependencies\n\nDependencies are specified in DESCRIPTION file under three categories:\n\nDepends: Specify the version of R that the package will work with or package that it is dependent on (e.g. for ggplot2 extension packages, it depends on ggplot2).\nImports: External packages that are imported to use in your package. Most external packages are in this category.\nSuggests: Packages that are not strictly needed but are nice to have, i.e. you use them in examples or vignettes.\n\nYou can add easily add this via usethis::use_package()\n\n\n\nImporting cowsay\n\ncowsay::say(\"Hello\", by = \"cow\")\n\n\n ----- \nHello \n ------ \n    \\   ^__^ \n     \\  (oo)\\ ________ \n        (__)\\         )\\ /\\ \n             ||------w|\n             ||      ||\n\n\n\nusethis::use_package(\"cowsay\", type = \"Imports\") # default is Imports\n\nThis adds a line in the DESCRIPTION file:\n\nImports: \n    cowsay\n\n\n\nUsing imported packages\n\nRefer to it with pkg::fun().\n\n\n#' Praises you or someone\n#'\n#' @description\n#' Praises you or someone with a random word.\n#'\n#' @param who A character of who to praise.\n#' @param by A character to say the praise. See the full\n#'   list of character by `list_character()`.\n#'\n#' @return An object of class `cheer`, which is\n#'   just a character with special print method.\n#'\n#' @examples\n#' praise_me()\n#' praise_me(by = \"cow\")\n#' praise_someone()\n#' praise_someone(\"Joanna\", by = \"cat\")\n#'\n#' @export\npraise_me &lt;- function(by = NULL) {\n  affirmation &lt;- sample(praises$words, 1)\n  praise_text &lt;- paste0(\"You are \", affirmation, \"!\")\n  praise_now(praise_text, by = by)\n}\n\n#' @rdname praise_me\n#' @export\npraise_someone &lt;- function(who = NULL, by = NULL) {\n  affirmation &lt;- sample(praises$words, 1)\n  praise_text &lt;- ifelse(is.null(who),\n    paste0(tools::toTitleCase(affirmation), \"!\"),\n    paste0(who, \" is \", affirmation, \"!\")\n  )\n  praise_now(praise_text, by = by)\n}\n\npraise_now &lt;- function(praise, by = NULL) {\n  if (is.null(by)) {\n    out &lt;- praise\n  } else {\n    out &lt;- cowsay::say(praise, by = by, type = \"string\")\n  }\n  structure(out, class = c(\"praise\", \"character\"))\n}\n\n#' @export\nprint.praise &lt;- function(x, ...) {\n  cat(x, ...)\n}\n\n\n\nUsing imported packages\n\nUse #' @importFrom pkg fun to drop the pkg::.\nUse #' @import pkg to import all functions in pkg(not recommended).\n\n\n#' @importFrom cowsay say\npraise_now &lt;- function(praise, by = NULL) {\n  if (is.null(by)) {\n    out &lt;- praise\n  } else {\n    out &lt;- say(praise, by = by, type = \"string\")\n  }\n  structure(out, class = c(\"praise\", \"character\"))\n}"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html#unit-tests",
+    "href": "2023S2-etc5523/lecture-09.html#unit-tests",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "Unit Tests",
+    "text": "Unit Tests\n\nTesting\n\nWhen we check a function works in the console, we are informally testing the function.\nWe can formalise and automate this process using unit tests.\nThis checks your assumptions - does your code do what you think it does?\nEnsure code works as intended as you develop the package.\n\n\n\nUnit testing with testthat\n\nTo create a file for testing for the active R file:\n\n\nusethis::use_test() \n\n\nThis creates a file test-active-filename.R in tests/testthat/ directory\n\n\npraise.me\n|- R\n|  |- praise.R\n|- tests\n|  |- testthat\n|     |- test-praise.R\n|- ...\n\n\n\nWriting tests with testthat\ntests/testthat/test-praise.R\n\ntest_that(\"praise works\", {\n  library(stringr)\n  expect_true(str_detect(praise_me(), \"^You are [a-z]+!$\"))\n  expect_true(str_detect(praise_someone(), \"^[A-Z][a-z]+!$\"))\n  expect_true(str_detect(\n    praise_someone(who = \"Emi\"),\n    \"^Emi is [a-z]+!$\"\n  ))\n})\n\nTest as you make changes to code:\n\ndevtools::test_active_file() \ndevtools::test() # to test whole package"
+  },
+  {
+    "objectID": "2023S2-etc5523/lecture-09.html#sharing",
+    "href": "2023S2-etc5523/lecture-09.html#sharing",
+    "title": "Lecture 9: Stylishly communicating with code",
+    "section": "Sharing",
+    "text": "Sharing\n\nShare and collaborate on your package\n\nTrack changes to your code with Git\n\n\nusethis::use_git()\n\n\nCollaborate with others via GitHub (or otherwise)\n\n\nusethis::use_github()\n\nor for existing repo, run from the terminal:\n\ngit remote add origin https://github.com/user/repo.git\n\n\nYou can install your R package now using:\n\n\ndevtools::install_github(\"user/repo\")\n\n\n\nInstalling praise.me package\n#| eval: false\n#| code-line-numbers: false\ndevtools::install_github(\"emitanaka/praise.me\")\n\nThe package is found at https://github.com/emitanaka/praise.me.\nIt’s a good idea to add a README file with installation instructions – this is displayed in the GitHub repo.\nYou can create a README.Rmd file with\n\n\nusethis::use_readme_rmd() \n# OR usethis::use_readme_md() if you have no code\n\n\nMake sure you knit the README.Rmd when you modify its contents.\n\n\n\nPackage documentation website with pkgdown\n\nAutomatically turns all package documentation into a website.\nDocumentation can now be easily viewable outside of R.\nEasy to customise appearance of the site using YAML\n\n\n\n\n\nUsing pkgdown\n\nusethis::use_pkgdown()\n\n\nBuild site locally with pkgdown::build_site()\nSite appearance is modified in the _pkgdown.yml file\n\nbootswatch themes for the appearance of the whole site\norganising function / vignette documentation with reference\n\nSee the vignette for more details\nAutomatically build and deploy your site with GitHub actions\n\n\nusethis::use_pkgdown_github_pages() # if using this, no need for usethis::use_pkgdown()\n\n\n\nThe whole package development workflow\n\navailable::available(\"pkgname\") # check if package name is available (if planning to publish publicly)\nusethis::create_package(\"pkgname\")\nusethis::use_git() # set up version control\nusethis::use_github() # optional\nusethis::use_r(\"myfile\")\n# write some functions in a script\nusethis::use_data_raw() # if adding data\ndevtools::load_all() # try it out in the console\nusethis::use_package(\"import-pkgname\") # add package to import (or depends or suggests)\nusethis::use_package_doc() # add package documentation\nusethis::use_pipe() # if you want to add %&gt;% from `magrittr`\nusethis::use_vignette(\"vignette-name\") # add vignette\nusethis::use_test() # make test file for active R file\n# write some test\ndevtools::test_active_file() # test active file\ndevtools::test() # test whole package\ndevtools::build() # build vignettes\ndevtools::install() # to install package\ndevtools::check() # to build and check a package \nusethis::use_readme_rmd() # to add a README Rmd file\nstyler::style_pkg() # optional (commit first, then review changes carefully)\nusethis::use_pkgdown_github_pages() # for setting up pkgdown website on github\n# `usethis::use_pkgdown()` if not using github pages\n\n\n\n\n\n\n\nSummary\n\n\n\n\n\nPackage documentation is important to let others know about the goal of the package, what your function does, and how to use your package.\nSharing your package by making it easy to install, implementing unit tests, commiting to good documentation, and making the documentation accessible helps to build trust to use your package.\nYou can make package development and distribution easy with usethis, devtools, roxygen2, testthat and pkgdown.\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\ntestthat reference\nroxygen2 documentation tags\nCustomising your pkgdown site"
   },
   {
     "objectID": "about.html",

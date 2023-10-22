@@ -31,6 +31,28 @@ knitr::opts_chunk$set(
 )
 ```
 
+## {#aim background="white"}
+
+::: {.callout-important }
+
+## Aim
+
+* Understand the make up of web documents, i.e. HTML, CSS and JS
+* Write basic HTML and CSS with valid syntax
+* Use CSS selectors to apply new styles 
+* Integrate CSS and JS to R markdown documents with HTML output
+
+:::
+
+::: {.callout-tip }
+
+## Why
+
+* Basic web development skills are necessary for customising HTML documents
+* This hard skill will be necessary later for when you are communicating with web documents and web apps
+
+:::
+
 ## 🌐 World Wide Web (WWW)
 
 -   WWW (or the **Web**) is the information system where documents (web pages) are identified by Uniform Resource Locators (**URL**s)

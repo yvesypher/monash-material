@@ -96,10 +96,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../assets/all.css">
-<link rel="stylesheet" href="../assets/monash.scss">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -139,12 +139,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Lecture 4: Data storytelling on the web</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05A.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5A: Statistical model outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05B.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5B: Data tables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-06.html" rel="" target="">
+ <span class="dropdown-text">Lecture 6: Effective data visualisation</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../2023S2-etc5523/lecture-07.html" rel="" target="">
  <span class="dropdown-text">Lecture 7: Captivating statistical presentations</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../2023S2-etc5523/lecture-08.html" rel="" target="">
  <span class="dropdown-text">Lecture 8: Clearly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-09.html" rel="" target="">
+ <span class="dropdown-text">Lecture 9: Stylishly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-10.html" rel="" target="">
+ <span class="dropdown-text">Lecture 10: Narrative</span></a>
   </li>  
     </ul>
   </li>
@@ -206,6 +226,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05A.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5A: Statistical model outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5B: Data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Effective data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../2023S2-etc5523/lecture-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 7: Captivating statistical presentations</span></a>
   </div>
@@ -214,6 +252,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../2023S2-etc5523/lecture-08.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 8: Clearly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Stylishly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Narrative</span></a>
   </div>
 </li>
       </ul>
@@ -228,7 +278,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#communicating" id="toc-communicating" class="nav-link active" data-scroll-target="#communicating">Communicating</a></li>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim"></a></li>
+  <li><a href="#communicating" id="toc-communicating" class="nav-link" data-scroll-target="#communicating">Communicating</a></li>
   <li><a href="#communicating-with-data" id="toc-communicating-with-data" class="nav-link" data-scroll-target="#communicating-with-data">Communicating <span class="monash-blue">with data</span></a></li>
   <li><a href="#the-basics-of-communication-theory" id="toc-the-basics-of-communication-theory" class="nav-link" data-scroll-target="#the-basics-of-communication-theory">The Basics of <span class="monash-blue">Communication Theory</span></a>
   <ul class="collapse">
@@ -242,9 +293,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#rhetorical-triangle" id="toc-rhetorical-triangle" class="nav-link" data-scroll-target="#rhetorical-triangle">Rhetorical Triangle</a></li>
   <li><a href="#rhetorical-situation" id="toc-rhetorical-situation" class="nav-link" data-scroll-target="#rhetorical-situation">Rhetorical Situation</a></li>
-  </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a>
-  <ul class="collapse">
   <li><a href="#hans-rosling" id="toc-hans-rosling" class="nav-link" data-scroll-target="#hans-rosling">Hans Rosling</a></li>
   </ul></li>
   <li><a href="#communicating-your-problem" id="toc-communicating-your-problem" class="nav-link" data-scroll-target="#communicating-your-problem">Communicating <em>your problem</em></a>
@@ -279,6 +327,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="aim" class="level2">
+<h2 class="anchored" data-anchor-id="aim"></h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aim
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Basic communication theory and its relevancy with communicating with data</li>
+<li>Demonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring</li>
+<li>Identify and apply rhetorical elements to improve data storytelling</li>
+<li>Clearly articulate and express technical problems for others to help you</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Effective communication with data is a blend of hard and soft skills</li>
+<li>You need the hard skills to process and understand the data</li>
+<li>But you also need the soft skills to get the message across to others</li>
+</ul>
+</div>
+</div>
+</section>
 <section id="communicating" class="level2">
 <h2 class="anchored" data-anchor-id="communicating">Communicating</h2>
 <div class="blockquote">
@@ -435,10 +521,6 @@ Tutorial
 <div class="floating circle" style="top:13%;left:84%;animation-delay:-4.2s;">
 <p>Context</p>
 </div>
-</section>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
 <div class="blockquote">
 <p>No one ever made a decision because of a number. They need a story.</p>
 <p><span class="fr">– Daniel Kahneman</span></p>
@@ -447,6 +529,7 @@ Tutorial
 <p>Maybe stories are just data with a soul.</p>
 <p><span class="fr">– Brene Brown</span></p>
 </div>
+</section>
 <section id="hans-rosling" class="level3">
 <h3 class="anchored" data-anchor-id="hans-rosling">Hans Rosling</h3>
 <iframe height="80%" width="100%" src="https://www.youtube.com/embed/hVimVzgtD6w?start=148" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -626,22 +709,85 @@ Tutorial
  pandoc   3.1.1 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
- codetools     0.2-19  2023-02-01 [2] CRAN (R 4.3.1)
- digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
- evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.1)
- fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
- htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
- htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.0)
- jsonlite      1.8.7   2023-06-29 [1] CRAN (R 4.3.1)
- knitr         1.44    2023-09-11 [1] CRAN (R 4.3.1)
- rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.1)
- rmarkdown     2.25    2023-09-18 [1] CRAN (R 4.3.1)
- rstudioapi    0.15.0  2023-07-07 [1] CRAN (R 4.3.1)
- sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
- xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)
- yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
+ package     * version    date (UTC) lib source
+ cli           3.6.1      2023-03-23 [1] CRAN (R 4.3.0)
+ codetools     0.2-19     2023-02-01 [2] CRAN (R 4.3.1)
+ colorspace  * 2.1-0      2023-01-23 [1] CRAN (R 4.3.0)
+ crayon        1.5.2      2022-09-29 [1] CRAN (R 4.3.0)
+ data.table    1.14.8     2023-02-17 [1] CRAN (R 4.3.0)
+ digest        0.6.31     2022-12-11 [1] CRAN (R 4.3.0)
+ dplyr       * 1.1.2      2023-04-20 [1] CRAN (R 4.3.0)
+ ellipsis      0.3.2      2021-04-29 [1] CRAN (R 4.3.0)
+ evaluate      0.21       2023-05-05 [1] CRAN (R 4.3.1)
+ fansi         1.0.4      2023-01-22 [1] CRAN (R 4.3.0)
+ farver        2.1.1      2022-07-06 [1] CRAN (R 4.3.0)
+ fastmap       1.1.1      2023-02-24 [1] CRAN (R 4.3.0)
+ forcats     * 1.0.0      2023-01-29 [1] CRAN (R 4.3.0)
+ formattable * 0.2.1      2021-01-07 [1] CRAN (R 4.3.1)
+ generics      0.1.3      2022-07-05 [1] CRAN (R 4.3.0)
+ gganimate   * 1.0.8      2022-09-08 [1] CRAN (R 4.3.1)
+ ggplot2     * 3.4.3      2023-08-14 [1] CRAN (R 4.3.1)
+ glue          1.6.2      2022-02-24 [1] CRAN (R 4.3.0)
+ gt          * 0.9.0      2023-03-31 [1] CRAN (R 4.3.1)
+ gtable        0.3.4      2023-08-21 [1] CRAN (R 4.3.1)
+ hms           1.1.3      2023-03-21 [1] CRAN (R 4.3.1)
+ htmltools   * 0.5.5      2023-03-23 [1] CRAN (R 4.3.0)
+ htmlwidgets * 1.6.2      2023-03-17 [1] CRAN (R 4.3.0)
+ httpuv        1.6.11     2023-05-11 [1] CRAN (R 4.3.1)
+ httr          1.4.7      2023-08-15 [1] CRAN (R 4.3.1)
+ janitor     * 2.2.0      2023-02-02 [1] CRAN (R 4.3.0)
+ jsonlite      1.8.7      2023-06-29 [1] CRAN (R 4.3.1)
+ kableExtra  * 1.3.4.9000 2023-09-21 [1] Github (kupietz/kableExtra@3bf9b21)
+ knitr       * 1.44       2023-09-11 [1] CRAN (R 4.3.1)
+ later         1.3.1      2023-05-02 [1] CRAN (R 4.3.0)
+ lazyeval      0.2.2      2019-03-15 [1] CRAN (R 4.3.0)
+ lifecycle     1.0.3      2022-10-07 [1] CRAN (R 4.3.0)
+ lubridate   * 1.9.2      2023-02-10 [1] CRAN (R 4.3.0)
+ magick        2.7.5      2023-08-07 [1] CRAN (R 4.3.1)
+ magrittr      2.0.3      2022-03-30 [1] CRAN (R 4.3.0)
+ mime          0.12       2021-09-28 [1] CRAN (R 4.3.0)
+ munsell       0.5.0      2018-06-12 [1] CRAN (R 4.3.0)
+ patchwork   * 1.1.3      2023-08-14 [1] CRAN (R 4.3.1)
+ pillar        1.9.0      2023-03-22 [1] CRAN (R 4.3.0)
+ pkgconfig     2.0.3      2019-09-22 [1] CRAN (R 4.3.0)
+ plotly      * 4.10.2     2023-06-03 [1] CRAN (R 4.3.1)
+ prettyunits   1.1.1      2020-01-24 [1] CRAN (R 4.3.0)
+ progress      1.2.2      2019-05-16 [1] CRAN (R 4.3.0)
+ promises      1.2.1      2023-08-10 [1] CRAN (R 4.3.1)
+ purrr       * 1.0.2      2023-08-10 [1] CRAN (R 4.3.1)
+ R6            2.5.1      2021-08-19 [1] CRAN (R 4.3.0)
+ Rcpp          1.0.11     2023-07-06 [1] CRAN (R 4.3.1)
+ readr       * 2.1.4      2023-02-10 [1] CRAN (R 4.3.0)
+ rlang         1.1.1      2023-04-28 [1] CRAN (R 4.3.1)
+ rmarkdown     2.25       2023-09-18 [1] CRAN (R 4.3.1)
+ rstudioapi    0.15.0     2023-07-07 [1] CRAN (R 4.3.1)
+ rvest         1.0.3      2022-08-19 [1] CRAN (R 4.3.1)
+ scales        1.2.1      2022-08-20 [1] CRAN (R 4.3.0)
+ sessioninfo   1.2.2      2021-12-06 [1] CRAN (R 4.3.0)
+ shiny       * 1.7.5      2023-08-12 [1] CRAN (R 4.3.1)
+ snakecase     0.11.1     2023-08-27 [1] CRAN (R 4.3.1)
+ stringi       1.7.12     2023-01-11 [1] CRAN (R 4.3.0)
+ stringr     * 1.5.0      2022-12-02 [1] CRAN (R 4.3.0)
+ svglite       2.1.1      2023-01-10 [1] CRAN (R 4.3.0)
+ systemfonts   1.0.4      2022-02-11 [1] CRAN (R 4.3.0)
+ tibble      * 3.2.1      2023-03-20 [1] CRAN (R 4.3.0)
+ tidyr       * 1.3.0      2023-01-24 [1] CRAN (R 4.3.0)
+ tidyselect    1.2.0      2022-10-10 [1] CRAN (R 4.3.0)
+ tidyverse   * 2.0.0      2023-02-22 [1] CRAN (R 4.3.0)
+ timechange    0.2.0      2023-01-11 [1] CRAN (R 4.3.0)
+ timevis     * 2.1.0      2022-11-03 [1] CRAN (R 4.3.1)
+ tweenr        2.0.2      2022-09-06 [1] CRAN (R 4.3.1)
+ tzdb          0.4.0      2023-05-12 [1] CRAN (R 4.3.1)
+ utf8          1.2.3      2023-01-31 [1] CRAN (R 4.3.0)
+ vctrs         0.6.3      2023-06-14 [1] CRAN (R 4.3.1)
+ viridisLite   0.4.2      2023-05-02 [1] CRAN (R 4.3.1)
+ webshot       0.5.5      2023-06-26 [1] CRAN (R 4.3.1)
+ widgetframe * 0.3.1      2017-12-20 [1] CRAN (R 4.3.1)
+ withr         2.5.0      2022-03-03 [1] CRAN (R 4.3.0)
+ xfun          0.39       2023-04-20 [1] CRAN (R 4.3.0)
+ xml2          1.3.5      2023-07-06 [1] CRAN (R 4.3.1)
+ xtable        1.8-4      2019-04-21 [1] CRAN (R 4.3.0)
+ yaml          2.3.7      2023-01-23 [1] CRAN (R 4.3.0)
 
  [1] C:/Users/Admin/AppData/Local/R/win-library/4.3
  [2] C:/Program Files/R/R-4.3.1/library

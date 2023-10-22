@@ -117,13 +117,13 @@ The balance of benefits and costs for using an interactive visualisation approac
 -   **Presentation** communicates results of a confirmed analysis
 :::
 
-* **Example: Global Temperature**
+-   **Example: Global Temperature**
 
 <https://climate.nasa.gov/vital-signs/global-temperature/>
 
 <img src="images/lecture-03/global-temperature.png" width="70%"/>
 
-* **Example: How you will die**
+-   **Example: How you will die**
 
 [https://flowingdata.com/2016/01/19/how-you-will-die/](https://flowingdata.com/2016/01/19/how-you-will-die/%22)
 
@@ -171,7 +171,7 @@ tags$html(
 ```
 
 ::: {.f3 .fragment}
- Use `includeCSS()` and `includeScript()` to include CSS and JS files
+Use `includeCSS()` and `includeScript()` to include CSS and JS files
 :::
 
 #### HTML Inputs

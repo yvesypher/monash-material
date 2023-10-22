@@ -21,6 +21,25 @@ knitr::opts_chunk$set(
 )
 ```
 
+##  {#aim}
+
+::: callout-important
+## Aim
+
+-   Basic communication theory and its relevancy with communicating with data
+-   Demonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring
+-   Identify and apply rhetorical elements to improve data storytelling
+-   Clearly articulate and express technical problems for others to help you
+:::
+
+::: callout-tip
+## Why
+
+-   Effective communication with data is a blend of hard and soft skills
+-   You need the hard skills to process and understand the data
+-   But you also need the soft skills to get the message across to others
+:::
+
 ## Communicating
 
 ::: blockquote
@@ -130,11 +149,11 @@ Ethos - Writer. Make it clear why people listen to you Pathos - Audience. Appeal
 
 ### Rhetorical Situation
 
-* Writer or Speaker
-* Purpose
-* Message
-* Audience
-* Context
+-   Writer or Speaker
+-   Purpose
+-   Message
+-   Audience
+-   Context
 
 ::: {.floating .circle style="top:10%;left:4%;animation-delay:-4.3s;"}
 Writer or Speaker
@@ -155,8 +174,6 @@ Audience
 ::: {.floating .circle style="top:13%;left:84%;animation-delay:-4.2s;"}
 Context
 :::
-
-## 
 
 ::: blockquote
 No one ever made a decision because of a number. They need a story.
@@ -278,9 +295,9 @@ ggplot(trees, aes(Height, Volume)) +
 
 #### Checklist [(note: not an exhaustive checklist)]{.f4}
 
-<label class="checkbox-container">Is the problem clearly and succinctly described? <input type="checkbox"></label> 
+<label class="checkbox-container">Is the problem clearly and succinctly described? <input type="checkbox"></label>
 
-<label class="checkbox-container">Is the expected solution or behaviour outlined? <input type="checkbox"></label> 
+<label class="checkbox-container">Is the expected solution or behaviour outlined? <input type="checkbox"></label>
 
 <label class="checkbox-container">Are you asking the right people at the right place? <input type="checkbox"> </label>
 
@@ -380,4 +397,3 @@ reprex::reprex(session_info = TRUE)
     -   [Why storytelling is more trustworthy than presenting data](https://www.youtube.com/watch?v=Ez5yS4Q5ASA)
     -   [Making data mean more through storytelling](https://www.youtube.com/watch?v=6xsvGYIxJok)
 :::
-

@@ -102,10 +102,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../assets/all.css">
-<link rel="stylesheet" href="../assets/monash.scss">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -145,12 +145,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Lecture 4: Data storytelling on the web</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05A.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5A: Statistical model outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-05B.html" rel="" target="">
+ <span class="dropdown-text">Lecture 5B: Data tables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-06.html" rel="" target="">
+ <span class="dropdown-text">Lecture 6: Effective data visualisation</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../2023S2-etc5523/lecture-07.html" rel="" target="">
  <span class="dropdown-text">Lecture 7: Captivating statistical presentations</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../2023S2-etc5523/lecture-08.html" rel="" target="">
  <span class="dropdown-text">Lecture 8: Clearly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-09.html" rel="" target="">
+ <span class="dropdown-text">Lecture 9: Stylishly communicating with code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../2023S2-etc5523/lecture-10.html" rel="" target="">
+ <span class="dropdown-text">Lecture 10: Narrative</span></a>
   </li>  
     </ul>
   </li>
@@ -212,6 +232,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05A.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5A: Statistical model outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-05B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5B: Data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Effective data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../2023S2-etc5523/lecture-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 7: Captivating statistical presentations</span></a>
   </div>
@@ -220,6 +258,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../2023S2-etc5523/lecture-08.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 8: Clearly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Stylishly communicating with code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023S2-etc5523/lecture-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10: Narrative</span></a>
   </div>
 </li>
       </ul>
@@ -234,7 +284,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#world-wide-web-www" id="toc-world-wide-web-www" class="nav-link active" data-scroll-target="#world-wide-web-www">🌐 World Wide Web (WWW)</a></li>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim"></a></li>
+  <li><a href="#world-wide-web-www" id="toc-world-wide-web-www" class="nav-link" data-scroll-target="#world-wide-web-www">🌐 World Wide Web (WWW)</a></li>
   <li><a href="#web-documents-are-handy" id="toc-web-documents-are-handy" class="nav-link" data-scroll-target="#web-documents-are-handy">🔨 Web Documents are Handy</a></li>
   <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html"><i class="fab fa-html5 monash-orange2"></i> Hyper Text Markup Language</a>
   <ul class="collapse">
@@ -292,6 +343,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="aim" class="level2" data-background="white">
+<h2 data-background="white" class="anchored" data-anchor-id="aim"></h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aim
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Understand the make up of web documents, i.e.&nbsp;HTML, CSS and JS</li>
+<li>Write basic HTML and CSS with valid syntax</li>
+<li>Use CSS selectors to apply new styles</li>
+<li>Integrate CSS and JS to R markdown documents with HTML output</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Basic web development skills are necessary for customising HTML documents</li>
+<li>This hard skill will be necessary later for when you are communicating with web documents and web apps</li>
+</ul>
+</div>
+</div>
+</section>
 <section id="world-wide-web-www" class="level2">
 <h2 class="anchored" data-anchor-id="world-wide-web-www">🌐 World Wide Web (WWW)</h2>
 <ul>
@@ -327,13 +415,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell" data-layout-align="center" data-hash="cache/unnamed-chunk-2_7cebddacdd45d2065db93c6ddefc9c47">
 <div class="cell-output-display">
-<div id="htmlwidget-b4331842a7fabc08240e" class="timevis html-widget " style="width:100%;height:250px;">
+<div id="htmlwidget-34582fa99f7bc187d2a2" class="timevis html-widget " style="width:100%;height:250px;">
 <div class="btn-group zoom-menu">
 <button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
 <button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
 </div>
 </div>
-<script type="application/json" data-for="htmlwidget-b4331842a7fabc08240e">{"x":{"items":[{"id":"1","content":"CSS 1","start":"1996-12-17","style":"font-size:10pt"},{"id":"2","content":"CSS 2","start":"1998-05-01","style":"font-size:10pt"},{"id":"3","content":"CSS","start":"1999-06-01","style":"font-size:10pt;"},{"id":"4","content":"HTML","start":"1989-01-01","style":"font-size:10pt"},{"id":"5","content":"HTML 2","start":"1995-11-24","style":"font-size:10pt"},{"id":"6","content":"HTML 3","start":"1997-01-14","style":"font-size:10pt"},{"id":"7","content":"HTML 4","start":"1997-12-18","style":"font-size:10pt"},{"id":"8","content":"HTML","start":"2014-10-28","style":"font-size:10pt"},{"id":"9","content":"CSS","start":"1994-10-10","style":"font-size:10pt"},{"id":"10","content":"JS","start":"1995-12-04","style":"font-size:10pt"}],"groups":null,"showZoom":true,"zoomFactor":0.5,"fit":true,"options":[],"height":"250px","timezone":null,"api":[]},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-34582fa99f7bc187d2a2">{"x":{"items":[{"id":"1","content":"CSS 1","start":"1996-12-17","style":"font-size:10pt"},{"id":"2","content":"CSS 2","start":"1998-05-01","style":"font-size:10pt"},{"id":"3","content":"CSS","start":"1999-06-01","style":"font-size:10pt;"},{"id":"4","content":"HTML","start":"1989-01-01","style":"font-size:10pt"},{"id":"5","content":"HTML 2","start":"1995-11-24","style":"font-size:10pt"},{"id":"6","content":"HTML 3","start":"1997-01-14","style":"font-size:10pt"},{"id":"7","content":"HTML 4","start":"1997-12-18","style":"font-size:10pt"},{"id":"8","content":"HTML","start":"2014-10-28","style":"font-size:10pt"},{"id":"9","content":"CSS","start":"1994-10-10","style":"font-size:10pt"},{"id":"10","content":"JS","start":"1995-12-04","style":"font-size:10pt"}],"groups":null,"showZoom":true,"zoomFactor":0.5,"fit":true,"options":[],"height":"250px","timezone":null,"api":[]},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
