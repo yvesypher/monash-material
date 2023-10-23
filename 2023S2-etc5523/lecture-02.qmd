@@ -31,26 +31,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-## {#aim background="white"}
+##  {#aim background="white"}
 
-::: {.callout-important }
-
+::: callout-important
 ## Aim
 
-* Understand the make up of web documents, i.e. HTML, CSS and JS
-* Write basic HTML and CSS with valid syntax
-* Use CSS selectors to apply new styles 
-* Integrate CSS and JS to R markdown documents with HTML output
-
+-   Understand the make up of web documents, i.e. HTML, CSS and JS
+-   Write basic HTML and CSS with valid syntax
+-   Use CSS selectors to apply new styles
+-   Integrate CSS and JS to R markdown documents with HTML output
 :::
 
-::: {.callout-tip }
-
+::: callout-tip
 ## Why
 
-* Basic web development skills are necessary for customising HTML documents
-* This hard skill will be necessary later for when you are communicating with web documents and web apps
-
+-   Basic web development skills are necessary for customising HTML documents
+-   This hard skill will be necessary later for when you are communicating with web documents and web apps
 :::
 
 ## 🌐 World Wide Web (WWW)
@@ -132,7 +128,7 @@ timevis::timevis(data, width = "100%", height = "250px")
 ::: w-50
 `r seehtml`
 
-<iframe src="simple-example.html" height="100%">
+<iframe src="2023S2-etc5523/simple-example.html" height="100%">
 
 </iframe>
 :::
@@ -356,29 +352,29 @@ This is a header
 
 ## `r css` CSS Selector {#selector}
 
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`\*\`         |         | selects all elements                                                                 |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`div\`        |         | selects all \<div\> elements                                                         |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`div, p\`     |         | selects all \<div\> and \<p\> elements                                               |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`div p\`      |         | selects all \<p\> within \<div\>                                                     |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`div \> p\`   |         | selects all \<p\> one level deep in \<div\>                                          |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`div + p\`    |         | selects all \<p\> immediately after a \<div\>                                        |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`div \~ p\`   |         | selects all \<p\> preceded by a \<div\>                                              |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`.classname\` |         | selects all elements with the attribute class="classname".                           |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`.c1.c2\`     |         | selects all elements with *both* c1 and c2 within its class attribute.               |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`.c1 .c2\`    |         | selects all elements with class c2 that is a descendant of an element with class c1. |
-+----------------+---------+--------------------------------------------------------------------------------------+
-| \`#idname\`    |         | selects all elements with the attribute id="idname".                                 |
-+----------------+---------+--------------------------------------------------------------------------------------+
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`\*\`         |          | selects all elements                                                                 |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`div\`        |          | selects all \<div\> elements                                                         |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`div, p\`     |          | selects all \<div\> and \<p\> elements                                               |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`div p\`      |          | selects all \<p\> within \<div\>                                                     |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`div \> p\`   |          | selects all \<p\> one level deep in \<div\>                                          |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`div + p\`    |          | selects all \<p\> immediately after a \<div\>                                        |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`div \~ p\`   |          | selects all \<p\> preceded by a \<div\>                                              |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`.classname\` |          | selects all elements with the attribute class="classname".                           |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`.c1.c2\`     |          | selects all elements with *both* c1 and c2 within its class attribute.               |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`.c1 .c2\`    |          | selects all elements with class c2 that is a descendant of an element with class c1. |
++----------------+----------+--------------------------------------------------------------------------------------+
+| \`#idname\`    |          | selects all elements with the attribute id="idname".                                 |
++----------------+----------+--------------------------------------------------------------------------------------+
 
 ## `r js` JavaScript (JS) {#js}
 
@@ -517,9 +513,13 @@ document.getElementById("p1").innerHTML = "content";
 ### <i class="fas fa-user-friends"></i> Community Web Enhancements
 
 -   [Bootstrap](https://getbootstrap.com/) is a free open-source CSS and JS that is widely adopted.[^1]
+
 -   [jQuery](https://jquery.com/) is a widely used JS library for object selection and manipulation.<sup>1</sup>
+
 -   [MathJax](https://www.mathjax.org/) is a JS library for displaying mathematics.<sup>1</sup>
+
 -   [Font Awesome](https://fontawesome.com/) inserts icons to web using their CSS.[^2]
+
 -   [D3.js](https://d3js.org/) is one of the most popular JS library for interactive data visualisation.
 
 [^1]: Included in the default `rmarkdown::html_document`.

@@ -45,35 +45,29 @@ knitr::opts_chunk$set(
 :::
 :::
 
-# Structure {background-color="#006DAE"}
+## Structure {background-color="#006DAE"}
 
-::: {.monash-gray10 .f4 .footnote}
-<br><br><br>
-
-Schwabish (2017) Better Presentations: A Guide for Scholars, Researchers, and Wonks
-:::
-
-## Typical Structure for Reports or Articles
+### Typical Structure for Reports or Articles
 
 <center><img src="images/lecture-07/paper-pyramid.svg"/></center>
 
-## Typical Structure for Journalism
+### Typical Structure for Journalism
 
 <center><img src="images/lecture-07/journalism-pyramid.svg"/></center>
 
-## For Presentations
+### Typical Structure for Presentations
 
 <center>
 
 <img src="images/lecture-07/presentation-hourglass.svg"/>
 
-[Aim for the ]{.f1}[hourglass structure]{.monash-blue}!
+Aim for the [hourglass structure]{.monash-blue}!
 
 </center>
 
-# Planning {background-color="#006DAE"}
+## Planning {background-color="#006DAE"}
 
-## Type and length of presentation?
+### Type and length of presentation?
 
 ```{r}
 expand.grid(Type = c("Informal meeting", 
@@ -98,7 +92,7 @@ expand.grid(Type = c("Informal meeting",
   row_spec(6, background="white") 
 ```
 
-## Who is your audience?
+### Who is your audience?
 
 🧑‍🚒🧑‍🚀👩‍🎨👩‍💻👩‍🌾
 
@@ -111,7 +105,7 @@ expand.grid(Type = c("Informal meeting",
 -   Journalist
 -   Public
 
-## 💡 Create ideas, not slides!
+### 💡 Create ideas, not slides!
 
 ::: incremental
 -   🪄 Start with content instead of fussing over with slides
@@ -126,25 +120,21 @@ expand.grid(Type = c("Informal meeting",
 Plan[, Plan, Plan]{.fragment}
 :::
 
-# Applying [Cognitive Psychology]{.monash-gray10} to Presentations {background="#006DAE"}
+## Applying [Cognitive Psychology]{.monash-gray10} to Presentations {background="#006DAE"}
 
-## Keep it simple
-
-. . .
+### Keep it simple
 
 ::: callout-note
-## Cognitive Load Theory (John Sweller)
+### Cognitive Load Theory (John Sweller)
 
 We can only absorb so much information at a time.
 :::
-
-. . .
 
 <br><br>
 
 Embrace [empty spaces]{.f-headline} in your slides!
 
-## Be audience-centered
+### Be audience-centered
 
 ::: incremental
 -   Don't make your audience captives and waste their time away <i class="fa-solid fa-handcuffs"></i>
@@ -154,7 +144,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 . . .
 
 ::: callout-note
-## Learning Principles (Richard Mayer)
+### Learning Principles (Richard Mayer)
 
 ::: incremental
 1.  [**Multimedia Principle**]{.monash-blue2}: people learn better from words and pictures than words alone.
@@ -162,8 +152,6 @@ Embrace [empty spaces]{.f-headline} in your slides!
 3.  [**Coherence Principle**]{.monash-orange2}: superfluous elements irrelevant to the teaching goal can disrupt and interfere with learning.
 :::
 :::
-
-## 
 
 ::: {.center .monash-bg-blue style="height:30%;width:100%;vertical-align: middle;"}
 ::: {.vcenter .f-headline .monash-white}
@@ -183,7 +171,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 :::
 :::
 
-## Color
+### Color
 
 ::: incremental
 -   [**Visualise**.]{.monash-blue} Color matters so select carefully and strategically.
@@ -195,7 +183,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 ![](images/lecture-07/ex1-1.png){.ba .pa3 .fragment width="30%"} ![](images/lecture-07/ex1-2.png){.ba .pa3 .fragment width="30%"} ![](images/lecture-07/ex1-3.png){.ba .pa3 .fragment width="30%"}
 :::
 
-## Type
+### Type
 
 ::: incremental
 -   [**Visualise**.]{.monash-blue} Consider choices for text carefully.
@@ -207,7 +195,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 ![](images/lecture-07/ex1-3.png){.ba .pa3 .fragment width="30%"} ![](images/lecture-07/ex2-2.png){.ba .pa3 .fragment width="30%"} ![](images/lecture-07/ex2-3.png){.ba .pa3 .fragment width="30%"}
 :::
 
-## Text Slides
+### Text Slides
 
 ::: incremental
 -   [**Visualise**.]{.monash-blue} When possible, convert text to visuals.
@@ -215,7 +203,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 -   [**Focus**.]{.monash-orange2} Use hierarchy and layering technique to direct audience's attention.
 :::
 
-## Data Visualisation Slides
+### Data Visualisation Slides
 
 ::: incremental
 -   [**Visualise**.]{.monash-blue} Make use of preattentive processing and other cognitive principles to make it easier for the audience to absorb the information in the data.
@@ -223,7 +211,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 -   [**Focus**.]{.monash-orange2} Remove or minimise non-essential elements.
 :::
 
-## Image Slides
+### Image Slides
 
 ::: incremental
 -   [**Visualise**.]{.monash-blue} Use large, high resolution images that fill entire slide.
@@ -231,7 +219,7 @@ Embrace [empty spaces]{.f-headline} in your slides!
 -   [**Focus**.]{.monash-orange2} Link text and images to draw audience's attention.
 :::
 
-## Panini World Cup sticker album
+### Panini World Cup sticker album
 
 Collecting and completing the official Panini Fifa World Cup Qatar 2022 album will cost fans an average of about £870.
 
@@ -243,7 +231,7 @@ Panini, which first produced a World Cup sticker album for the 1970 tournament i
 Original story and image from [The Guardian](https://www.theguardian.com/business/2022/aug/31/inflation-pushes-average-cost-of-filling-panini-2022-world-cup-sticker-album-to-870-pounds-football).
 :::
 
-## Inflation increases cost of World Cup sticker
+### Inflation increases cost of World Cup sticker
 
 Average cost of completing Panini Fifa World Cup Qatar 2022 album is now £870.
 
@@ -263,8 +251,6 @@ tibble(fifa = c("2016 Euro", "2018 Russia", "2022 Qatar"),
 Original story and image from [The Guardian](https://www.theguardian.com/business/2022/aug/31/inflation-pushes-average-cost-of-filling-panini-2022-world-cup-sticker-album-to-870-pounds-football).
 :::
 
-##  {background-image="images/lecture-07/panini.png"}
-
 ::: {.monash-bg-white .pa3 .w-80 style="opacity:0.85;"}
 [**Inflation increases cost of World Cup sticker**]{.f1}
 
@@ -278,7 +264,7 @@ Average cost of completing Panini Fifa World Cup Qatar 2022 album is now **£870
 [Original story and image from [The Guardian](https://www.theguardian.com/business/2022/aug/31/inflation-pushes-average-cost-of-filling-panini-2022-world-cup-sticker-album-to-870-pounds-football).]{.monash-white .monash-bg-black .pa3 style="opacity:0.65"}
 :::
 
-## Inflation increases cost of World Cup sticker
+### Inflation increases cost of World Cup sticker
 
 Average cost of completing Panini Fifa World Cup Qatar 2022 album is now **£870**.
 
@@ -302,7 +288,7 @@ tibble(fifa = c("2016 Euro", "2018 Russia", "2022 Qatar"),
 Original story from [The Guardian](https://www.theguardian.com/business/2022/aug/31/inflation-pushes-average-cost-of-filling-panini-2022-world-cup-sticker-album-to-870-pounds-football) and image from eBay.
 :::
 
-## Data Slides
+### Data Slides
 
 ::: incremental
 -   Data slides are not about the data but the **meaning of the data**
@@ -326,17 +312,15 @@ Original story from [The Guardian](https://www.theguardian.com/business/2022/aug
 
 [4]{style="border-radius:50%;background:#006DAE;color:white;width:1.2em;height:1.2em;display:inline-block;text-align:center;font-weight:bold;padding-bottom:3px;"} Keep it simple
 
-# The 3-second rule
+## The 3-second rule
 
 The message should be effectively processed in 3 seconds
 
-. . .
-
 [Don't take it as an absolute rule!]{.monash-red2}
 
-# The technical nitty gritty {background="#006DAE"}
+## The technical nitty gritty {background="#006DAE"}
 
-## Technical set-ups and tools
+### Technical set-ups and tools
 
 ::: incremental
 -   Aspect ratio (4:3 or 16:9)
@@ -346,7 +330,7 @@ The message should be effectively processed in 3 seconds
 -   Other
 :::
 
-## Presentation Software Tools
+### Presentation Software Tools
 
 ::: incremental
 -   Powerpoint (Microsoft) or Keynote (Apple)
@@ -358,9 +342,9 @@ The message should be effectively processed in 3 seconds
     -   [via Quarto](https://quarto.org/docs/presentations/revealjs/)
 :::
 
-# Reveal.js with Quarto {background="#006DAE"}
+## Reveal.js with Quarto {background="#006DAE"}
 
-## These slides are made with reveal.js via Quarto!
+### These slides are made with reveal.js via Quarto!
 
 ::: flex
 ::: w-50
@@ -380,7 +364,7 @@ All lecture slides Qmd files are [here](https://github.com/numbats/cwd/tree/mast
 :::
 :::
 
-## Reveal.js with Quarto
+### Reveal.js with Quarto
 
 ::: incremental
 -   ... **is just markdown** with some more special syntax
@@ -410,8 +394,6 @@ Right column
 
 </iframe>
 
-## Week 7 Lesson
-
 ::: callout-important
 ## Summary
 
@@ -419,8 +401,6 @@ Right column
 -   We reviewed some slide structure and design to make communication more effective
 -   We looked at how to develop slides using Quarto revealjs
 :::
-
-## Week 7 Lesson
 
 ::: callout-tip
 ## Resources

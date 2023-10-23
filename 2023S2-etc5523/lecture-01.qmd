@@ -112,22 +112,17 @@ Communication is often thought of as discrete, independent acts but in fact it i
 -   **Public** [-- a group too large for all to contribute]{.fragment}
 -   **Mass** [-- messages transmitted to large, wide-spread audiences via media]{.fragment}
 
-::: fragment
-::: callout-note
-### Tutorial
-
-How does your communication strategy change for different types of communication?
-:::
-:::
-
 ### [Effective]{.monash-blue} communication
 
 ::: incremental
 -   Communication doesn't always require complete understanding
+
 -   We notice some messages more and ignore others, e.g. we tend to notice messages that are:
+
     -   **intense**,
-    -   **repetitious**, and
+    -   **repetitious**
     -   **constrastive**.
+
 -   **Motives** also determine what information we select from environment
 :::
 
@@ -135,45 +130,25 @@ How does your communication strategy change for different types of communication
 -   We are influenced by what is most obvious
 :::
 
-## Rhetorics
-
-The art of effective or persuasive speaking or writing
+## Rhetorics - The art of effective or persuasive speaking or writing
 
 ### Rhetorical Triangle
 
 <center><img src="images/drawn/rhetorical-triangle.png"/></center>
 
-::: notes
-Ethos - Writer. Make it clear why people listen to you Pathos - Audience. Appeal to the audience to listen to you. Engage them. Logos - Context. Audience will put things in context for them. Make sure it will make sense. (Example)
-:::
+-   Ethos - Writer. Make it clear why people listen to you
+
+-   Pathos - Audience. Appeal/Convince to the audience to listen to you. Engage them.
+
+-   Logos - Context. Audience will put things in context for them. Make sure it will make sense.
 
 ### Rhetorical Situation
 
--   Writer or Speaker
--   Purpose
--   Message
--   Audience
--   Context
-
-::: {.floating .circle style="top:10%;left:4%;animation-delay:-4.3s;"}
-Writer or Speaker
-:::
-
-::: {.floating .circle style="top:11%;left:24%;animation-delay:-0.1s;"}
-Purpose
-:::
-
-::: {.floating .circle style="top:21%;left:44%;animation-delay:-3.4s;"}
-Message
-:::
-
-::: {.floating .circle style="top:15%;left:64%;animation-delay:-2.1s;"}
-Audience
-:::
-
-::: {.floating .circle style="top:13%;left:84%;animation-delay:-4.2s;"}
-Context
-:::
+-   Writer or Speaker -> Who's the writer/speaker?
+-   Purpose -> Why am I telling this?
+-   Message -> What do they need to know?
+-   Audience -> Who's ur audience?
+-   Context -> What's context u put the work in so that audience listen to ur message?
 
 ::: blockquote
 No one ever made a decision because of a number. They need a story.
