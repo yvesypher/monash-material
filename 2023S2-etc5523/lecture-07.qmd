@@ -33,8 +33,6 @@ knitr::opts_chunk$set(
 :::
 :::
 
-. . .
-
 ::: callout-tip
 ## Why
 
@@ -55,6 +53,9 @@ knitr::opts_chunk$set(
 
 <center><img src="images/lecture-07/journalism-pyramid.svg"/></center>
 
+* The lede: the opening sentence or paragraph of a news article, summarizing the most important aspects of the story. => Spend most time and effort here
+
+
 ### Typical Structure for Presentations
 
 <center>
@@ -62,6 +63,7 @@ knitr::opts_chunk$set(
 <img src="images/lecture-07/presentation-hourglass.svg"/>
 
 Aim for the [hourglass structure]{.monash-blue}!
+
 
 </center>
 

@@ -428,6 +428,7 @@ DT::datatable(mtcars, options = list(pageLength = 4))
 -   It's useful for data exploration where the main goal of the table is display of information rather than communication.
 
 ### When do you make tables over plots?
+
 -   When you want to ***show exact values*** or the ***accuracy of the values are important*** to convey.
 
 -   You *can* combine plots with tables!
