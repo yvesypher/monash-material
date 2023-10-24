@@ -39,8 +39,6 @@ knitr::opts_chunk$set(
 -   An R package makes functions, data or apps **accessible**, thereby increasing impact of your work
 :::
 
-[Thanks to Stuart Lee for developing the initial content in this slide, which has been subsequently modified a fair amount by me.]{.f2}
-
 ## Example data
 
 ::: callout-note
@@ -107,7 +105,7 @@ ToothGrowth %>%
   summarise(length_avg = mean(len))
 ```
 
-# Naming matters {background-color="#006DAE"}
+# Naming matters
 
 ## Syntactic sugar
 
@@ -141,7 +139,7 @@ compute_average(x)
 ::: {.w-50 .pr3}
 ::: fragment
 ::: callout-note
-## camelCase
+### camelCase
 
 -   Capitalise all words after first word.
 -   **Common in R Shiny** and JavaScript.
@@ -150,7 +148,7 @@ compute_average(x)
 
 ::: fragment
 ::: callout-note
-## snake_case
+### snake_case
 
 -   All words are lower case and separated by an underscore.
 -   **Preferred by R programmers** in general (except Shiny).
@@ -161,7 +159,7 @@ compute_average(x)
 ::: {.w-50 .pl3}
 ::: fragment
 ::: callout-note
-## PascalCase
+### PascalCase
 
 -   Capitalise all words.
 -   Preferred by C programmers.
@@ -170,7 +168,7 @@ compute_average(x)
 
 ::: fragment
 ::: callout-note
-## kebab-case
+### kebab-case
 
 -   All words are lower case and separated by a dash.
 -   Common in HTML attribute names and CSS property names.
@@ -187,7 +185,10 @@ Stick with the style convention of the language as much as possible!
 
 ::: incremental
 -   In R, a [**syntactically valid name**]{.monash-blue} consists of letters, numbers and the dot or underline characters and starts with a letter or the dot not followed by a number.
--   It also cannot be a **reserved word**, e.g. `if`, `else`, `TRUE`, `FALSE`, `while`, `function`. For full list see [`?Reserved`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html).
+
+-   It also cannot be a **reserved word**, e.g. `if`, `else`, `TRUE`, `FALSE`, `while`, `function`. 
+For full list see [`?Reserved`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html).
+
 -   Anything else is a **non-syntactic name** in R and you can still use any name in R by surrounding it with backticks:
 
 ::: fragment
@@ -751,8 +752,6 @@ Note: for this to work, you need to first install the package!
 -   **Cmd**/**Ctrl** + **Shift** + **B**: Build and Reload
 -   plus more... see **RStudio IDE** \> **Tools** \> **Keyboard Shortcuts Help**
 :::
-
-## Week 8 Lesson
 
 ::: callout-important
 ## Summary

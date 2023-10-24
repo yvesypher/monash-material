@@ -4,7 +4,7 @@ title: "Practice Questions"
 
 ## Practice Set 1
 
-## 1. Explain the Quarto workflow for creating a HTML report. What do you write, and how is it transformed? What are some of the output formats you can specify?
+### 1. Explain the Quarto workflow for creating a HTML report. What do you write, and how is it transformed? What are some of the output formats you can specify?
 
 -   Quarto is written in a (modified) form of Markdown
 
@@ -14,7 +14,7 @@ title: "Practice Questions"
 
 -   Some of the output formats include: docx, pptx, html and pdf.
 
-## 2. Describe the purpose of a vignette, including ewhat type of information goes into one, and the technical details of how one is written. Give an example of the code used to create a vignette.
+### 2. Describe the purpose of a vignette, including ewhat type of information goes into one, and the technical details of how one is written. Give an example of the code used to create a vignette.
 
 -   Long-form documentation
 -   Include full examples of how to use a package
@@ -23,7 +23,7 @@ title: "Practice Questions"
 -   Provide a practical guide to a package, similar to a blog post or interactive tutorial
 -   Easiest way to create is usethis::use_vignette()
 
-## 3. Explain the difference between the linear and transactional communication model.
+### 3. Explain the difference between the linear and transactional communication model.
 
 -   Linear communication model:
     -   has sender and receiver in a line
@@ -35,9 +35,9 @@ title: "Practice Questions"
     -   There is more noise in this model (due to more communication).
 -   There is no ideal way to communicate but the preferred model is transactional, as it reflects the back and forth between sender and recevier.
 
-# Practice set 2
+## Practice set 2
 
-## 1. What are some examples of information you might want to extract from a fitted linear model? What would be a good way to communicate these items?
+### 1. What are some examples of information you might want to extract from a fitted linear model? What would be a good way to communicate these items?
 
 -   Examples of information you might want to extract from a fitted linear model:
     -   Model paramter estimates
@@ -47,7 +47,7 @@ title: "Practice Questions"
     -   Predictions
 -   First two are good to present in a table, the last three are often best presented as visuals
 
-## 2. What is the ideal structure for a report or article? How does this differ to the structure for presentations?
+### 2. What is the ideal structure for a report or article? How does this differ to the structure for presentations?
 
 -   Reports and articles have:
 
@@ -112,7 +112,7 @@ title: "Practice Questions"
 
 -   The relevant function will automatically be evaluated if any of it's inputs inside change.
 
-## 2. Name four of the naming cases conventions and describe them
+### 2. Name four of the naming cases conventions and describe them
 
 -   `camelCase`: Capitalise all words after the first. Common in Shiny and JavaScript
 
@@ -122,7 +122,7 @@ title: "Practice Questions"
 
 -   `kebab-case`: All words lower case, separate by dash. Common in HTML and CSS property names.
 
-## 3. Describe the difference between a website and a webpage. Tell me how HTML and CSS work together to create a page.
+### 3. Describe the difference between a website and a webpage. Tell me how HTML and CSS work together to create a page.
 
 -   A webpage is a single page, usually written in HTML, that displays content in a webbrowser
 -   A website is a collection of webpages
@@ -133,7 +133,7 @@ title: "Practice Questions"
 
 ## Practice set 4
 
-## 1. What are the differences between a static visualization and a shiny app and when are each of these most appropriate?
+### 1. What are the differences between a static visualization and a shiny app and when are each of these most appropriate?
 
 **Static Visualization** \* Definition: A static visualization is a fixed image or chart that does not change or respond to user interaction. It is created and rendered once, and displays the same information each time it is viewed.
 
@@ -198,7 +198,7 @@ title: "Practice Questions"
 
 In summary, if the goal is to communicate a specific insight or message in a straightforward manner, a static visualization might be more appropriate. If the goal is to provide a tool for data exploration, analysis, or real-time monitoring, a Shiny app might be a better fit.
 
-## 2. What are types of communication and give examples for each of them?
+### 2. What are types of communication and give examples for each of them?
 
 -   Intrapersonal - communicating with one-self
 
@@ -240,14 +240,11 @@ In summary, if the goal is to communicate a specific insight or message in a str
 
     -   **Social Media Posts**: Content created by organizations or influencers intended to reach a large number of followers.
 
-## 3. What makes a presentation effective in your opinion?
+### 3. What makes a presentation effective in your opinion?
 
-Follow the hourglass structure:
-* Focus more on the hook and preview
-* Less focus on methods, data, and details
-* Focus more conclusions and takeaways
+Follow the hourglass structure: \* Focus more on the hook and preview \* Less focus on methods, data, and details \* Focus more conclusions and takeaways
 
-## 4. Explain how the input and output objects work together in Shiny application?
+### 4. Explain how the input and output objects work together in Shiny application?
 
 -   In a Shiny application, the input and output objects play central roles, facilitating the reactive programming model that allows for real-time user interaction and dynamic data updates. Here's an explanation of how they work together:
 
@@ -277,7 +274,7 @@ Follow the hourglass structure:
 
     -   Example: Imagine a Shiny app with a slider (for input) and a plot (for output). The user moves the slider, updating an input value. Any reactive expressions or outputs that depend on that slider value are then automatically re-evaluated. If the plot output depends on the slider input, the plot is re-rendered to reflect the new input value.
 
-## 5. What are the methods of hosting the outputs of a quarto document?
+### 5. What are the methods of hosting the outputs of a quarto document?
 
 -   Quarto Pub
 -   GitHub Pages
