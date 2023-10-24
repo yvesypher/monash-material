@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Yvesypher"
+  navbar:
+    left:
+      - sidebar:etc5523
+      
+  sidebar:
+    - id: etc5523
+      title: "ETC5523"
+      style: "docked"
+      collapse-level: 3
+      contents: 2023S2-etc5523
+        
+  search: 
+    location: navbar
+    type: overlay
+
+format:
+  html:
+    theme: 
+      - flatly
+      - assets/monash.scss
+    css: assets/all.css
+    toc: true
